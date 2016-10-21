@@ -1,0 +1,11 @@
+1. https://en.wikipedia.org/wiki/Assembly_language
+2. https://en.wikipedia.org/wiki/C_(programming_language)
+3. https://en.wikipedia.org/wiki/C%2B%2B
+4. https://en.wikipedia.org/wiki/JavaScript
+5. https://en.wikipedia.org/wiki/Python_(programming_language)
+
+Assembly or assembler language is a low-level programming language with a very strong corresponce between the language and the architecture's machine code instructions. Therefore each particular architecture has its own assembly language. Assembly language is converted into executable machine code by a utility program -- assembler. Assembly uses mnemonic to represent each low-level machine instruction or operation and many operations require one or more operands in order to form a complete instruction.
+
+C is a general-purpose, imperative procedural programming language. It supports structured programming, lexical variable scope and recursion and has a static type system that prevents unintended operations. C provides constructs that map efficientrly to typical machine instructions, and therefore it has replaced Assembly in many applications, including OS. 
+
+C++
