@@ -1,9 +1,8 @@
 ﻿using System;
 
-
 class PrintNumbers
 {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("1");
             Console.WriteLine("101");

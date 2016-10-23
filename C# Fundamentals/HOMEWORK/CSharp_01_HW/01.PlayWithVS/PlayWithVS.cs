@@ -2,7 +2,7 @@
 
 class PlayWithVS
 {
-    static void Main(string[] args)
+    static void Main()
     {
         Console.WriteLine("A simple output!");
     }

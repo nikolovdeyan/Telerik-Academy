@@ -1,9 +1,8 @@
 ﻿using System;
 
-
-class PrintMyName
+class PrintName
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Deyan");
         }

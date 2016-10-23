@@ -3,7 +3,7 @@ using System.Globalization;
 
 class Age
 {
-    static void Main(string[] args)
+    static void Main()
     {
         DateTime parsedDate;
         string inputString = Console.ReadLine();
@@ -11,7 +11,7 @@ class Age
         if (DateTime.TryParseExact(inputString, "MM.dd.yyyy", null, DateTimeStyles.AssumeLocal, out parsedDate))
         {
             //hack because of the broken tests
-            DateTime currentDate = DateTime.Now.AddMonths(-7);
+            DateTime currentDate = DateTime.Now;
             TimeSpan ageTimeSpan = currentDate - parsedDate;
             double ageInDays = ageTimeSpan.TotalDays;
             int ageInYears = (int)ageInDays / 365;
@@ -23,6 +23,5 @@ class Age
         {
             Console.WriteLine("Unable to convert '{0:d}' to a date!", inputString);
         }
-
     }
 }

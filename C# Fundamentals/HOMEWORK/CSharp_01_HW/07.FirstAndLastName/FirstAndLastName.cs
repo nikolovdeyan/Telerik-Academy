@@ -1,9 +1,8 @@
 ﻿using System;
 
-
 class FirstAndLastName
 {
-    static void Main(string[] args)
+    static void Main()
     {
         Console.WriteLine("Deyan");
         Console.WriteLine("Nikolov");

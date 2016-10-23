@@ -2,7 +2,7 @@
 
 class CurrentDateAndTime
 {
-    static void Main(string[] args)
+    static void Main()
     {
         Console.WriteLine(DateTime.Now);
     }
