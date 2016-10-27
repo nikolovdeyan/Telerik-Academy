@@ -1,0 +1,23 @@
+#lowertable, #lowertable th, #lowertable td {
+	width: 180px;
+	border: 2px ridge;
+	border-collapse: separate;
+	border-spacing: 0px;
+}
+
+#la {
+    text-align: left;
+}
+
+#ra {
+    text-align: right;
+}
+
+#rla {
+    text-align:right;
+    vertical-align:bottom;
+}
+
+#ca {
+    text-align: center;
+}
