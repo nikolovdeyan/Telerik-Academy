@@ -1,0 +1,39 @@
+body {
+    font: normal 20px Corbel, Arial, sans-serif;
+}
+
+a {
+    font-size: 28px;
+    color: #00aff0;
+    font-weight: bold;
+}
+
+table {
+  border: 3px solid black;
+  border-radius: 6px;
+}
+
+table thead td {
+    border-bottom: 3px solid black;
+    text-align: center;
+}
+
+td, th {
+    padding: 2px;
+}
+
+fieldset {
+    border: 3px solid black;
+    border-radius: 4px;
+}
+
+fieldset > table {
+    border-style: hidden;
+    text-align: center;
+    font-weight: bold;
+}
+
+legend {
+    font-size: 22px;
+    font-weight: bold;
+}

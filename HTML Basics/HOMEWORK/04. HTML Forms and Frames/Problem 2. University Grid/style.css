@@ -1,0 +1,13 @@
+table, td, th {
+  border: 3px solid black;
+  border-collapse: collapse;
+  border-style: inset;
+}
+
+input {
+    border-style: outset;
+}
+
+td, th {
+  padding: 5px;
+}

@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Sample Form</title>
+      <!-- NOTE: A separate CSS file is used to fix the styles -->
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <form method="post" action="#">
+         <table>
+            <tr>
+               <td><label for="last-name">Last Name</label></td>
+               <td colspan="3"><input id="last-name" type="text" name="LastName" value="Nakov"></td>
+            </tr>
+            <tr>
+               <td><label for="first-name">First Name</label></td>
+               <td colspan="3"><input id="first-name" type="text" name="FirstName" value="Svetlin"></td>
+            </tr>
+            <tr>
+               <td><label for="address">Address</label></td>
+               <td colspan="3">
+                  <textarea id="address" name="Address">
+                  17 Hristo Botev Str. floor 3, apt.12
+                  </textarea>
+               </td>
+            </tr>
+            <tr>
+               <td><label for="city">City</label></td>
+               <td><input id="city" type="text" name="City" value="Kaspichan"></td>
+               <td><label for="state">State</label></td>
+               <td><input id="state" type="text" name="State" value=""></td>
+            </tr>
+            <tr>
+               <td><label for="zip-postal">Zip/Postal Code</label></td>
+               <td colspan="3"><input id="zip-postal" type="text" name="FirstName" value="9325"></td>
+            </tr>
+            <tr>
+               <td><label for="country">Country</label></td>
+               <td colspan="3">
+                  <select id="country">
+                     <option value="bg">Bulgaria</option>
+                     <option value="other">Other</option>
+                  </select>
+               </td>
+            </tr>
+            <tr>
+               <td><label>
+                  Phone (country code,<br>area code, number)
+                  </label>
+               </td>
+               <td colspan="3">
+                  (+
+                  <input id="tel-cntrycode" type="text" name="PhoneCountryCode" value="359">
+                  )
+                  <input id="tel-areacode" type="text" name="PhoneAreaCode" value="88">
+                  -
+                  <input id="tel-number" type="text" name="PhoneNumber" value="8334343">
+               </td>
+            </tr>
+            <tr>
+               <td><label for="email">E-mail</label></td>
+               <td colspan="3"><input id="email" type="email" name="Email" value="nakov@kaspichan.org"></td>
+            </tr>
+            <tr>
+               <td><label>Birth date</label></td>
+               <td colspan="3">
+                  Month
+                  <input id="birth-month" type="text" name="BirthDateMonth" value="06">
+                  Day
+                  <input id="birth-day" type="text" name="BirthDateDay" value="14">
+                  Year (4 digit)
+                  <input id="birth-year" type="text" name="BirthDateYear" value="1980">    
+               </td>
+            </tr>
+            <tr>
+               <td><label>Gender</label></td>
+               <td colspan="3">
+                  <select>
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
+                     <option value="other">Other</option>
+                  </select>
+               </td>
+            </tr>
+            <tr>
+               <td><label>Starting date</label></td>
+               <td colspan="3"> 
+                  <input type="radio" name="StartingDate" value="Spring2016">Spring 2006
+                  <input type="radio" name="StartingDate" value="Summer2016">Summer 2006
+               </td>
+            </tr>
+            <tr>
+               <td><label for="comments">Comments/Questions</label></td>
+               <td colspan="3">
+                  <textarea id="comments" name="Comments">
+                  Please send me mor information about the lodging.
+                  </textarea>
+               </td>
+            </tr>
+            <tfoot>
+               <tr>
+                  <td colspan="4">
+                     <input type="button" value="Submit">
+                     <input type="button" value="Clear This Form">
+                  </td>
+               </tr>
+            </tfoot>
+         </table>
+      </form>
+   </body>
+</html>
+

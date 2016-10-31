@@ -1,0 +1,29 @@
+table {
+  min-width: 500px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+input {
+  border-style: inset;
+}
+
+td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+td label {
+  display: block;
+  text-align: right;
+  font-weight: bold;
+}
+
+tfoot {
+  text-align: center;
+  background-color: #d1ede1;
+}
+
+tfoot input {
+  border-style: outset;
+}
