@@ -1,0 +1,119 @@
+
+table {
+    font-family: sans-serif;
+    font-size: 11px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr, td, th {
+    border: 1px solid gray;
+    overflow: hidden;
+    padding-left: 7px;
+}
+
+thead {
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+.first-row {
+    height: 23px;
+
+}
+
+.second-row {
+    height: 27px;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f2f2+0,dcdcdc+100 */
+    background: #f2f2f2; /* Old browsers */
+    background: -moz-linear-gradient(top, #f2f2f2 0%, #dcdcdc 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f2f2f2 0%,#dcdcdc 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f2f2f2 0%,#dcdcdc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#dcdcdc',GradientType=0 ); /* IE6-9 */
+}
+
+.filter-row {
+    height: 34px;
+}
+
+.body-row {
+    height: 27.7px;
+}
+
+.footer-row {
+    height: 30px;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e3e9ed+0,b9bec3+100 */
+    background: #e3e9ed; /* Old browsers */
+    background: -moz-linear-gradient(top, #e3e9ed 0%, #b9bec3 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #e3e9ed 0%,#b9bec3 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #e3e9ed 0%,#b9bec3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e9ed', endColorstr='#b9bec3',GradientType=0 ); /* IE6-9 */
+}
+
+.prod-id {
+    width: 61px;
+}
+
+.prod-id-input {
+    width: 25px;
+    line-height: 15px;
+}
+
+.prod-name {
+    width: 240px;
+}
+
+.prod-name-input {
+    width: 138px;
+    line-height: 15px;
+}
+
+.unit-price {
+    width: 150px;
+}
+
+.unit-price-input {
+    float: left;
+    width: 74px;
+    margin: 1px 2px 0 0;
+    line-height: 15px;
+}
+
+.quantity {
+    width: 143px;
+}
+
+.quantity-input {
+    width: 88px;
+    line-height: 15px;
+}
+
+.units-stock {
+    width: 157px;
+}
+
+.units-stock-input {
+    float: left;
+    width: 73px;
+    margin: 1px 2px 0 0;
+    line-height: 15px;
+}
+
+.discontinued {
+    width: 74px;
+}
+
+.discontinued-input {
+    float: left;
+}
+
+tfoot > tr > th > span.total-pages {
+    float: right;
+}
+
+tfoot > tr > th > span.pages-links {
+    float: left;
+}
+
