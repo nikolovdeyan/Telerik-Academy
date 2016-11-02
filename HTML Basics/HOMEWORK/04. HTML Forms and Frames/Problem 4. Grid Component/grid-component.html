@@ -5,13 +5,12 @@
         <title>Document</title>
         <link href="style.css" rel="stylesheet"/>
     </head>
-
     <body>
         <table>
             <thead>
                 <tr class="first-row">
                     <th colspan="6">
-Drag a column header and drop it here to group by that column
+                        Drag a column header and drop it here to group by that column
                     </th>
                 </tr>
                 <tr class="second-row">
@@ -24,25 +23,25 @@ Drag a column header and drop it here to group by that column
                 </tr>
                 <tr class="filter-row">
                     <th>
-                        <input name="" type="text" class="prod-id-input" value=""/>
+                        <input name="prod-id" type="text" class="prod-id-input" value=""/>
                     </th>
                     <th>
-                        <input name="" type="text" class="prod-name-input" value=""/>
+                        <input name="prod-name" type="text" class="prod-name-input" value=""/>
                     </th>
                     <th>
-                        <input name="" type="text" class="unit-price-input" value=""/>
-                        <input name="" type="image" src="./.resources/filter-button.png" value=""/>
+                        <input name="unit-price" type="text" class="unit-price-input" value=""/>
+                        <input name="filter-price" type="image" src="./.resources/filter-button.png" alt="filter price" />
                     </th>
                     <th>
-                        <input name="" type="text" class="quantity-input" value=""/>
+                        <input name="quantity" type="text" class="quantity-input" value=""/>
                     </th>
                     <th>
-                        <input name="" type="text" class="units-stock-input" value=""/>
-                        <input name="" type="image" src="./.resources/filter-button.png" value=""/>
+                        <input name="units-stock" type="text" class="units-stock-input" value=""/>
+                        <input name="filter-stock" type="image" src="./.resources/filter-button.png" alt="filter stock"/>
                     </th>
                     <th>
-                        <input name="" type="checkbox" class="discontinued-input" value=""/>
-                        <input name="" type="image" src="./.resources/filter-button.png" value=""/>
+                        <input name="discontinued" type="checkbox" class="discontinued-input" value=""/>
+                        <input name="filter-discontinued" type="image" src="./.resources/filter-button.png" alt="filter discontinued" />
                     </th>
                 </tr>
             </thead>
@@ -53,16 +52,15 @@ Drag a column header and drop it here to group by that column
                     <td>$18.00</td>
                     <td>10 boxes x 20 bags</td>
                     <td>39</td>
-                    <td></td>
+                    <td><input name="prod1" type="checkbox" value="" /></td>
                 </tr>
-
                 <tr class="body-row">
                     <td>2</td>
                     <td>Chang</td>
                     <td>$19.00</td>
                     <td>24 - 12 oz bottles</td>
                     <td>17</td>
-                    <td></td>
+                    <td><input name="prod2" type="checkbox" value=""/></td>
                 </tr>
                 <tr class="body-row">
                     <td>3</td>
@@ -70,7 +68,7 @@ Drag a column header and drop it here to group by that column
                     <td>$10.00</td>
                     <td>12 - 550 ml bottles</td>
                     <td>13</td>
-                    <td></td>
+                    <td><input name="prod3" type="checkbox" value=""/></td>
                 </tr>
                 <tr class="body-row">
                     <td>4</td>
@@ -78,7 +76,7 @@ Drag a column header and drop it here to group by that column
                     <td>$22.00</td>
                     <td>48 - 6 oz jars</td>
                     <td>53</td>
-                    <td></td>
+                    <td><input name="prod4" type="checkbox" value=""/></td>
                 </tr>
                 <tr class="body-row">
                     <td>5</td>
@@ -86,7 +84,7 @@ Drag a column header and drop it here to group by that column
                     <td>$21.35</td>
                     <td>36 boxes</td>
                     <td>0</td>
-                    <td></td>
+                    <td><input name="prod5" type="checkbox" value=""/></td>
                 </tr>
                 <tr class="body-row">
                     <td>6</td>
@@ -94,7 +92,7 @@ Drag a column header and drop it here to group by that column
                     <td>$25.00</td>
                     <td>12 - 8 oz jars</td>
                     <td>120</td>
-                    <td></td>
+                    <td><input name="prod6" type="checkbox" value=""/></td>
                 </tr>
                 <tr class="body-row">
                     <td>7</td>
@@ -102,7 +100,7 @@ Drag a column header and drop it here to group by that column
                     <td>$30.00</td>
                     <td>12 - 1 lb pkgs.</td>
                     <td>15</td>
-                    <td></td>
+                    <td><input name="prod7" type="checkbox" value=""/></td>
                 </tr>
                 <tr class="body-row">
                     <td>8</td>
@@ -110,7 +108,7 @@ Drag a column header and drop it here to group by that column
                     <td>$40.00</td>
                     <td>12 - 12 oz jars</td>
                     <td>6</td>
-                    <td></td>
+                    <td><input name="prod8" type="checkbox" value=""/></td>
                 </tr>
                 <tr class="body-row">
                     <td>9</td>
@@ -118,7 +116,7 @@ Drag a column header and drop it here to group by that column
                     <td>$97.00</td>
                     <td>18 - 500 g pkgs.</td>
                     <td>29</td>
-                    <td></td>
+                    <td><input name="prod9" type="checkbox" value=""/></td>
                 </tr>
                 <tr class="body-row">
                     <td>10</td>
@@ -126,14 +124,15 @@ Drag a column header and drop it here to group by that column
                     <td>$31.00</td>
                     <td>12 - 200 ml jars</td>
                     <td>31</td>
-                    <td></td>
+                    <td><input name="prod10" type="checkbox" value=""/></td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr class="footer-row">
                     <th colspan="6">
-                        <span class="total-pages">
-335104 items in 33511 pages
+                        <span class="buttons-back">
+                            <input name="tofirst" type="image" src="./.resources/to-first.png" alt="First Page"/>
+                            <input name="toprev" type="image" src="./.resources/to-prev.png" alt="Next Page"/>
                         </span>
                         <span class="pages-links">
                             <a href="">1</a>
@@ -146,10 +145,28 @@ Drag a column header and drop it here to group by that column
                             <a href="">8</a>
                             <a href="">9</a>
                             <a href="">10</a>
+                            ...
+                        </span>
+                        <span class="buttons-fwd">
+                            <input name="tonext" type="image" src="./.resources/to-next.png" alt="Next Page" />
+                            <input name="tolast" type="image" src="./.resources/to-last.png" alt="Last Page" />
+                        </span>
+                        <span class="page-size">
+                            Page size: 
+                            <select id="sel" name="pagesize">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </select>
+                        </span>
+                        <span class="total-pages">
+                            335104 items in 33511 pages
                         </span>
                     </th>
                 </tr>
             </tfoot>
         </table>
     </body>
-</html>
+</html> 

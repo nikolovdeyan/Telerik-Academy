@@ -1,3 +1,13 @@
+.bgimage {
+    position: relative;
+}
+
+.bgimage img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+}
 
 table {
     font-family: sans-serif;
@@ -24,7 +34,6 @@ thead {
 
 .second-row {
     height: 27px;
-
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f2f2+0,dcdcdc+100 */
     background: #f2f2f2; /* Old browsers */
     background: -moz-linear-gradient(top, #f2f2f2 0%, #dcdcdc 100%); /* FF3.6-15 */
@@ -42,7 +51,7 @@ thead {
 }
 
 .footer-row {
-    height: 30px;
+    line-height: 30px;
 
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e3e9ed+0,b9bec3+100 */
     background: #e3e9ed; /* Old browsers */
@@ -51,6 +60,13 @@ thead {
     background: linear-gradient(to bottom, #e3e9ed 0%,#b9bec3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e9ed', endColorstr='#b9bec3',GradientType=0 ); /* IE6-9 */
 }
+
+.footer-row > * {
+    vertical-align: middle;
+    line-height: normal;
+    height: 30px;
+}
+
 
 .prod-id {
     width: 61px;
@@ -109,11 +125,54 @@ thead {
     float: left;
 }
 
-tfoot > tr > th > span.total-pages {
-    float: right;
-}
-
-tfoot > tr > th > span.pages-links {
+.buttons-back {
+    display: inline-block;
     float: left;
+    margin-top: 3px;
+    margin-left: 3px;
 }
 
+.pages-links {
+    display: inline-block;
+    float: left;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+.pages-links > a {
+    padding: 2px;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+.pages-links > a:hover {
+    border: 1px dotted red;
+}
+
+.buttons-fwd {
+    display: inline-block;
+    float: left;
+    margin-top: 3px;
+    margin-left: 15px;
+}
+
+.page-size {
+    display: inline-block;
+    float: left;
+    margin-top: 3px;
+    margin-left: 20px;
+}
+
+.page-size > select {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 1px;
+    margin-top: 1px
+}
+
+.total-pages {
+    display: inline-block;
+    float: right;
+    margin-top: 8px;
+    margin-right: 10px;
+}
