@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>01. CSS Overview -- Problem 2. International Employees</title>
+        <link href="style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-contact-name">Contact name</th>
+                    <th class="col-city">City</th>
+                    <th class="col-country">Country</th>
+                    <th class="col-is-promoted">Is Promoted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maria Anders</td>
+                    <td>Berlin</td>
+                    <td class="flag-de">Germany</td>
+                    <td>
+                        <input name="promoted-ger" type="checkbox" disabled="disabled" id="is-promoted-DE"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ana Trujillo</td>
+                    <td>México D.F.</td>
+                    <td class="flag-mx">Mexico</td>
+                    <td>
+                        <input name="promoted-mex" type="checkbox" disabled="disabled" id="01-is-promoted-MX"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Antonio Moreno</td>
+                    <td>México D.F.</td>
+                    <td class="flag-mx">Mexico</td>
+                    <td>
+                        <input name="promoted-mex" type="checkbox" disabled="disabled" checked="checked" id="02-is-promoted-MX" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Thomas Hardy</td>
+                    <td>London</td>
+                    <td class="flag-gb">UK</td>
+                    <td>
+                        <input name="promoted-uke" type="checkbox" disabled="disabled" id="is-promoted-GB"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+@font-face {
+    font-family: MSReference;
+    src: url(./resources/refsan.ttf)
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: MSReference, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+td {
+    border: 1px inset #ceccb3;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 5px;
+}
+
+th {
+    border: 1px inset #4fa01d;
+    border-bottom: 1px inset #407f29;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 5px;
+    height: 22px;
+}
+
+thead {
+    background: #5ec306;
+  	background: -moz-linear-gradient(top, #5ec306 0%, #47a803 99%);
+  	background: -webkit-linear-gradient(top, #5ec306 0%,#47a803 99%);
+  	background: linear-gradient(to bottom, #5ec306 0%,#47a803 99%);
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ec306', endColorstr='#47a803',GradientType=0 );
+    color: white;
+}
+
+tbody > tr {
+    height: 28px;
+    border-bottom: hidden;
+}
+
+tbody > tr:nth-child(even) {
+    background-color: #ececd8;
+}
+
+tbody > tr:last-child {
+    border-bottom: 1px inset #ceccb3;
+}
+
+.col-contact-name {
+    width: 132px;
+}
+
+.col-city {
+    width: 104px;
+}
+
+.col-country {
+    width: 119px;
+}
+
+.col-is-promoted {
+    width: 77px;
+}
+
+.flag-de:before {
+    content:url('./resources/flag-de.png');
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    vertical-align: middle;
+}
+
+.flag-mx:before {
+    content:url('./resources/flag-mx.png');
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    vertical-align: middle;
+}
+
+.flag-gb:before {
+    content:url('./resources/flag-gb.png');
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    vertical-align: middle;
+}
+
+input[type='checkbox'] {
+    margin: 3px 0 0 6px;
+}
