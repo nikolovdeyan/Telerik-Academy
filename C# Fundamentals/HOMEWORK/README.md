@@ -1,25 +1,10 @@
-Homework: Introduction to Programming
+C# Fundamentals > Homework Submissions
 =====================================
 
-### [Submit homework in bgcoder](http://bgcoder.com/Contests/314/CSharp-Fundamentals-01-Introduction-to-Programming)
-
-### Problem List
-
-1. [Play with Visual Studio](./01.PlayWithVS)
-2. Blank Solution
-3. Play with MSDN Library
-4. [Hello World](./04.HelloWorld)
-5. [Print Name](./05.PrintName)
-6. [Print Numbers](./06.PrintNumbers)
-7. [Print First and Last Name](./07.FirstAndLastName)
-8. [Square root](./08.SquareRoot)
-9. [Print Sequence](./09.PrintSequence)
-10. [Format Code](./10.FormatCode)
-11. Programming Languages
-12. Development Environments
-13. C# and .NET Differences
-14. [Current Date and Time](./14.CurrentDateAndTime)
-15. [Age](./15.Age)
-16. [Print Long Sequence](./16.PrintLongSequence)
-17. Play with the VS Debugger
-18. Command line
+1. [Introduction to Programming](./CSharp_01_HW-Introduction_to_Programming)
+2. [Data Types and Variables](./CSharp_02_HW-Data_Types_and_Variables)
+3. [Operators and Expressions](./CSharp_03_HW-Operators_and_Expressions)
+4. [Console In and Out](./CSharp_04_HW-Console_In_and_Out)
+5. [Conditional Statements](./CSharp_05_HW-Conditional_Statements)
+6. [Loops](./CSharp_06_HW-Loops)
+7. [Arrays](./CSharp_07_HW-Arrays)
