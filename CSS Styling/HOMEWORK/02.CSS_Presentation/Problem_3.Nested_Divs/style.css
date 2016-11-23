@@ -1,0 +1,10 @@
+.inner {
+    height: 1px;
+}
+
+div {
+    width: 97%;
+    background: black;
+    border: 1px solid red;
+    border-radius: 500px;
+}
