@@ -1,70 +1,49 @@
 ﻿using System;
 using System.Text;
-using System.Numerics;
 
 class OneSystemToAnyOther
 {
+    const string BASE_N_DIGITS = "0123456789ABCDEF";
+
     static void Main()
     {
         int inputBase = int.Parse(Console.ReadLine());
         string inputNum = Console.ReadLine();
         int outputBase = int.Parse(Console.ReadLine());
 
-        BigInteger inputNumInDecimal = BaseNToBase10(inputNum, inputBase);
+        long inputNumInDecimal = BaseNToBase10(inputNum, inputBase);
         string result = Base10ToBaseN(inputNumInDecimal, outputBase);
 
         Console.WriteLine(result);
     }
 
-    static BigInteger BaseNToBase10(string numBaseN, int baseN)
+    static long BaseNToBase10(string numBaseN, int baseN)
     {
-        BigInteger result = 0;
+        long result = 0;
         foreach (char digit in numBaseN)
         {
-            result = result * baseN + (digit - '0');
+            int numberDecimal = BASE_N_DIGITS.IndexOf(digit);
+            result = result * baseN + numberDecimal;
         }
+
         return result;
     }
 
-    static string Base10ToBaseN(BigInteger numBase10, int baseN)
+    static string Base10ToBaseN(long numBase10, int baseN)
     {
-        BigInteger remainder = 0;
+        int remainder = 0;
         StringBuilder sb = new StringBuilder();
 
         while (numBase10 > 0)
         {
-            remainder = numBase10 % baseN;
+            remainder = (int)(numBase10 % baseN);
             numBase10 /= baseN;
-            //sb.Insert(0, Translate(remainder));
-            if (remainder > 9)
-            {
-                char letter = (char)((remainder - 9 - 1) + 'A');
-                sb.Insert(0, letter.ToString());
-            }
-            else
-            {
-                sb.Insert(0, remainder.ToString());
-            }
+            sb.Insert(0, BASE_N_DIGITS[remainder]);
         }
 
         string result = sb.ToString().TrimStart('0');
         result = result.Length > 0 ? result : "0";
+
         return result;
     }
-
-//      if (tempSum > 9)
-//      {
-//           char letter = (char)((tempSum - 9 - 1) + 'A');
-//           result = (letter.ToString()) + result;
-//      }
-//      else
-//      {
-//           result = tempSum + result;
-//      }
-
-    //static string Translate(int num)
-    //{
-    //    string base16Digits = "0123456789ABCDEF";
-    //    return base16Digits[(int)num].ToString();
-    //}
 }
