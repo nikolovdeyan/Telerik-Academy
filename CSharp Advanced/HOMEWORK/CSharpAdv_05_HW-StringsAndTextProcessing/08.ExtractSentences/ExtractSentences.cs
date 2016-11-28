@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -9,17 +10,22 @@ namespace _08.ExtractSentences
         static void Main(string[] args)
         {
             string inputWord = Console.ReadLine();
-            string inputStr = Console.ReadLine();
+            string[] inputSentences = Console.ReadLine().Split('.').ToArray();
             string pattern = @"\b" + inputWord + @"\b";
 
-            foreach (var str in inputStr.Split('.'))
+            foreach (var sentence in inputSentences)
             {
-                string sentence = SentenceNormalizer(str);
-                if (Regex.IsMatch(sentence, pattern))
-                {
 
-                }
             }
+
+            //foreach (var str in inputStr.Split('.'))
+            //{
+            //    string sentence = SentenceNormalizer(str);
+            //    if (Regex.IsMatch(sentence, pattern))
+            //    {
+
+            //    }
+            //}
         }
 
         static string SentenceNormalizer(string sentence)
