@@ -2,8 +2,9 @@
 A repository to keep my study materials
 
 -----------------------
-## Courses
+## Courses List
+
 #### - [HTML Fundamentals](./HTML Basics)
-#### - [C# Fundamentals](./CSharp Fundamentals)
+#### - [C# Fundamentals](./C%23 Fundamentals)
 #### - [CSS Styling](./CSS Styling)
-#### - [C# Advanced](./CSharp Advanced)
+#### - [C# Advanced](./C%23 Advanced)
