@@ -1,3 +1,5 @@
+#### [Telerik Academy Courses](./../) 
+
 CSS Styling
 =====================================
 
@@ -5,7 +7,6 @@ The free course "CSS Styling" provides knowledge for styling web pages. Students
 
 
 ## Homework Submissions
-
 1. [CSS Overview](./HOMEWORK/01.CSS_Overview)
 2. [CSS Presentation](./HOMEWORK/02.CSS_Presentation)
 

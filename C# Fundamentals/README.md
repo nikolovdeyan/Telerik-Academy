@@ -1,3 +1,5 @@
+#### [Telerik Academy Courses](./../)
+
 C# Fundamentals
 =====================================
 
@@ -6,7 +8,6 @@ The free course "C# Fundamentals" introduces students to the fundamentals of pro
 The training is practice-oriented and involves solving hundreds of problems, which develop students' algorithmic thinking and skills.
 
 ## Homework Submissions
-
 1. [Introduction to Programming](./HOMEWORK/CSharp_01_HW-Introduction_to_Programming)
 2. [Data Types and Variables](./HOMEWORK/CSharp_02_HW-Data_Types_and_Variables)
 3. [Operators and Expressions](./HOMEWORK/CSharp_03_HW-Operators_and_Expressions)
@@ -16,5 +17,4 @@ The training is practice-oriented and involves solving hundreds of problems, whi
 7. [Arrays](./HOMEWORK/CSharp_07_HW-Arrays)
 
 ## Exam Solutions
-
  - [Exam Solutions](./CSharp_Basics_Exam_10_nov_2016)
