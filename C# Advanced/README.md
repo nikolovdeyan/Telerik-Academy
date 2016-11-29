@@ -1,4 +1,4 @@
-#### [Telerik Academy Courses](./../) 
+#### [Telerik Academy Courses](../) 
 
 C# Advanced
 =====================================

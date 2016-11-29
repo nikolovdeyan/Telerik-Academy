@@ -1,4 +1,4 @@
-#### [Telerik Academy Courses](./../../../) > [C# Advanced](./../../)  > [Homework](./../)
+#### [Telerik Academy Courses](../../../) > [C# Advanced](../../)  > [Homework](../)
 
 
 Strings and Text Processing Homework
