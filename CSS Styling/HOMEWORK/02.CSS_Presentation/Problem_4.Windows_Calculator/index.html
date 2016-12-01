@@ -7,33 +7,27 @@
     </head>
 
     <body>
-
-        <div class="template">
-            <IMG alt="" src="./resources/task4.png"/>
-        </div>
-
         <div class="calculator">
             <div class="window-title">
                 <div class="window-title__icon">
-                <img alt="" src="./resources/calc_icon.png"/>
+                    <img alt="" src="./resources/calc_icon.png"/>
                 </div>
                 <div class="window-title__label">
-                <p>Calculator</p>
+                    <p>Calculator</p>
                 </div>
             </div>
             <div class="window-buttons">
                 <div class="window-buttons__minimize">
-                <img alt="" src="./resources/minimize_icon.png"/>
+                    <img alt="" src="./resources/minimize_icon.png"/>
                 </div>
                 <div class="window-buttons__restore-down
                             window-buttons--disabled">
-                <img alt="" src="./resources/restore_icon.png"/>
+                    <img alt="" src="./resources/restore_icon.png"/>
                 </div>
                 <div class="window-buttons__close">
-                <img alt="" src="./resources/close_icon.png"/>
+                    <img alt="" src="./resources/close_icon.png"/>
                 </div>
             </div>
-
             <div class="window-container">
                 <div class="menubar">
                     <ul>
@@ -48,13 +42,11 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="result-area">
                     <div class="result-area__result-item">
                         8854455
                     </div>
                 </div>
-
                 <div class="binary-area">
                     <div class="binary-area__data-row">
                         <span class="binary-area__data-item">0000</span>
@@ -97,15 +89,285 @@
                     </div>
 
                 </div>
+                <div class="radio-container">
+
+                    <div class="num-system-radio">
+
+                        <form action="#">
+                            <input type="radio" class="num-system-radio__radio" name="numeric-system" value="Hex" id="num-hex" >
+                            <label for="num-hex" class="num-system-radio__label" >Hex</label><br>
+                            <input type="radio" class="num-system-radio__radio" name="numeric-system" value="Dec" id="num-dec" checked >
+                            <label for="num-dec" class="num-system-radio__label" >Dec</label><br>
+                            <input type="radio" class="num-system-radio__radio" name="numeric-system" value="Oct" id="num-oct" >
+                            <label for="num-oct" class="num-system-radio__label" >Oct</label><br>
+                            <input type="radio" class="num-system-radio__radio" name="numeric-system" value="Bin" id="num-bin" >
+                            <label for="num-bin" class="num-system-radio__label" >Bin</label><br>
+                        </form>
+                    </div>
+
+                    <div class="byte-radio">
+
+                        <form action="#">
+                            <input type="radio" class="byte-radio__radio" name="numeric-system" value="Qword" id="qwrd" checked >
+                            <label for="num-hex" class="byte-radio__label" >Qword</label><br>
+                            <input type="radio" class="byte-radio__radio" name="numeric-system" value="Dword" id="dwrd" >
+                            <label for="num-dec" class="byte-radio__label" >Dword</label><br>
+                            <input type="radio" class="byte-radio__radio" name="numeric-system" value="Word" id="wrd" >
+                            <label for="num-oct" class="byte-radio__label" >Word</label><br>
+                            <input type="radio" class="byte-radio__radio" name="numeric-system" value="Byte" id="byte" >
+                            <label for="num-bin" class="byte-radio__label" >Byte</label><br>
+                        </form>
 
 
+                    </div>
+                </div>
+                <div class="buttons-grid">
+                    <form action="#">
+                        <div class="buttons-col">
+                            <ul>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label"></a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">(</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">RoL</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">Or</a>
 
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">Lsh</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">Not</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttons-col">
+                            <ul>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">Mod</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">)</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">RoR</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">Xor</a>
 
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">Rsh</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">And</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttons-col">
+                            <ul>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">A</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">B</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">C</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">D</a>
 
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">E</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">F</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttons-col">
+                            <ul>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label">MC</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">&larr;</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">7</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">4</a>
+
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">1</a>
+                                </li>
+                                <li class="buttons-grid__horizontal-button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">0</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttons-col">
+                            <ul>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label">MR</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">CE</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">8</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">5</a>
+
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">2</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttons-col">
+                            <ul>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label">MS</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">C</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">9</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">6</a>
+
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large">3</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label">.</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttons-col">
+                            <ul>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label">M+</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">&plusmn;</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">/</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">*</a>
+
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">-</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label">+</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttons-col">
+                            <ul>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label">M-</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label">&radic;</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label">%</a>
+                                </li>
+                                <li class="buttons-grid__button
+                                           buttons-grid__button--disabled">
+                                    <a href="#" class="buttons-grid__label">1/x</a>
+
+                                </li>
+                                <li class="buttons-grid__vertical-button
+                                           buttons-grid__button--service">
+                                    <a href="#" class="buttons-grid__label
+                                                       buttons-grid__label--large
+                                                       buttons-grid__label--vertical">=</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-
-            <div class=""></div>
         </div>
     </body>
 </html>
