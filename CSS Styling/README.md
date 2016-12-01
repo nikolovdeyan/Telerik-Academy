@@ -1,4 +1,5 @@
-#### [Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+#### [Telerik Academy Courses](../) 
+-------------------------------------------------
 
 CSS Styling
 =====================================

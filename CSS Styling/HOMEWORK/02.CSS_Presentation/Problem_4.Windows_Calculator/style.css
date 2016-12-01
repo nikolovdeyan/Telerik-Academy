@@ -7,8 +7,23 @@
     margin: 0px;
     padding: 0px;
     text-decoration: none;
-	color: black;
+  	color: #062449;
 }
+
+/* Temporary overlay of the task for development purposes
+.template {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.template img {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    opacity: 0.0;
+}
+*/
 
 .calculator {
     background-color: rgba(207, 229, 252, 0.7);
@@ -88,7 +103,7 @@
 }
 
 .window-buttons--disabled img {
-    opacity: 0.4;
+    background-color: rgba(100, 100, 100, 0.3)
 }
 
 .window-buttons__minimize:hover,
@@ -113,13 +128,35 @@
 .menubar {
     border-bottom: 1px solid #747B85;
     height: 20px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #e9edf6 28%, #e7ebf6 33%, #dae0f0 39%, #d3daed 44%, #e0e5f5 94%, #e3e8f8 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e9edf6 28%,#e7ebf6 33%,#dae0f0 39%,#d3daed 44%,#e0e5f5 94%,#e3e8f8 100%);
+    background: linear-gradient(to bottom, #ffffff 0%,#e9edf6 28%,#e7ebf6 33%,#dae0f0 39%,#d3daed 44%,#e0e5f5 94%,#e3e8f8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e3e8f8',GradientType=0 );
 }
 
 .menubar__menu-item {
     display: inline-block;
     padding: 0 2px 0 6px;
+    border: 1px ;
     list-style-type: none;
     font-size: 14px;
+}
+
+.menubar__menu-item:hover {
+    border: 1px double black;
+    margin: -1px;
+    border-radius: 2px;
+    background-color: rgba(100, 100, 100, 0.1);
+    cursor: default;
+}
+
+.menubar__menu-item:active {
+    border: 1px inset black;
+    margin: -1px;
+    border-radius: 2px;
+    background-color: rgba(100, 100, 100, 0.2);
+    cursor: default;
 }
 
 .menubar__menu-item::first-letter {
