@@ -1,4 +1,4 @@
-#### [Telerik Academy Courses](../../../) > [CSS Styling](../../) > [Homework](../) > 02. CSS Presentation
+#### [Telerik Academy Courses](TelerikAcademy/) > [CSS Styling](CSS Styling/) > [Homework](CSS Styling/HOMEWORK/) > 02. CSS Presentation
 -----------------------------------------------------------
 
 CSS Presentation

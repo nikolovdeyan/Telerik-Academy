@@ -1,6 +1,5 @@
-#### [Telerik Academy Courses](../../../../) > [CSS Styling](../../../) > [Homework](../../) > [01.CSS Overview](../) > Problem 1. Ticket CSS
+#### [Telerik Academy Courses](TelerikAcademy/) > [CSS Styling](CSS Styling/) > [Homework](CSS Styling/HOMEWORK/) > [01.CSS Overview](CSS Styling/HOMEWORK/01.CSS_Overview/) > Problem 1. Ticket CSS
 -----------------------------------------
-
 
 Problem 1: Ticket CSS
 ==========================

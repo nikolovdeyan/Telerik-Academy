@@ -1,4 +1,4 @@
-#### [Telerik Academy Courses](../../) > [CSS Styling](../) > Homework
+#### [Telerik Academy Courses]() > [CSS Styling](CSS Styling/) > Homework
 -----------------------------------------------------------
 
 CSS Styling Homework Submissions
