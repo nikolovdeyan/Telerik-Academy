@@ -1,0 +1,25 @@
+ul li  {
+    list-style-type: none;
+}
+
+ul li ul {
+    display: none;
+}
+
+.list-item:hover {
+    text-decoration: underline;
+}
+
+ul li:hover ul {
+    display: block;
+}
+
+ul li:hover ul li a {
+    color: #888888;
+    text-decoration: none;
+    margin-left: -30px;
+}
+
+ul li:hover ul li a:hover {
+    text-decoration: underline;
+}
