@@ -18,23 +18,6 @@ a {
     text-decoration: none;
 }
 
-/* Temporary overlay of the task for development purposes */
-
-.template {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-}
-
-.template img {
-    position: relative;
-    left: 0px;
-    top: 0px;
-    opacity: 0.0;
-}
-
-/* ----------------END----------------------------------- */
-
 .container {
     width: 420px;
     height: 537px;
