@@ -4,7 +4,9 @@ A repository to keep my study materials
 -----------------------
 ## Courses List
 
-#### - [HTML Fundamentals](./HTML Basics)
-#### - [C# Fundamentals](./C%23 Fundamentals)
-#### - [CSS Styling](./CSS Styling)
-#### - [C# Advanced](./C%23 Advanced)
+#### - [![HTML Fundamentals](./.resources/HTMLFundamentals_small.png)](./HTML Basics)
+#### - [![C# Fundamentals](./.resources/C#Fundamentals_small.png)](./C%23 Fundamentals)
+#### - [![CSS Styling](./.resources/CSSStyling_small.png)](./CSS Styling)
+#### - [![C# Advanced](./.resources/C#Advanced_small.png)](./C%23 Advanced)
+#### - [![JavaScript Fundamentals](./.resources/JavaScriptFundamentals_small.png)](./JavaScript Fundamentals)
+#### - [![Object Oriented Programming](./.resources/ObjectOrientedProgramming_small.png)](./Object Oriented Programming)
