@@ -1,3 +1,6 @@
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
 Problem 3. Social site
 =================
 

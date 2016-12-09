@@ -1,5 +1,5 @@
-HTML Fundamentals > Homework Submissions
-=====================================
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
 
 2. [HTML Fundamentals](./02.HTML_Fundamentals)
 3. [HTML Tables](./03.HTML_Tables)
