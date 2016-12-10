@@ -1,7 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-[![C# Fundamentals](https://raw.githubusercontent.com/nikolovdeyan/telerikacademy/master/.resources/C#Fundamentals_large.png)]
+![C# Fundamentals](https://raw.githubusercontent.com/nikolovdeyan/telerikacademy/master/.resources/C%23Fundamentals_large.png)
 =====================================
 
 The free course "C# Fundamentals" introduces students to the fundamentals of programming. The course focuses on fundamental programming concepts using C#/.NET and Visual Studio. The course covers topics such as **data types**, **variables**, **operators**, **arithmetic expressions**, **Console Input/Output**, **conditional statements** (`if-else`, `switch-case`) and **loops** (`while`, `do-while`, `for`, `foreach`).

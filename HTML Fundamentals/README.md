@@ -1,7 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-[![HTML Fundamentals](https://raw.githubusercontent.com/nikolovdeyan/telerikacademy/master/.resources/HTMLFundamentals_large.png)]
+![HTML Fundamentals](https://raw.githubusercontent.com/nikolovdeyan/telerikacademy/master/.resources/HTMLFundamentals_large.png)
 =====================================
 
 In the free course HTML Basics the students will make their first steps in the development of modern web applications. The course is introductionary and covers only the basics of web development. Yet it is a fundamental for everybody who wants to grow as a web professional, both front-end developer or web developer.
