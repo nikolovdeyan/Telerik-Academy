@@ -1,0 +1,120 @@
+#container {
+	display: block;
+	width: 75%;
+	background-color: #F2E3C6;
+	color: #2B2B2B;
+	box-shadow: 5px 5px 5px 0.5px #838689;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+h1 {
+    font-weight:bold;
+    font-size: 1.8em;
+}
+
+h2 {
+    font-weight:bold;
+	font-size: 1.2em;
+}
+
+.task-info {
+    list-style-type: none;
+}
+
+.divider {
+	border: 0;
+	height: 2px;
+	margin: 20px 0 20px 0;
+	background-image: linear-gradient(to right, rgba(230, 50, 75, 0), rgba(230, 50, 75, 1), rgba(230, 50, 75, 0)); 
+}
+
+.task-example {
+	font-weight: bold;
+}
+
+.task-table {
+	display: inline-block;
+	margin-left: 40px;
+}
+
+.task-table tr th,
+.task-table tr td {
+	padding: 2px 20px;
+	border: 1px inset #5D4157;
+	background-color: #CAD7B2;
+}
+
+.task-test {
+	display: block;
+	width: 100%;
+	height: 30%;
+	text-align: right;
+}
+
+.task-test label {
+	display: block;
+	text-align: left;
+    margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.task-input {
+	display: inline-block;
+	margin-left: 40px;
+	float: left;
+}
+.task-button {
+	display: inline-block;
+	background-color: #FFC6A5;
+	margin-left: 5px;
+	margin-top: -1px;
+	float: left;
+}
+
+.var {
+	color: #32E657;
+}
+
+.val {
+	color: #6CC0E5;
+}
+
+.type {
+	color: #E6324B;
+}
+
+
+
+#js-console {
+	display: inline-block;
+    margin: 0 5px 0 50px;
+    padding: 5px 10px;
+    background-color: #353634;
+	border: 1px inset #EAE44A;
+	border-radius: 5px;
+    width: 50%;
+    height: 200px;
+    font-family: Consolas;
+    font-size: 14px;
+	text-align: left;
+    color: #F2E3C6;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+#js-console > p {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+}
+#js-console > p > span {
+   margin: 0;
+   padding: 0;
+}
+#js-console > p > br {
+   display: inline-block;
+   margin-bottom: 5px;
+}
