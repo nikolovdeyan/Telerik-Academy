@@ -1,0 +1,19 @@
+
+
+## JavaScript Fundamentals
+# ignoring *.html files, *.css files 
+# Mainly the display files for the web user interface for the tasks.
+
+JavaScript?Fundamentals/**/*.html linguist-documentation
+JavaScript?Fundamentals/**/*.css linguist-documentation
+
+# Ignoring <jsConsole.js>, a helper function (not mine either)
+JavaScript?Fundamentals/**/jsConsole.js linguist-documentation
+
+## C# Fundamentals
+# some exam tasks contain html
+C#?Fundamentals/**/*.html linguist-documentation
+
+## C# Advanced
+# some exam tasks contain html
+C#?Advanced/**/*.html linguist-documentation
