@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Operators and Expressions Homework</title>
+        <link rel="stylesheet" href="./resources/style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <h1>Operators and Expressions Homework</h1>
+		        <hr class="divider">
+            <h2>06. Point in a Circle</h2>
+            <div class="task-container">
+                <p class="task-desc">Implement a javascript function that by given coordinates of a point x and y and using an expression checks if given point (x,  y) is inside a circle K({0, 0}, 2) - the center has coordinates (0, 0) and the circle has radius 2.</p>
+                <p class="task-desc">The program should then print "yes DISTANCE" if the point is inside the circle or "no DISTANCE" if the point is outside the circle.</p>
+                <ul>
+                    <li>In place of DISTANCE print the distance from the beginning of the coordinate system - (0, 0) - to the given point.</li>
+                </ul>
+                <div class="task-inout">
+                    <p>Input:</p>
+                    <ul>
+                        <li>You will receive an array as a parameter. The array will contain exactly 2 string elements, the first being the x coordinate and the second - the y coordinate.</li>
+                    </ul>
+                    <p>Output:</p>
+                    <ul>
+                        <li>Output a single line in the format described above. The distance should always be printed with 2-digits of precision after the floating point.</li>
+                        <li>You can use console.log to print the results or you can use return to return the answer. Both are correct.</li>
+                    </ul>
+                    <p>Constraints:</p>
+                    <ul>
+                        <li>The numbers x and y will always be valid floating point numbers in the range (-1000, 1000)</li>
+                        <li>Time limit: 0.1s</li>
+                        <li>Memory limit: 16MB</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="divider">
+		        <p class="task-example">Examples:</p>
+            <div class="task-table">
+                <table>
+                    <thead>
+                        <tr>
+                        <th>Input:</th>
+                        <th>Output:</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>['-2', '0']</td>
+                        <td>yes 2.00</td>
+                    </tr>
+                        <tr>
+                        <td>['-1', '2']</td>
+                        <td>no 2.24</td>
+                    </tr>
+                        <tr>
+                        <td>['1.5', '-1']</td>
+                        <td>yes 1.80</td>
+                    </tr>
+                        <tr>
+                        <td>['-1.5', '-1.5']</td>
+                        <td>no 2.12</td>
+                    </tr>
+                        <tr>
+                        <td>['100', '-30']</td>
+                        <td>no 104.40</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table class="task-table">
+                    <thead>
+                        <tr>
+                        <th>Input:</th>
+                        <th>Output:</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>['0', '0']</td>
+                            <td>yes 0.00</td>
+                        </tr>
+                        <tr>
+                            <td>['0.2', '-0.8']</td>
+                            <td>yes 0.82</td>
+                        </tr>
+                        <tr>
+                            <td>['0.9', '-1.93']</td>
+                            <td>no 2.13</td>
+                        </tr>
+                        <tr>
+                            <td>['1', '1.655']</td>
+                            <td>yes 1.93</td>
+                        </tr>
+                        <tr>
+                            <td>['0', '1']</td>
+                            <td>yes 1.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr class="divider">
+		        <div class="input-container">
+				        <label for="problem">Provide input in the specified format:</label>
+				        <input class="task-input" id="problemInputs" />
+				        <button class="submit-button" onclick="passToSolve()">Submit</button>
+				        <button class="clear-button" id="clear-console" onclick="jsConsole.clearConsole()">Clear console</button>
+			      </div>
+			      <div class="console-container">
+				        <div id="js-console">
+					          <script src="jsConsole.js" type="text/javascript"></script>
+				        </div>
+			      </div>
+        </div>
+
+        <script src="06.PointInACircle.js" type="text/javascript"></script>
+        <script src="passToSolve.js" type="text/javascript"></script>
+    </body>
+</html>

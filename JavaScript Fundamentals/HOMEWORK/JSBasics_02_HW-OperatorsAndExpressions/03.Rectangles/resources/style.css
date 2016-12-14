@@ -1,0 +1,130 @@
+#container {
+	display: block;
+	width: 65%;
+	min-width: 600px;
+	background-color: #F2E3C6;
+	color: #2B2B2B;
+	box-shadow: 5px 5px 5px 0.5px #838689;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+h1 {
+    font-weight:bold;
+    font-size: 1.8em;
+}
+
+h2 {
+    font-weight:bold;
+	font-size: 1.2em;
+}
+
+.task-desc {
+	font-weight: normal;
+}
+
+.task-inout > p {
+	font-weight: bold;
+	margin-left: 40px;
+}
+
+.task-container ul li {
+	padding: 5px;
+	line-height: 1.3em;
+	margin-left: 15px;
+}
+
+.divider {
+	border: 0;
+	height: 2px;
+	margin: 20px 0 20px 0;
+	background-image: linear-gradient(to right, rgba(230, 50, 75, 0), rgba(230, 50, 75, 1), rgba(230, 50, 75, 0)); 
+}
+
+.task-example {
+	font-weight: bold;
+}
+
+.task-table {
+	display: inline-block;
+	margin-left: 40px;
+}
+
+.task-table tr th,
+.task-table tr td {
+	padding: 2px 20px;
+	border: 1px inset #E6324B;
+	background-color: #FFC6A5;
+}
+
+.input-container {
+	display: block;
+	float: left;
+	width: 40%;
+	min-width: 380px;
+}
+
+.console-container {
+	display: inline-block;
+	width: 60%;
+}
+
+.input-container label {
+	display: inline-block;
+	float: left;
+	min-width: 350px;
+    margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.task-input {
+	display: inline-block;
+	margin-left: 40px;
+}
+.submit-button {
+	display: inline-block;
+	background-color: #FFC6A5;
+	margin-left: 5px;
+	margin-top: -1px;
+}
+
+.clear-button {
+	display: inline-block;
+	background-color: #FFC6A5;
+	margin-left: 5px;
+	margin-top: -1px;
+}
+
+#js-console {
+	display: block;
+	width: 90%;
+	min-width: 500px;
+    height: 200px;
+    margin: 40px 5px 0 40px;
+    padding: 5px 10px;
+    background-color: #353634;
+	border: 1px inset #EAE44A;
+	border-radius: 5px;
+    font-family: Consolas;
+    font-size: 14px;
+	text-align: left;
+    color: #F2E3C6;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+#js-console > p {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+}
+#js-console > p > span {
+   margin: 0;
+   padding: 0;
+}
+#js-console > p > br {
+   display: inline-block;
+   margin-bottom: 5px;
+}

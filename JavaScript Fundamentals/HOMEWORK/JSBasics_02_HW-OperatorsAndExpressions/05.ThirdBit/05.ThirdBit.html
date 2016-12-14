@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Operators and Expressions Homework</title>
+        <link rel="stylesheet" href="./resources/style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <h1>Operators and Expressions Homework</h1>
+		        <hr class="divider">
+            <h2>Problem 5. Third Bit</h2>
+            <div class="task-container">
+                <p class="task-desc">Using bitwise operators, write a javascript function(that accepts a single array with arguments as a parameter) that uses an expression to find the value of the bit at index 3 of an unsigned integer read from the console.</p>
+                <ul>
+                    <li>The bits are counted from right to left, starting from bit 0.</li>
+                </ul>
+                <ul>
+                    <li>The result of the expression should be either 1 or 0. Print it on the console.</li>
+                </ul>
+                <div class="task-inout">
+                    <p>Input:</p>
+                    <ul>
+                        <li>The only element of the parameter array, will be a positive integer as a string - the number whose 3rd bit you must print.</li>
+                    </ul>
+                    <p>Output:</p>
+                    <ul>
+                        <li>Output a single number - 1 or 0 - the value of the 3rd bit, counted from 0 and from right to left.</li>
+                        <li>You can use console.log to print the results or you can use return to return the answer. Both are correct.</li>
+                    </ul>
+                    <p>Constraints:</p>
+                    <ul>
+                        <li>The input number will always be a valid positive integer number.</li>
+                        <li>Time limit: 0.2s</li>
+                        <li>Memory limit: 16MB</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="divider">
+		        <p class="task-example">Examples:</p>
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th>Input:</th>
+                        <th>Output:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>['15']</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>['1024']</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr class="divider">
+		        <div class="input-container">
+				        <label for="problem">Provide input in the specified format:</label>
+				        <input class="task-input" id="problemInputs" />
+				        <button class="submit-button" onclick="passToSolve()">Submit</button>
+				        <button class="clear-button" id="clear-console" onclick="jsConsole.clearConsole()">Clear console</button>
+			      </div>
+			      <div class="console-container">
+				        <div id="js-console">
+					          <script src="jsConsole.js" type="text/javascript"></script>
+				        </div>
+			      </div>
+        </div>
+
+        <script src="05.ThirdBit.js" type="text/javascript"></script>
+        <script src="passToSolve.js" type="text/javascript"></script>
+    </body>
+</html>

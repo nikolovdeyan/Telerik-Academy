@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Operators and Expressions Homework</title>
+        <link rel="stylesheet" href="./resources/style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <h1>Operators and Expressions Homework</h1>
+		        <hr class="divider">
+            <h2>Problem 2. Divisible by 7 and 5</h2>
+            <div class="task-container">
+                <p class="task-info">Implement a JavaScript function that does the following:
+                    <ul>
+                        <li>Accepts an array containing a single integer number as string.</li>
+                        <li>Stores in a variable if the number can be divided by 7 and 5 without remainder.</li>
+                        <li>Prints on the console "true NUMBER" if the number is divisible without remainder by 7 and 5. Otherwise prints "false NUMBER". In place of NUMBER print the value of the input number.</li>
+                    </ul>
+                </p>
+            </div>
+            <hr class="divider">
+		        <p class="task-example">Examples:</p>
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th>Input</th>
+                        <th>Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>['3']</td>
+                        <td>false 3</td>
+                    </tr>
+                    <tr>
+                        <td>['0']</td>
+                        <td>true 0</td>
+                    </tr>
+                    <tr>
+                        <td>['5']</td>
+                        <td>false 5</td>
+                    </tr>
+                    <tr>
+                        <td>['7']</td>
+                        <td>false 7</td>
+                    </tr>
+                    <tr>
+                        <td>['35']</td>
+                        <td>true 35</td>
+                    </tr>
+                    <tr>
+                        <td>['140']</td>
+                        <td>true 140</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr class="divider">
+		        <div class="input-container">
+				        <label for="problem">Provide input in the specified format:</label>
+				        <input class="task-input" id="problemInputs" />
+				        <button class="submit-button" onclick="passToSolve()">Submit</button>
+				        <button class="clear-button" id="clear-console" onclick="jsConsole.clearConsole()">Clear console</button>
+			      </div>
+			      <div class="console-container">
+				        <div id="js-console">
+					          <script src="jsConsole.js" type="text/javascript"></script>
+				        </div>
+			      </div>
+        </div>
+
+        <script src="02.DivisibleBy7And5.js" type="text/javascript"></script>
+        <script src="passToSolve.js" type="text/javascript"></script>
+    </body>
+</html>

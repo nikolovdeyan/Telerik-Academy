@@ -2,7 +2,7 @@
 -------------------------------------
 
 1. [Data Types and Variables](./JSBasics_01_HW-DataTypesAndVariables)
-2. Operators And Expressions
+2. [Operators And Expressions](./JSBasics_02_HW-OperatorsAndExpressions)
 3. Conditional Statements
 4. Loops
 5. Arrays

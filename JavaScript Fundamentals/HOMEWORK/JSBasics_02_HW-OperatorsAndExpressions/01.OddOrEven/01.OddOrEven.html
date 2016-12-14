@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Operators And Expressions Homework</title>
+        <link rel="stylesheet" href="./resources/style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <h1>Operators and Expressions Homework</h1>
+		        <hr class="divider">
+            <h2>Problem 1. Odd or Even</h2>
+            <div class="task-container">
+                <p class="task-info">Write an expression that checks if given integer is odd or even.
+                    <ul>
+                        <li>Implement a javascript function that uses an expression to check if given integer is odd or even, and prints "even NUMBER" or "odd NUMBER", where you should print the input number's value instead of NUMBER.</li>
+                    </ul>
+                </p>
+            </div>
+            <hr class="divider">
+		        <p class="task-example">Examples:</p>
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th>Input</th>
+                        <th>Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>['3']</td>
+                        <td>odd 3</td>
+                    </tr>
+                    <tr>
+                        <td>['2']</td>
+                        <td>even 2</td>
+                    </tr>
+                    <tr>
+                        <td>['-2']</td>
+                        <td>even -2</td>
+                    </tr>
+                    <tr>
+                        <td>['-1']</td>
+                        <td>odd -1</td>
+                    </tr>
+                    <tr>
+                        <td>['0']</td>
+                        <td>even 0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr class="divider">
+		        <div class="input-container">
+                <label for="problem">Enter integer number:</label>
+                <input class="task-input" id="problemInputs" />
+                <button class="submit-button" onclick="passToSolve()">Submit</button>
+			          <button class="clear-button" id="clear-console" onclick="jsConsole.clearConsole()">Clear Console</button>
+            </div>
+					  <div class="console-container">
+				        <div id="js-console">
+					          <script src="jsConsole.js" type="text/javascript"></script>
+				        </div>
+			      </div>
+        </div>
+
+        <script src="01.OddOrEven.js" type="text/javascript"></script>
+        <script src="passToSolve.js" type="text/javascript"></script>
+    </body>
+</html>
