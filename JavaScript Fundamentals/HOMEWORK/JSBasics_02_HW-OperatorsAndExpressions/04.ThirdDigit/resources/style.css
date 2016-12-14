@@ -11,6 +11,7 @@
 
 h1 {
     font-weight:bold;
+	text-shadow: 1.5px 1.5px 3px #E6324B;
     font-size: 1.8em;
 }
 
@@ -46,8 +47,14 @@ h2 {
 }
 
 .task-table {
-	display: inline-block;
+	display: block;
+	width: 100%;
 	margin-left: 40px;
+}
+
+.task-table > table {
+	display: inline;
+	margin: 0 5px 0 0;
 }
 
 .task-table tr th,

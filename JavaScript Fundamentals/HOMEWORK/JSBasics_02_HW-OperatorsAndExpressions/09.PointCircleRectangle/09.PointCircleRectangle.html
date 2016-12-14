@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Operators and Expressions Homework</title>
+        <link rel="stylesheet" href="./resources/style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <h1>Operators and Expressions Homework</h1>
+		        <hr class="divider">
+            <h2>Problem 09. Point, Circle, Rectangle</h2>
+            <div class="task-container">
+                <p class="task-desc">Implement a javascript function that accepts an array with a pair of coordinates x and y and uses an expression to checks for given point (x, y) if it is within the circle K({1, 1}, 1.5) and out of the rectangle R(top=1, left=-1, width=6, height=2).</p>
+                <div class="task-inout">
+                    <p>Input:</p>
+                    <ul>
+                        <li>You will receive the pair of coordinates as two elements of an array - the first element will be x, and the second - y.</li>
+                    </ul>
+                    <p>Output:</p>
+                    <ul>
+                        <li>Print inside circle if the point is inside the circle and outside circle if it's outside. Then print a single whitespace followed by inside rectangle if the point is inside the rectangle and outside rectangle otherwise. See the sample tests for a visual description.</li>
+                        <ul>
+                            <li>You can use console.log to print the results or you can use return to return the answer. Both are correct.</li>
+                        </ul>
+                    </ul>
+                    <p>Constraints:</p>
+                    <ul>
+                        <li>The coordinates x and y will always be valid floating-point numbers in the range [-1000, 1000].</li>
+                        <li>Time limit: 0.1s</li>
+                        <li>Memory limit: 16MB</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="divider">
+		        <p class="task-example">Examples:</p>
+            <div class="task-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Input:</th>
+                            <th>Output:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>['2.5', '2']</td>
+                            <td>outside circle outside rectangle</td>
+                        </tr>
+                        <tr>
+                            <td>['0', '1']</td>
+                            <td>inside circle inside rectangle</td>
+                        </tr>
+                        <tr>
+                            <td>['2.5', '1']</td>
+                            <td>inside circle inside rectangle</td>
+                        </tr>
+                        <tr>
+                            <td>['1', '2']</td>
+                            <td>inside circle outside rectangle</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr class="divider">
+		        <div class="input-container">
+				        <label for="problem">Provide input in the specified format:</label>
+				        <input class="task-input" id="problemInputs" />
+				        <button class="submit-button" onclick="passToSolve()">Submit</button>
+				        <button class="clear-button" id="clear-console" onclick="jsConsole.clearConsole()">Clear console</button>
+			      </div>
+			      <div class="console-container">
+				        <div id="js-console">
+					          <script src="jsConsole.js" type="text/javascript"></script>
+				        </div>
+			      </div>
+        </div>
+
+        <script src="09.PointCircleRectangle.js" type="text/javascript"></script>
+        <script src="passToSolve.js" type="text/javascript"></script>
+    </body>
+</html>

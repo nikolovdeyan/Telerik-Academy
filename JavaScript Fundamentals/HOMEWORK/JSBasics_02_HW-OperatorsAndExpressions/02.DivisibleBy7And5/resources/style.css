@@ -11,6 +11,7 @@
 
 h1 {
     font-weight:bold;
+	text-shadow: 1.5px 1.5px 3px #E6324B;
     font-size: 1.8em;
 }
 
@@ -19,13 +20,19 @@ h2 {
 	font-size: 1.2em;
 }
 
-.task-container > ul > li {
-	padding: 5px;
-	line-height: 1.5em;
+.task-desc {
+	font-weight: normal;
 }
 
-.task-info {
+.task-inout > p {
 	font-weight: bold;
+	margin-left: 40px;
+}
+
+.task-container ul li {
+	padding: 5px;
+	line-height: 1.3em;
+	margin-left: 15px;
 }
 
 .divider {
@@ -40,8 +47,14 @@ h2 {
 }
 
 .task-table {
-	display: inline-block;
+	display: block;
+	width: 100%;
 	margin-left: 40px;
+}
+
+.task-table > table {
+	display: inline;
+	margin: 0 5px 0 0;
 }
 
 .task-table tr th,

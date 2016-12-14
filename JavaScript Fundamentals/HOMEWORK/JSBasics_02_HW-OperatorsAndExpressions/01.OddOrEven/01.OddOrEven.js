@@ -3,11 +3,7 @@
 
 function solveProblem(args) {
 	  var n = +args[0];
-    var result = 'odd ' + n;
-
-    if( (n % 2) === 0 ){
-        result = 'even ' + n;
-    }
+    var result = ((n % 2) === 0) ? ('even ' + n) : ('odd ' + n);
 
     jsConsole.writeLine(result);
     console.log(result);
