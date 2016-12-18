@@ -13,7 +13,9 @@ JavaScript?Fundamentals/**/jsConsole.js linguist-documentation
 ## C# Fundamentals
 # some exam tasks contain html
 C#?Fundamentals/**/*.html linguist-documentation
+C#?Fundamentals/**/AssemblyInfo.cs linguist-documentation
 
 ## C# Advanced
 # some exam tasks contain html
 C#?Advanced/**/*.html linguist-documentation
+C#?Advanced/**/AssemblyInfo.cs linguist-documentation
