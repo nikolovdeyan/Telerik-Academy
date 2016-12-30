@@ -11,8 +11,8 @@ namespace _03.StaticClass
     {
 
         // While searching for Halversine algorithm implemented in C# i found that there is a
-        // built-in GeoCoordinate class in .NET, so I happily used it
-        // Here is the Halversine implemented in C# --> http://stackoverflow.com/a/215849/6819519
+        // built-in GeoCoordinate class in .NET, so I happily used it.
+        // Here is the Halversine implemented in C# for reference --> http://stackoverflow.com/a/215849/6819519
         public static double CalculateDistance(Point3d origin, Point3d destination)
         {
             var originPoint = new GeoCoordinate(origin.X, origin.Y);

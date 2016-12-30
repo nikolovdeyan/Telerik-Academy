@@ -18,7 +18,7 @@ namespace _06.AutoGrow
         private T[] contents;
 
         // CONSTRUCTORS
-        // Default constructor initializes a list with 8 items
+        // Default constructor initializes a list with DefListSize items
         public GenericList()
             : this(DefListSize)
         {

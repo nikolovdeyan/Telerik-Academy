@@ -4,21 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _05.GenericClass
+namespace _07.MinAndMax
 {
     public class GenericList<T>
         where T : IComparable, IComparable<T>
     {
-        // CONSTANTS
         private const int DefListSize = 4;
 
-        // FIELDS
         private int size;
         private int lastElement;
         private T[] contents;
 
-        // CONSTRUCTORS
-        // Default constructor initializes a list with DefListSize items
         public GenericList()
             : this(DefListSize)
         {
@@ -36,7 +32,6 @@ namespace _05.GenericClass
             this.Contents = items;
         }
 
-        // PROPERTIES
         public int Size
         {
             get { return this.size; }
@@ -56,7 +51,6 @@ namespace _05.GenericClass
             get { return this.contents; }
             set { this.contents = value; }
         }
-        // Indexer property -- Accessing an element by index
         public T this[int index]
         {
             get
@@ -83,8 +77,6 @@ namespace _05.GenericClass
             }
         }
 
-        // METHODS
-        // Adding an element
         public void Add(T element)
         {
             this.LastElement++;
@@ -98,7 +90,6 @@ namespace _05.GenericClass
             this.Contents[this.LastElement] = element;
         }
 
-        // Removing an element by index
         public void RemoveAt(int pos)
         {
             this.LastElement--;
@@ -130,7 +121,6 @@ namespace _05.GenericClass
             }
         }
 
-        // Inserting element at position
         public void Insert(T element, int pos)
         {
 
@@ -166,7 +156,6 @@ namespace _05.GenericClass
             }
         }
 
-        // Clearing the list
         public void Clear()
         {
             this.Contents = new T[DefListSize];
@@ -174,7 +163,6 @@ namespace _05.GenericClass
             this.ResizeArray("shrink");
         }
 
-        // Finding an element by its value
         public int Find(T element)
         {
             if (this.LastElement == -1)
@@ -194,7 +182,6 @@ namespace _05.GenericClass
             }
         }
 
-        // Resizing the array
         private void ResizeArray(string operation)
         {
             // If growing: 
@@ -216,7 +203,20 @@ namespace _05.GenericClass
             }
         }
 
-        // ToString Override
+        // Implementing Min<T>()
+        public T Min<U>()
+        {
+            dynamic result = this.Contents.Min();
+            return result;
+        }
+
+        // Implementing Max<T>()
+        public T Max<U>()
+        {
+            dynamic result = this.Contents.Max();
+            return result;
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
