@@ -15,9 +15,7 @@ namespace _06.StaticField
         private Display display;
         private Battery battery;
         // Adding the private field to hold the information for IPhone4S
-        private static GSM iPhone4S = new GSM("iPhone 4S", "Apple", 2999, null,
-                                               new Display(640, 960, 16000000),
-                                               new Battery("Non-removable 1432mAh", BatteryType.LiPo, 200, 14));
+        private static GSM iPhone4S;
 
         public string Model
         {
@@ -83,9 +81,7 @@ namespace _06.StaticField
         {
             get
             {
-                return new GSM ("iPhone 4S", "Apple", 2999, null, 
-                                  new Display (640, 960, 16000000),
-                                  new Battery ("Non-removable 1432mAh", BatteryType.LiPo, 200, 14));
+                return GSM.iPhone4S;
             }
         }
 
@@ -125,6 +121,13 @@ namespace _06.StaticField
             this.Display = display;
             this.Battery = battery;
         }
+        static GSM()
+        {
+            GSM.iPhone4S = new GSM("iPhone 4S", "Apple", 2999, null,
+                                               new Display(640, 960, 16000000),
+                                               new Battery("Non-removable 1432mAh", BatteryType.LiPo, 200, 14));
+        }
+
 
 
         public override string ToString()
