@@ -12,6 +12,7 @@ The course includes topics such as **HTML tags**, **using tables**, **forms and 
 2. [HTML Fundamentals](./HOMEWORK/02.HTML_Fundamentals)
 3. [HTML Tables](./HOMEWORK/03.HTML_Tables)
 4. [HTML Forms and Frames](./HOMEWORK/04.HTML_Forms_and_Frames)
+5. [Semantic HTML](./HOMEWORK/05.Semantic_HTML)
 
 ## Useful Resources
 - [Course Archive](https://telerikacademy.com/Courses/Courses/Details/386)

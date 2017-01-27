@@ -1,9 +1,8 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-Problem 2. Nested Lists
-=================
+Problem 1. Refactoring
+=============
 
-*	Write an HTML page like the following:
+*	Refactor (edit) the `homework-refactoring.html` web page and make it HTML semantic.
 
-![picture2](./resources/task2.png)

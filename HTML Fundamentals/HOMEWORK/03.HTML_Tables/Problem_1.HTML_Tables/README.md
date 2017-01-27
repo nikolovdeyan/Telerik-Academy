@@ -9,3 +9,4 @@ Problem 1. HTML Tables
 ![picture1](./resources/task1-1.png)
 
 ![picture2](./resources/task1-2.png)
+
