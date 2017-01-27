@@ -1,4 +1,7 @@
-C# Fundamentals > Homework Submissions
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+C# Fundamentals Homeworks
 =====================================
 
 1. [Introduction to Programming](./CSharp_01_HW-Introduction_to_Programming)

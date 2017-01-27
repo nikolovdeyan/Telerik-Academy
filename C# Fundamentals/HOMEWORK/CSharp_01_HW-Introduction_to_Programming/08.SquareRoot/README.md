@@ -1,4 +1,8 @@
-# Square root
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+08. Square Root
+=====================================
 
 ## Description
 Write a program that calculates the square root of the number **12345** and prints it on the console.

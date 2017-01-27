@@ -1,4 +1,8 @@
-# Print Numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+06. Print Numbers
+=====================================
 
 ## Description
 Write a program that prints the numbers **1**, **101** and **1001**, each on a separate line. Submit the code at the contest in [www.bgcoder.com](http://bgcoder.com/Contests/314/CSharp-Fundamentals-01-Introduction-to-Programming).

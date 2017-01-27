@@ -1,11 +1,12 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-07. First and Last Name
+13. C# and .NET Differences
 =====================================
 
 ## Description
-- Create console application that prints your first and last name, each at a separate line.
+- Describe the difference between **C#** and **.NET Framework** in 2-3 sentences.
+- Write your description in a text file called **csharp-and-dot-net-framework.txt**. Use English.
 
 ## Submission
 - You do not have to submit anything for this problem
