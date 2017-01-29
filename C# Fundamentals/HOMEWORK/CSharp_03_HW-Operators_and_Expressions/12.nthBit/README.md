@@ -1,4 +1,8 @@
-# N-th Bit
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+N-th Bit
+=====================
 
 ## Description
 Write a program that reads from the console two integer numbers **P** and **N** and prints on the console the value of **P**'s **N**-th bit. 

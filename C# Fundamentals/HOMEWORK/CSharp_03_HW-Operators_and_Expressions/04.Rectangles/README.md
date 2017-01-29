@@ -1,4 +1,8 @@
-# Rectangles
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Rectangles
+===============
 
 ## Description
 Write an expression that calculates rectangle’s area and perimeter by given **width** and **height**. 

@@ -1,4 +1,8 @@
-# 3rd Bit
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+3rd Bit
+=====================
 
 ## Description
 Using bitwise operators, write a program that uses an expression to find the value of the bit at index **3** of an unsigned integer read from the console.

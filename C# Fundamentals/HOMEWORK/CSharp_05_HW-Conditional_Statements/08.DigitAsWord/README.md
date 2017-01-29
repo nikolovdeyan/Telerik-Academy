@@ -1,4 +1,8 @@
-# Digit as Word
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Digit as Word
+====================
 
 ## Description
 Write a program that read a digit **[0-9]** from the console, and depending on the input, shows the digit as a word (in English).

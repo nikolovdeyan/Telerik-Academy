@@ -1,4 +1,8 @@
-# Third digit
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Third digit
+================
 
 ## Description
 Write a program that reads an integer **N** from the console and prints **true** if the third digit of **N** is **7**, or **"false THIRD_DIGIT"**, where you should print the third digits of **N**.

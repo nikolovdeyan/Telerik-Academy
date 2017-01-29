@@ -1,4 +1,8 @@
-# Null Values Arithmetic
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Null Values Arithmetic
+=======================
 
 ## Description
 Create a program that assigns null values to an integer and to a double variable. 

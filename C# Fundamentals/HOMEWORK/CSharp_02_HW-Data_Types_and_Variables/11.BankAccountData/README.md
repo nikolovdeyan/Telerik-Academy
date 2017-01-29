@@ -1,4 +1,8 @@
-# Bank Account Data
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Bank Account Data
+=====================
 
 ## Description
 A bank account has a holder name (first name, middle name and last name), available amount of money (balance), bank name, IBAN, 3 credit card numbers associated with the account.

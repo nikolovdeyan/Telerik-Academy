@@ -1,4 +1,8 @@
-# Biggest of 3
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Biggest of 3
+=======================
 
 ## Description
 Write a program that finds the biggest of three numbers that are read from the console.

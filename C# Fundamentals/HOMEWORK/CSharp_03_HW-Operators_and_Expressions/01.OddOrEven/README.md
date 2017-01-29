@@ -1,4 +1,8 @@
-# Odd or Even
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Odd or Even
+======================
 
 ## Description
 Write a program that reads an integer from the console, uses an expression to check if 

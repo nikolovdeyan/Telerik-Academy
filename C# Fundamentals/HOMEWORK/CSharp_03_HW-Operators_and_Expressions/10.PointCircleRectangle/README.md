@@ -1,4 +1,8 @@
-# Point, Circle, Rectangle
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Point, Circle, Rectangle
+========================
 
 ## Description
 Write a program that reads a pair of coordinates **x** and **y** and uses an expression to checks for given point **(x, y)**

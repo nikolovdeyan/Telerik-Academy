@@ -1,4 +1,8 @@
-# Four digits
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Four digits
+======================
 
 ## Description
 Write a program that takes as input a four-digit number in format **abcd** (e.g. **2011**) and performs the following:

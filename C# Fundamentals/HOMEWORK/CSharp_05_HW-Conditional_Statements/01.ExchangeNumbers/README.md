@@ -1,4 +1,8 @@
-# Exchange numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Exchange numbers
+========================
 
 ## Description
 Write a program that reads two double values from the console **A** and **B**, stores them in variables and exchanges their values if the first one is greater than the second one. 

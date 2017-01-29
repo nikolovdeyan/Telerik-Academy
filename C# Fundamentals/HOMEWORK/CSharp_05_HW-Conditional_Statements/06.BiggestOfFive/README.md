@@ -1,4 +1,8 @@
-# Biggest of 5
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Biggest of 5
+======================
 
 ## Description
 Write a program that finds the biggest of **5** numbers that are read from the console, using only **5** if statements.

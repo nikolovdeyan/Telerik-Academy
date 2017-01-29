@@ -1,4 +1,8 @@
-# Trapezoids
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Trapezoids
+===================
 
 ## Description
 Write an expression that calculates trapezoid's area by given sides **a** and **b** and height **h**. 

@@ -1,4 +1,8 @@
-# Circle
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Circle
+=================
 
 ## Description
 Write a program that reads from the console the radius **r** of a circle and prints its **perimeter** and **area**, rounded and formatted with **2 digits** *after* the decimal point.

@@ -1,4 +1,8 @@
-# Quadratic Equation
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Quadratic Equation
+=========================
 
 ## Description
 Write a program that reads the coefficients **a**, **b** and **c** of a quadratic equation *ax<sup>2</sup> + bx + c = 0* and solves it (prints its real roots).

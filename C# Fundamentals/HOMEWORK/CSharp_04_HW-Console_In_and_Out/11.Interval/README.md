@@ -1,4 +1,8 @@
-# Interval
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Interval
+================
 
 ## Description
 Write a program that reads two positive integer numbers **N** and **M** and prints how many numbers exist between them such that the reminder of the division by **5** is **0**.

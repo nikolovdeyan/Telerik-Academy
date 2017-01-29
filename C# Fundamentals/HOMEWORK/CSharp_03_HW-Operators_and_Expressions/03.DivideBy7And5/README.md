@@ -1,4 +1,8 @@
-# Divide by 7 and 5
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Divide by 7 and 5
+=====================
 
 ## Description
 Write a program that does the following:

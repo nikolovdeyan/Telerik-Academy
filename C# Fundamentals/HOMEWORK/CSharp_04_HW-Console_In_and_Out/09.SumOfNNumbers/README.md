@@ -1,4 +1,8 @@
-# Sum of N Numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Sum of N Numbers
+========================
 
 ## Description
 Write a program that enters a number **N** and after that enters more **N** numbers and calculates and prints their sum.

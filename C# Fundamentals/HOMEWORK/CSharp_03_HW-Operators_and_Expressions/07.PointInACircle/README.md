@@ -1,4 +1,8 @@
-# Point in a circle
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Point in a circle
+=======================
 
 ## Description
 Write a program that reads the coordinates of a point **x** and **y** 

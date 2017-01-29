@@ -1,5 +1,8 @@
-Homework: Data Types and Variables
-==================================
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Data Types and Variables
+=====================================
 
 ### [Submit homework in bgcoder](http://bgcoder.com/Contests/313/CSharp-Fundamentals-02-Data-types-and-variables)
 

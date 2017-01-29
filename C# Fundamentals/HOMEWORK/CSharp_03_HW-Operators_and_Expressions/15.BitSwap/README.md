@@ -1,4 +1,8 @@
-# BitSwap
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+BitSwap
+=================
 
 ## Description
 Write a program first reads 4 numbers **n**, **p**, **q** and **k** and than swaps bits

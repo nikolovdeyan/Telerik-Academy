@@ -1,4 +1,8 @@
-# Bonus Score
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Bonus Score
+======================
 
 ## Description
 Write a program that applies bonus score to given score in the range **[1…9]** by the following rules:

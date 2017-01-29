@@ -1,4 +1,8 @@
-# Strings and Objects
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Strings and Objects
+=====================
 
 ## Description
 Declare two string variables and assign them with `Hello` and `World`.

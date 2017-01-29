@@ -1,4 +1,8 @@
-# Variable in Hexadecimal Format
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Variable in Hexadecimal Format
+=============================
 
 ## Description
 Declare an integer variable and assign it with the value `254` in hexadecimal format (`0x##`).

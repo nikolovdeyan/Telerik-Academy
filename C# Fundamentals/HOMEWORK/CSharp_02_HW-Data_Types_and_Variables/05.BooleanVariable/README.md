@@ -1,4 +1,8 @@
-# Boolean Variable
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Boolean Variable
+=====================
 
 ## Description
 Declare a Boolean variable called `isFemale` and assign an appropriate value corresponding to your gender.

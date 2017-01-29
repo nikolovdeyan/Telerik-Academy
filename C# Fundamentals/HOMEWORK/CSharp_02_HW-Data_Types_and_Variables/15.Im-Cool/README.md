@@ -1,4 +1,8 @@
-# Look like a hacker
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Look like a hacker
+=====================
 
 ## Preliminaries
 If you haven't done the Command line task from the previous homework, go back and do it.

@@ -1,4 +1,8 @@
-# Modify Bit
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Modify Bit
+==================
 
 ## Description
 We are given an integer number **N** (read from the console), a bit value **v** (read from the console as well) (v = 0 or 1) and a position **P** (read from the console). 

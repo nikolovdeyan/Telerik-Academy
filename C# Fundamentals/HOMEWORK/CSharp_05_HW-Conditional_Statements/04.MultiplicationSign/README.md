@@ -1,4 +1,8 @@
-# Multiplication sign
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Multiplication sign
+===================
 
 ## Description
 Write a program that shows the sign (+, - or 0) of the product of three real numbers, without calculating it.

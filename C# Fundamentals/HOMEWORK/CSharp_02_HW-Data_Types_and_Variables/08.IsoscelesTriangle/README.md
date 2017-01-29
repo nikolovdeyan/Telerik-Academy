@@ -1,4 +1,8 @@
-# Isosceles Triangle
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Isosceles Triangle
+====================
 
 ## Description
 Write a program that prints an isosceles triangle of 9 copyright symbols `©`, something like this:

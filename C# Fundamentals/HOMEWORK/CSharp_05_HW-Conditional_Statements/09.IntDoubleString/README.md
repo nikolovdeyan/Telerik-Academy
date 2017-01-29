@@ -1,4 +1,8 @@
-# Int, Double, String
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Int, Double, String
+========================
 
 ## Description
 Write a program that, depending on the first line of the input, reads an **int**, **double** or **string** variable.

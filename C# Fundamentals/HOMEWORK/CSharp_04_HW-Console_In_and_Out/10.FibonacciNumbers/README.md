@@ -1,4 +1,8 @@
-# Fibonacci Numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Fibonacci Numbers
+=================
 
 ## Description
 Write a program that reads a number **N** and prints

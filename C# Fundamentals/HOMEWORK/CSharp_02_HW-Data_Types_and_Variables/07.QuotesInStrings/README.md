@@ -1,4 +1,8 @@
-# Quotes in Strings
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Quotes in Strings
+==================
 
 ## Description
 Write a program that outputs `The "use" of quotations causes difficulties.`

@@ -1,4 +1,8 @@
-# Moon Gravity
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Moon Gravity
+=====================
 
 ## Description
 The gravitational field of the Moon is approximately **17%** of that on the Earth.

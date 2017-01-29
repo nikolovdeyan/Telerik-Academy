@@ -1,4 +1,8 @@
-# Number Comparer
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Number Comparer
+==========================
 
 ## Description
 Write a program that gets two numbers from the console and prints the greater of them.

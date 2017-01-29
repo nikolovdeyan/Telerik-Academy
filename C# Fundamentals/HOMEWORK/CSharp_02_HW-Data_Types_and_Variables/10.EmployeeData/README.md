@@ -1,4 +1,8 @@
-# Employee Data
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Employee Data
+=====================
 
 ## Description
 A marketing company wants to keep record of its employees. Each record would have the following characteristics:

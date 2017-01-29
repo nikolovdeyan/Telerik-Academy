@@ -1,4 +1,8 @@
-# Formatting Numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Formatting Numbers
+=====================
 
 ## Description
 - Write a program that reads 3 numbers:

@@ -1,4 +1,8 @@
-# Company info
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Company info
+===================
 
 ## Description
 *	A company has name, address, phone number, fax number, web site and manager. The manager has first name, last name, age and a phone number.

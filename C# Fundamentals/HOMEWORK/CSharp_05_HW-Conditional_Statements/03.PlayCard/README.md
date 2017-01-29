@@ -1,4 +1,8 @@
-# Play card
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Play card
+===================
 
 ## Description
 Classical play cards use the following signs to designate the card face: 

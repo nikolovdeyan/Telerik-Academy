@@ -1,4 +1,8 @@
-# Sum of 5 numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Sum of 5 numbers
+===================
 
 ## Description
 Write a program that reads 5 integer numbers from the console and prints their sum.

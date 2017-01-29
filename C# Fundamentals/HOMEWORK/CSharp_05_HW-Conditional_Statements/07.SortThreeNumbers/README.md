@@ -1,4 +1,8 @@
-# Sort 3 Numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Sort 3 Numbers
+=====================
 
 ## Description
 Write a program that enters 3 real numbers and prints them sorted in descending order.

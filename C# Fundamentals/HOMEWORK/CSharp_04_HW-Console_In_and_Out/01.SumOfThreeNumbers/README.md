@@ -1,4 +1,8 @@
-# Sum of 3 numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Sum of 3 numbers
+=====================
 
 ## Description
 Write a program that reads 3 real numbers from the console and prints their sum.
