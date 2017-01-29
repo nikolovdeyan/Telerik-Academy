@@ -5,8 +5,8 @@
 =====================================
 
 ## Homework Submissions
-1. [Defining Classes Part 1](./HOMEWORK/01.OOP-Defining_Classes_Part1)
-2. [Defining Classes Part 2](./HOMEWORK/02.OOP-Defining_Classes_Part2)
+1. [Defining Classes Part 1](./HOMEWORK/01.OOP-Defining_Classes_Part_1)
+2. [Defining Classes Part 2](./HOMEWORK/02.OOP-Defining_Classes_Part_2)
 3. [Extension Methods, Lambda, Delegates, LINQ](./HOMEWORK/03.OOP-Ext_Methods_Lambd_Deleg_LINQ)
 4. [OOP Principles Part 1](./HOMEWORK/04.OOP-OOP_Principles_P1)
 5. [OOP Principles Part 2](./HOMEWORK/05.OOP-OOP_Principles_P2)
