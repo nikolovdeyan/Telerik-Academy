@@ -1,4 +1,8 @@
-# Decimal to Hex
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Decimal to Hex
+==========================
 
 ## Description
 Using loops write a program that converts an integer number to its hexadecimal representation.

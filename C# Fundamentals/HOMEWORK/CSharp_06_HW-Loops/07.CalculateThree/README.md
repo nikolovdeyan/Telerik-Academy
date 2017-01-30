@@ -1,4 +1,8 @@
-# Calculate 3!
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Calculate 3!
+========================
 
 ## Description
 In combinatorics, the number of ways to choose **N** different members out of a group of **N** different elements 

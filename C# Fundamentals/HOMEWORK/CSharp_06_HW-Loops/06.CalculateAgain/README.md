@@ -1,4 +1,8 @@
-# Calculate Again
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Calculate Again
+===========================
 
 ## Description
 Write a program that calculates **N! / K!** for given **N** and **K**.

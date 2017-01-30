@@ -1,4 +1,8 @@
-# Calculate!
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Calculate!
+===========================
 
 ## Description
 Write a program that, for a given two numbers **N** and **x**, calculates the sum **S** = 1 + 1!/x + 2!/x<sup>2</sup> + … + N!/x<sup>N</sup>.

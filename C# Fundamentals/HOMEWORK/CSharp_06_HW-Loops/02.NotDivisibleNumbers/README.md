@@ -1,4 +1,8 @@
-# Not Divisible Numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Not Divisible Numbers
+==============================
 
 ## Description
 Write a program that reads from the console a positive integer 

@@ -1,4 +1,8 @@
-# Binary to Decimal
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Binary to Decimal
+============================
 
 ## Description
 Using loops write a program that converts a binary integer number to its decimal form.

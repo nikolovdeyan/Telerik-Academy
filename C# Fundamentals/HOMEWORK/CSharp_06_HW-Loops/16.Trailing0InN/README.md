@@ -1,4 +1,8 @@
-# Trailing 0 in N!
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Trailing 0 in N!
+===============================
 
 ## Description
 Write a program that calculates with how many **zeroes** the factorial of a given number **N** has at its end.

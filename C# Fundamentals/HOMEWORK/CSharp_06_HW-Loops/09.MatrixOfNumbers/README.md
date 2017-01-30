@@ -1,4 +1,8 @@
-# Matrix of Numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Matrix of Numbers
+=============================
 
 ## Description
 Write a program that reads from the console a positive integer number **N** and prints a matrix like in the examples below. Use two nested loops.

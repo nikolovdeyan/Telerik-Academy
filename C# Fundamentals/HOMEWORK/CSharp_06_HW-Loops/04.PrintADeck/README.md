@@ -1,4 +1,8 @@
-# Print a Deck
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Print a Deck
+====================
 
 ## Description
 Write a program that reads a card sign(as a **string**) from the console and generates and prints all possible cards from a 

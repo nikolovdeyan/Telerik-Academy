@@ -1,4 +1,8 @@
-# Odd and Even Product
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Odd and Even Product
+===============================
 
 ## Description
 You are given **N** integers (given in a single line, separated by a space).

@@ -1,4 +1,8 @@
-# Spiral Matrix
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Spiral Matrix
+==========================
 
 ## Description
 Write a program that reads from the console a positive integer number **N** (1 &#8804; **N** &#8804; 20)

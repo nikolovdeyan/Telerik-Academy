@@ -1,4 +1,8 @@
-# GCD
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+GCD
+======================
 
 ## Description
 Write a program that calculates the greatest common divisor (**GCD**) of given two integers **A** and **B**.

@@ -1,4 +1,8 @@
-# Catalan Numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Catalan Numbers
+===========================
 
 ## Description
 In combinatorics, the Catalan numbers are calculated by the following formula:
