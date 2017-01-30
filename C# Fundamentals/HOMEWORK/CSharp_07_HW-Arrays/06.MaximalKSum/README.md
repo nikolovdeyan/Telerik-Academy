@@ -1,4 +1,8 @@
-# Maximal K sum
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Maximal K sum
+============================
 
 ## Description
 Write a program that reads two integer numbers **N** and **K** and an array of **N** elements from the console.

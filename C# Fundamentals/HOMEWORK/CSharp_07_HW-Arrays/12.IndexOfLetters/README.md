@@ -1,4 +1,8 @@
-# Index of letters
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Index of letters
+=============================
 
 ## Description
 Write a program that creates an array containing all letters from the alphabet (`a-z`).

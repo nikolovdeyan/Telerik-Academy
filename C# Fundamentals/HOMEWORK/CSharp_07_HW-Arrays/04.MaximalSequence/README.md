@@ -1,4 +1,8 @@
-# Maximal sequence
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Maximal sequence
+============================
 
 ## Description
 Write a program that finds the length of the **maximal sequence** of equal elements in an array of **N** integers.

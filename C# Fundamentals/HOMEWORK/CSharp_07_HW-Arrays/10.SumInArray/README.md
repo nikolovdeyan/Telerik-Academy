@@ -1,4 +1,8 @@
-# Find sum in array
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Find sum in array
+========================
 
 ## Description
 Write a program that finds in given array of integers a sequence of given sum `S` (if present).

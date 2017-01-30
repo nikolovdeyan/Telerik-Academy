@@ -1,4 +1,8 @@
-# Binary search
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Binary search
+========================
 
 ## Description
 Write a program that finds the index of given element **X** in a sorted array of **N** integers by using the [Binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm) algorithm.

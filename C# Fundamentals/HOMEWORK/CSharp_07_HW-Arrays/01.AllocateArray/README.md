@@ -1,4 +1,8 @@
-# Allocate array
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Allocate array
+=====================
 
 ## Description
 Write a program that allocates array of **N** integers, initializes each element by its index multiplied by `5` and the prints the obtained array on the console.

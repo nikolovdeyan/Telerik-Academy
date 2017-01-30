@@ -1,4 +1,8 @@
-# Prime numbers
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Prime numbers
+=====================
 
 ## Description
 Write a program that finds all prime numbers in the range [`1 ... N`]. Use the [Sieve of Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) algorithm. The program should print the biggest prime number which is `<= N`.

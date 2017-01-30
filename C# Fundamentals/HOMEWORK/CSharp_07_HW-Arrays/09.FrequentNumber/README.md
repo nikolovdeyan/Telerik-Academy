@@ -1,4 +1,8 @@
-# Frequent number
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Frequent number
+========================
 
 ## Description
 Write a program that finds the most frequent number in an array of **N** elements.

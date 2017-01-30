@@ -8,7 +8,7 @@ Homework: Console IO
 
 ### Problem List
 
-1. [Sum of 3 numbers](./01. SumOfThreeNumbers)
+1. [Sum of 3 numbers](./01.SumOfThreeNumbers)
 2. [Company info](./02.CompanyInfo)
 3. [Circle](./03.Circle)
 4. [Formatting Numbers](./04.FormattingNumbers)

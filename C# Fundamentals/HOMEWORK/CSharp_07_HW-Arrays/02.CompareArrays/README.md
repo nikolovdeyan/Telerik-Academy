@@ -1,4 +1,8 @@
-# Compare arrays
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Compare arrays
+=======================
 
 ## Description
 Write a program that reads two `integer` arrays of size **N** from the console and compares them element by element.

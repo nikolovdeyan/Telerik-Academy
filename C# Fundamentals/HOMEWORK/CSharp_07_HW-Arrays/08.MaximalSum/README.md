@@ -1,4 +1,8 @@
-# Maximal sum
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Maximal sum
+=================
 
 ## Description
 Write a program that finds the maximal sum of consecutive elements in a given array of **N** numbers.

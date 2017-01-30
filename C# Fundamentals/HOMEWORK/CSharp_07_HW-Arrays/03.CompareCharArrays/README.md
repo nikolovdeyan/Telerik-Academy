@@ -1,4 +1,9 @@
-# Compare char arrays
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Compare char arrays
+===========================
+
 Write a program that compares two `char` arrays lexicographically (letter by letter).
 
 ## Input

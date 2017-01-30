@@ -1,4 +1,8 @@
-# Selection sort
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
+Selection sort
+========================
 
 ## Description
 **Sorting** an array means to arrange its elements in increasing order. Write a program to sort an array.

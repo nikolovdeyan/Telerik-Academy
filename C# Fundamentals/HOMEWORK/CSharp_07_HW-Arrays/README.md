@@ -1,3 +1,6 @@
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+-------------------------------------
+
 Homework: Arrays
 ================
 
@@ -20,4 +23,10 @@ Homework: Arrays
 13. [Merge sort](./13.MergeSort)
 14. [Quick sort](./14.QuickSort)
 15. [Prime numbers](./15.PrimeNumbers)
+16. [Subset with sum S](16.SubsetWithSumS)
+17. [Subset K with sum S](17.SubsetKWithSumS)
 18. [Remove elements from array](./18.RemoveElementsInArray)
+19. [Permutations of a set](./19.PermutationsOfSet)
+20. [Variations of a set](./20.VariationsOfSet)
+21. [Combinations of a set](./21.CombinationsOfSet)
+22. [Command line arguments](./22.CommandLineArguments)
