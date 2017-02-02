@@ -15,3 +15,5 @@ The JavaScript OOP is about building of low-level user interface. The course cov
 6. [Class Inheritance](./HOMEWORK/JS_OOP_06.ClassInheritance)
 7. ES2015 Features
 
+## Workshops
+- [Carts and Products, 31 January 2017](./WORKSHOPS/CartsAndProducts)
