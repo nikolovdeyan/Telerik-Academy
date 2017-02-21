@@ -22,7 +22,7 @@ function solve() {
 
         function remove(product) {
             let productIndex = products.findIndex(p => (p.name === product.name));
-            if(productIndex <= -1) {
+            if (productIndex <= -1) {
                 throw "Cannot remove from an empty cart";
             }
             products.splice(productIndex, 1);
@@ -48,7 +48,7 @@ function solve() {
                     }
                 });
             }
-            var test = productTypes.sort();
+            productTypes.sort();
             return productTypes;
         };
 
@@ -67,7 +67,6 @@ function solve() {
             return productInfo;
 
             function getProductInfo(product) {
-
                 if (productInfo.length === 0 ||
                     !productInfo.some(p => (p.name === product.name))) {
                     let infoContainer = {};
@@ -75,8 +74,7 @@ function solve() {
                     infoContainer.totalPrice = product.price;
                     infoContainer.quantity = 1;
                     productInfo.push(infoContainer);
-                }
-                else {
+                } else {
                     let productIndex = productInfo.findIndex(p => (p.name === product.name));
                     productInfo[productIndex].totalPrice += product.price;
                     productInfo[productIndex].quantity += 1;
@@ -85,12 +83,12 @@ function solve() {
         };
 
         return {
-            products: products, // Array
-            add: add, // Function
-            remove: remove, // Function
-            showCost: showCost, // Function
-            showProductTypes: showProductTypes, // Function
-            getInfo: getInfo // Function
+            products: products,
+            add: add,
+            remove: remove,
+            showCost: showCost,
+            showProductTypes: showProductTypes,
+            getInfo: getInfo
         };
     }
 
