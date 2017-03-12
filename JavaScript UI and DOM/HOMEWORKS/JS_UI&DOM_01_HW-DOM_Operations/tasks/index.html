@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="task-1.js"></script>
+    <script>
+     var elemString = "todays-weather";
+     //var elemHTMLElement = document.getElementByID('todays-weather');
+     var cont;
+
+     cont = [
+        '<h2>Weather forecast for <em>13.03.2017</em></h2>',
+        '<h4 id="city-name">Sofia:</h4><ul><li>Rain</li><li>Temp: 20</li></ul>',
+        '<h4 id="city-name">Plovdiv:</h4><ul><li>Thunderstorms</li><li>Temp: 15</li></ul>',
+        '<h4 id="city-name">Varna:</h4><ul><li>Partly Cloudy</li><li>Temp: 18</li></ul>',
+        '<h4 id="city-name">Burgas:</h4><ul><li>Cloudy</li><li>Temp: 19</li></ul>',
+        ];
+
+     var myFunc = solve(elemString, cont);
+    </script>
+    
+    <title>DOM Operations Homework</title>
+    </head>
+
+    <body>
+        <h1>Mock-a-Weather Station</h1>
+        
+        <div id="todays-weather">
+            <div>
+                <h2>Weather forecast for <em>12.03.2017</em></h2>
+            </div>
+            <div>
+                <h4 id="city-name">Sofia:</h4>
+                <ul>
+                    <li>Sunny</li>
+                    <li>Temp: 12</li>
+                </ul>
+            </div>
+            <div>
+                <h4 id="city-name">Plovdiv:</h4>
+                <ul>
+                    <li>Sunny</li>
+                    <li>Temp: 7</li>
+                </ul>
+            </div>
+            <div>
+                <h4 id="city-name">Varna:</h4>
+                <ul>
+                    <li>Cloudy</li>
+                    <li>Temp: 11</li>
+                </ul>
+            </div>
+            <div>
+                <h4 id="city-name">Burgas:</h4>
+                <ul>
+                    <li>Cloudy</li>
+                    <li>Temp: 13</li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="parameters">
+            <button onclick="myFunc(elemString, cont)">Run Function</button>
+        </div>
+    </body>
+    
+</html>
