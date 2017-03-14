@@ -1,27 +1,35 @@
-/* globals $ */
-
-/* 
-
-Create a function that takes a selector and COUNT, then generates inside a UL with COUNT LIs:   
-  * The UL must have a class `items-list`
-  * Each of the LIs must:
-    * have a class `list-item`
-    * content "List item #INDEX"
-      * The indices are zero-based
-  * If the provided selector does not selects anything, do nothing
-  * Throws if
-    * COUNT is a `Number`, but is less than 1
-    * COUNT is **missing**, or **not convertible** to `Number`
-      * _Example:_
-        * Valid COUNT values:
-          * 1, 2, 3, '1', '4', '1123'
-        * Invalid COUNT values:
-          * '123px' 'John', {}, [] 
-*/
+/* global $ */
 
 function solve() {
   return function (selector, count) {
-   
+    function validateInputs(selector, count) {
+      // Validate count
+      if (!count || (typeof count !== 'number')) {
+        throw Error('count should be a number');
+      }
+      if (count <= 0) {
+        throw Error('count should be a positive number');
+      }
+      // Validate selector
+      if (!selector || (typeof selector !== 'string')) {
+        throw Error('Selector is not a string');
+      }
+    }
+
+    count = +count; 
+
+    validateInputs(selector, count);
+
+    var selection = $(selector);
+    var ulFragment = $('<ul class="items-list"></ul>');
+    var liFragment = $(new Array(count+1).join('<li class="list-item"></li>'));
+
+    ulFragment.appendTo(selection);
+    liFragment.appendTo($('.items-list'));
+
+    $(".list-item").text(function(index) {
+      return "List item #" + (index++);
+    });
   };
 };
 

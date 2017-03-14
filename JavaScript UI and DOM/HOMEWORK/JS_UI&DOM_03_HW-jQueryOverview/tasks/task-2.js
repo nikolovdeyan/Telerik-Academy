@@ -1,25 +1,35 @@
-/* globals $ */
+/* global $ jQuery*/
 
-/*
-Create a function that takes a selector and:
-* Finds all elements with class `button` or `content` within the provided element
-  * Change the content of all `.button` elements with "hide"
-* When a `.button` is clicked:
-  * Find the topmost `.content` element, that is before another `.button` and:
-    * If the `.content` is visible:
-      * Hide the `.content`
-      * Change the content of the `.button` to "show"       
-    * If the `.content` is hidden:
-      * Show the `.content`
-      * Change the content of the `.button` to "hide"
-    * If there isn't a `.content` element **after the clicked `.button`** and **before other `.button`**, do nothing
-* Throws if:
-  * The provided ID is not a **jQuery object** or a `string` 
-
-*/
 function solve() {
   return function (selector) {
-    
+    function onButtonClick() {
+      // The next sibling that has either of the two classes
+      var $sibling = $(this).nextAll('.button, .content').eq(0);
+      if ($sibling.hasClass('content') && $sibling.css('display') !== 'none') {
+        $(this).html('show');
+        $sibling.css('display', 'none');
+
+      } else if ($sibling.hasClass('content') && $sibling.css('display') === 'none') {
+        $(this).html('hide');
+        $sibling.css('display', '');
+
+      } else {
+        console.log("shouldn't be here");
+      }
+
+    }
+
+    if (typeof(selector) === 'string') {
+      selector = $(selector);
+    }
+
+    if (selector.length === 0) {
+      throw Error('Invalid selector provided');
+    }
+
+    selector.find(".button")
+      .html('hide')
+      .on("click", onButtonClick);
   };
 };
 
