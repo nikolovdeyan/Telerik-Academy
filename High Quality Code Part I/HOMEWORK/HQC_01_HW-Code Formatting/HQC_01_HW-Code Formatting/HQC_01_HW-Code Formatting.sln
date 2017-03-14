@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Bunnies", "01.Bunnies\01.Bunnies.csproj", "{5630B7CE-49D4-4E6F-8743-0BF3D1AFEBE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Events", "02.Events\02.Events.csproj", "{E949E33B-2397-4BC2-857C-A1424F21AA99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5630B7CE-49D4-4E6F-8743-0BF3D1AFEBE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5630B7CE-49D4-4E6F-8743-0BF3D1AFEBE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5630B7CE-49D4-4E6F-8743-0BF3D1AFEBE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5630B7CE-49D4-4E6F-8743-0BF3D1AFEBE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E949E33B-2397-4BC2-857C-A1424F21AA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E949E33B-2397-4BC2-857C-A1424F21AA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E949E33B-2397-4BC2-857C-A1424F21AA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E949E33B-2397-4BC2-857C-A1424F21AA99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

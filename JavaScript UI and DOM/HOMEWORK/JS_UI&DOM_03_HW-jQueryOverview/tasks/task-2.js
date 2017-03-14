@@ -1,10 +1,10 @@
 /* global $ jQuery*/
-
 function solve() {
   return function (selector) {
     function onButtonClick() {
       // The next sibling that has either of the two classes
       var $sibling = $(this).nextAll('.button, .content').eq(0);
+	  
       if ($sibling.hasClass('content') && $sibling.css('display') !== 'none') {
         $(this).html('show');
         $sibling.css('display', 'none');
@@ -14,7 +14,6 @@ function solve() {
         $sibling.css('display', '');
 
       } else {
-        console.log("shouldn't be here");
       }
 
     }
