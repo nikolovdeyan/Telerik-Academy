@@ -5,12 +5,12 @@ namespace Events.Models
 {
     public static class Messages
     {
-        internal static StringBuilder output = new StringBuilder();
+        internal static StringBuilder Output = new StringBuilder();
 
         public static void EventAdded()
         {
-            output.Append("Event added");
-            output.Append(Environment.NewLine);
+            Output.Append("Event added");
+            Output.Append(Environment.NewLine);
         }
 
         public static void EventDeleted(int count)
@@ -21,14 +21,14 @@ namespace Events.Models
             }
             else
             {
-                output.AppendFormat("{0} events deleted", count)
+                Output.AppendFormat("{0} events deleted", count)
                     .Append(Environment.NewLine);
             }
         }
 
         public static void NoEventsFound()
         {
-            output.Append("No events found")
+            Output.Append("No events found")
                 .Append(Environment.NewLine);
         }
 
@@ -36,7 +36,7 @@ namespace Events.Models
         {
             if (eventToPrint != null)
             {
-                output.Append(eventToPrint)
+                Output.Append(eventToPrint)
                     .Append(Environment.NewLine);
             }
         }

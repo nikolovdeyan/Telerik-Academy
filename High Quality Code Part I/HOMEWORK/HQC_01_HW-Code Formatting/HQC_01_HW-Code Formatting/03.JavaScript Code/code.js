@@ -2,7 +2,6 @@ var appName,
     userAgent,
     addScroll = false,
     off = 0,
-    txt = "",
     event,
     theLayer,
     posX = 0,
@@ -81,39 +80,20 @@ function hideTip() {
   }
 }
 
-function showMenu1() {
-  if (appName == "Netscape") {
-    theLayer = document.layers['menu1'];
+function showMenu(menuName) {
+  if (appName === 'Netscape') {
+    theLayer = document.layers[menuName];
     theLayer.visibility = 'show';
   } else {
-    theLayer = document.all['menu1'];
+    theLayer = document.all[menuName];
     theLayer.style.visibility = 'visible';
   }
 }
 
-function hideMenu1() {
+function hideMenu(menuName) {
   if (appName == "Netscape") {
-    document.layers['menu1'].visibility = 'hide';
+    document.layers[menuName].visibility = 'hide';
   } else {
-    document.all['menu1'].style.visibility = 'hidden';
+    document.all[menuName].style.visibility = 'hidden';
   }
 }
-
-function showMenu2() {
-  if (appName == "Netscape") {
-    theLayer = document.layers['menu2'];
-    theLayer.visibility = 'show';
-  } else {
-    theLayer = document.all['menu2'];
-    theLayer.style.visibility = 'visible';
-  }
-}
-
-function hideMenu2() {
-  if (appName == "Netscape") {
-    document.layers['menu2'].visibility = 'hide';
-  } else {
-    document.all['menu2'].style.visibility = 'hidden';
-  }
-}
-

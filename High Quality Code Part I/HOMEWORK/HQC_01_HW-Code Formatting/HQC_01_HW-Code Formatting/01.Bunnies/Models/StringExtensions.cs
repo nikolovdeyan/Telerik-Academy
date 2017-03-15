@@ -1,7 +1,7 @@
-﻿namespace Bunnies.Models.StringExtensions
-{
-    using System.Text;
+﻿using System.Text;
 
+namespace Bunnies.Models.StringExtensions
+{
     public static class StringExtensions
     {
         public static string SplitToSeparateWordsByUppercaseLetter(this string sequence)

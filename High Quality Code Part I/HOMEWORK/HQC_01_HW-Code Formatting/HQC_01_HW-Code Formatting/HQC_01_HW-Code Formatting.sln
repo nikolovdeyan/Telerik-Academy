@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Bunnies", "01.Bunnies\01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Events", "02.Events\02.Events.csproj", "{E949E33B-2397-4BC2-857C-A1424F21AA99}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.JavaScript Code", "03.JavaScript Code", "{72F81789-18E9-4217-B11A-CC9B8C47352E}"
+	ProjectSection(SolutionItems) = preProject
+		03.JavaScript Code\code.js = 03.JavaScript Code\code.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

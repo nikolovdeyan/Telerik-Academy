@@ -17,18 +17,21 @@
 
         public void Introduce(IWriter writer)
         {
+            var furTypeString = this.FurType.ToString().SplitToSeparateWordsByUppercaseLetter();
+
             writer.WriteLine($"{this.Name} - \"I am {this.Age} years old!\"");
-            writer.WriteLine($"{this.Name} - \"And I am {this.FurType.ToString().SplitToSeparateWordsByUppercaseLetter()}");
+            writer.WriteLine($"{this.Name} - \"And I am {furTypeString}");
         }
 
         public override string ToString()
         {
             var builderSize = 200;
             var builder = new StringBuilder(builderSize);
+            var furTypeString = this.FurType.ToString().SplitToSeparateWordsByUppercaseLetter();
 
             builder.AppendLine($"Bunny name: {this.Name}");
             builder.AppendLine($"Bunny age: {this.Age}");
-            builder.AppendLine($"Bunny fur: {this.FurType.ToString().SplitToSeparateWordsByUppercaseLetter()}");
+            builder.AppendLine($"Bunny fur: {furTypeString}");
 
             return builder.ToString();
         }

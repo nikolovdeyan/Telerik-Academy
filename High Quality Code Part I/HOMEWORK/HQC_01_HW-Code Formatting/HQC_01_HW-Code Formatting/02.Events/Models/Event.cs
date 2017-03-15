@@ -55,7 +55,8 @@ namespace Events.Models
             string titleString = CommandDelimiter + this.Title;
 
             string locationString = 
-                (this.Location != null && this.Location != string.Empty) ? (CommandDelimiter + this.Location) : string.Empty;
+                (this.Location != null && 
+                this.Location != string.Empty) ? (CommandDelimiter + this.Location) : string.Empty;
 
             sb.Append(dateString)
                 .Append(titleString)

@@ -38,40 +38,30 @@ namespace Events.Core
             {
             }
 
-            Console.WriteLine(Messages.output);
+            Console.WriteLine(Messages.Output);
         }
 
         private static bool ExecuteNextCommand()
         {
             string command = Console.ReadLine();
+            char firstLetter = command[0];
 
-            if (command[0] == 'A')
+            switch (firstLetter)
             {
-                AddEvent(command);
-
-                return true;
+                case 'A':
+                    AddEvent(command);
+                    return true;
+                case 'D':
+                    DeleteEventsCommand(command);
+                    return true;
+                case 'L':
+                    ListEventsCommand(command);
+                    return true;
+                case 'E':
+                    return false;
+                default:
+                    return false;
             }
-
-            if (command[0] == 'D')
-            {
-                DeleteEventsCommand(command);
-
-                return true;
-            }
-
-            if (command[0] == 'L')
-            {
-                ListEventsCommand(command);
-
-                return true;
-            }
-
-            if (command[0] == 'E')
-            {
-                return false;
-            }
-
-            return false;
         }
 
         private static void ListEventsCommand(string command)
@@ -104,10 +94,10 @@ namespace Events.Core
         }
 
         private static void GetParameters(
-            string commandForExecution, 
-            string commandType, 
-            out DateTime dateAndTime, 
-            out string eventTitle, 
+            string commandForExecution,
+            string commandType,
+            out DateTime dateAndTime,
+            out string eventTitle,
             out string eventLocation)
         {
             int firstDelimiterIndex = commandForExecution.IndexOf(CommandDelimiter);
@@ -115,7 +105,7 @@ namespace Events.Core
 
             dateAndTime = GetDate(commandForExecution, commandType);
 
-            if (firstDelimiterIndex == lastDelimiterIndex) 
+            if (firstDelimiterIndex == lastDelimiterIndex)
             {
                 // If no location is provided
                 eventTitle = commandForExecution.Substring(firstDelimiterIndex + 1).Trim();
@@ -124,7 +114,7 @@ namespace Events.Core
             else
             {
                 eventTitle = commandForExecution.Substring(
-                    firstDelimiterIndex + 1, 
+                    firstDelimiterIndex + 1,
                     lastDelimiterIndex - firstDelimiterIndex - 1)
                     .Trim();
 
@@ -136,9 +126,10 @@ namespace Events.Core
         {
             string dateTimeString = command.Substring(commandType.Length + 1, DateTimeFormatterLength).Trim();
 
-            Console.WriteLine(dateTimeString);
-
-            DateTime date = DateTime.ParseExact(dateTimeString, DateTimeFormatString, CultureInfo.InvariantCulture);
+            DateTime date = DateTime.ParseExact(
+                dateTimeString,
+                DateTimeFormatString,
+                CultureInfo.InvariantCulture);
 
             return date;
         }

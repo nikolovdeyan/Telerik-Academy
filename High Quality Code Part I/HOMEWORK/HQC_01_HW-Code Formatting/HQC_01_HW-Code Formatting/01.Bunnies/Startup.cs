@@ -8,9 +8,9 @@ namespace Bunnies
 {
     public class Startup
     {
-        public static void Main()
-        {
-            var bunnies = new List<Bunny>
+        public const string bunniesFilePath = @"..\..\bunnies.txt";
+        #region bunnies-list-definition
+        public static List<Bunny> bunnies = new List<Bunny>
             {
                 new Bunny
                 {
@@ -29,15 +29,15 @@ namespace Bunnies
                 new Bunny
                 {
                    Name = "Tiberii",
-                   FurType = FurType.ALittleFluffy,
-                   Age = 3
+                   Age = 3,
+                   FurType = FurType.ALittleFluffy
                 },
 
                 new Bunny
                 {
                    Name = "Neron",
-                   FurType = FurType.ALittleFluffy,
-                   Age = 1
+                   Age = 1,
+                   FurType = FurType.ALittleFluffy
                 },
 
                 new Bunny
@@ -68,15 +68,18 @@ namespace Bunnies
                    FurType = FurType.FluffyToTheLimit
                 }
             };
+        #endregion
 
-            var consoleWriter = new ConsoleWriter();
+        public static void Main()
+        {
+            ConsoleWriter consoleWriter = new ConsoleWriter();
+
+
 
             foreach (var bunny in bunnies)
             {
                 bunny.Introduce(consoleWriter);
             }
-
-            var bunniesFilePath = @"..\..\bunnies.txt";
 
             var fileStream = File.Create(bunniesFilePath);
 
