@@ -7,53 +7,7 @@ namespace Minesweeper.Core
 {
     public static class Engine
     {
-        public static void ParsePlayerTurn(
-                                        string userInput,
-                                        out string command,
-                                        out int turnRow,
-                                        out int turnCol)
-        {
-            turnRow = -1;
-            turnCol = -1;
-            command = string.Empty;
-
-            if (userInput.Length >= 3)
-            {
-                bool validRowNumber = int.TryParse(userInput[0].ToString(), out turnRow);
-                bool validColNumber = int.TryParse(userInput[2].ToString(), out turnCol);
-
-                if (validRowNumber &&
-                    validColNumber &&
-                    turnRow <= Constants.GameSettings.PlayingFieldRows &&
-                    turnCol <= Constants.GameSettings.PlayingFieldCols)
-                {
-                    command = "turn";
-                }
-            }
-        }
-
-        public static void SetUpNewRound(
-                                                ref char[,] displayField,
-                                                ref char[,] playingField,
-                                                ref int scoreCount,
-                                                ref bool gameIsLost,
-                                                ref bool gameIsStarting,
-                                                ref bool gameIsWon)
-        {
-            displayField = Field.GetNewDisplayField();
-
-            playingField = Field.GetNewPlayingField();
-
-            scoreCount = Constants.GameSettings.StartingPoints;
-
-            gameIsLost = false;
-
-            gameIsStarting = true;
-
-            gameIsWon = false;
-        }
-
-        public static void Logic()
+        internal static void Logic()
         {
             const int ScoreToWin = Constants.GameSettings.PointsNeededToWin;
 
@@ -67,7 +21,8 @@ namespace Minesweeper.Core
             int turnCol;
             string command = string.Empty;
 
-            List<Score> highScores = new List<Score>(6);
+            Score playerScore = null;
+            List<Score> highScores = null;
 
             do
             {
@@ -82,11 +37,9 @@ namespace Minesweeper.Core
 
                 Console.Write(Constants.Messages.AskInput);
 
-                var userInput = Console.ReadLine().Trim();
+                command = Console.ReadLine().Trim();
 
-                Engine.ParsePlayerTurn(userInput, out command, out turnRow, out turnCol);
-
-                Console.WriteLine(command);
+                ParsePlayerTurn(ref command, out turnRow, out turnCol);
 
                 switch (command)
                 {
@@ -94,11 +47,16 @@ namespace Minesweeper.Core
                         Field.DisplayHighScores(highScores);
                         break;
                     case "restart":
-                        displayField = Field.GetNewDisplayField();
-                        playingField = Field.GetNewPlayingField();
+                        StartNewRound(
+                                     ref displayField,
+                                     ref playingField,
+                                     ref score,
+                                     ref roundIsLost,
+                                     ref firstMoveForRound,
+                                     ref roundIsWon);
+
                         Field.DisplayField(displayField);
-                        roundIsLost = false;
-                        roundIsWon = false;
+
                         break;
                     case "exit":
                         Console.WriteLine(Constants.Messages.ExitProgram);
@@ -140,54 +98,129 @@ namespace Minesweeper.Core
                 if (roundIsLost)
                 {
                     Field.DisplayField(playingField);
+
                     Console.WriteLine(Constants.Messages.Defeat, score);
 
-                    // High score check initiated
-                    string playerName = Console.ReadLine();
+                    SetPlayerScore(score, ref playerScore);
 
-                    Score playerScore = new Score(playerName, score);
-
-                    if (highScores.Count < 5)
-                    {
-                        highScores.Add(playerScore);
-                    }
-                    else
-                    {
-                        for (int i = 0; i < highScores.Count; i++)
-                        {
-                            if (highScores[i].PlayerScore < playerScore.PlayerScore)
-                            {
-                                highScores.Insert(i, playerScore);
-                                highScores.RemoveAt(highScores.Count - 1);
-                                break;
-                            }
-                        }
-                    }
-
-                    highScores.Sort((Score r1, Score r2) => r2.PlayerName.CompareTo(r1.PlayerName));
-                    highScores.Sort((Score r1, Score r2) => r2.PlayerScore.CompareTo(r1.PlayerScore));
+                    UpdateHighScores(ref playerScore, ref highScores);
 
                     Field.DisplayHighScores(highScores);
+
+                    StartNewRound(
+                                 ref displayField,
+                                 ref playingField,
+                                 ref score,
+                                 ref roundIsLost,
+                                 ref firstMoveForRound,
+                                 ref roundIsWon);
                 }
 
                 if (roundIsWon)
                 {
-                    Console.WriteLine(Constants.Messages.Victory);
-
                     Field.DisplayField(playingField);
 
-                    // High score add initiated
-                    Console.WriteLine(Constants.Messages.AskName);
-                    string playerName = Console.ReadLine();
-                    Score playerPoints = new Score(playerName, score);
-                    highScores.Add(playerPoints);
+                    Console.WriteLine(Constants.Messages.Victory);
+
+                    SetPlayerScore(score, ref playerScore);
+
+                    UpdateHighScores(ref playerScore, ref highScores);
+
                     Field.DisplayHighScores(highScores);
+
+                    StartNewRound(
+                                 ref displayField,
+                                 ref playingField,
+                                 ref score,
+                                 ref roundIsLost,
+                                 ref firstMoveForRound,
+                                 ref roundIsWon);
                 }
             }
             while (command != "exit");
 
             // Termination
             Console.WriteLine(Constants.Messages.ExitProgram);
+        }
+
+        private static void ParsePlayerTurn(
+                                           ref string command,
+                                           out int turnRow,
+                                           out int turnCol)
+        {
+            turnRow = -1;
+            turnCol = -1;
+
+            if (command.Length >= 3)
+            {
+                bool validRowNumber = int.TryParse(command[0].ToString(), out turnRow);
+                bool validColNumber = int.TryParse(command[2].ToString(), out turnCol);
+
+                if (validRowNumber &&
+                    validColNumber &&
+                    turnRow <= Constants.GameSettings.PlayingFieldRows &&
+                    turnCol <= Constants.GameSettings.PlayingFieldCols)
+                {
+                    command = "turn";
+                }
+            }
+        }
+
+        private static void StartNewRound(
+                                         ref char[,] displayField,
+                                         ref char[,] playingField,
+                                         ref int scoreCount,
+                                         ref bool gameIsLost,
+                                         ref bool gameIsStarting,
+                                         ref bool gameIsWon)
+        {
+            displayField = Field.GetNewDisplayField();
+
+            playingField = Field.GetNewPlayingField();
+
+            scoreCount = Constants.GameSettings.StartingPoints;
+
+            gameIsLost = false;
+
+            gameIsStarting = true;
+
+            gameIsWon = false;
+        }
+
+        private static void SetPlayerScore(int score, ref Score playerScore)
+        {
+            Console.WriteLine(Constants.Messages.AskUserName);
+            string playerName = Console.ReadLine();
+
+            playerScore = new Score(playerName, score);
+        }
+
+        private static void UpdateHighScores(ref Score playerScore, ref List<Score> highScores)
+        {
+            if (highScores == null)
+            {
+                highScores = new List<Score>(6);
+            }
+
+            if (highScores.Count < 5)
+            {
+                highScores.Add(playerScore);
+            }
+            else
+            {
+                for (int i = 0; i < highScores.Count; i++)
+                {
+                    if (highScores[i].PlayerScore < playerScore.PlayerScore)
+                    {
+                        highScores.Insert(i, playerScore);
+                        highScores.RemoveAt(highScores.Count - 1);
+                        break;
+                    }
+                }
+            }
+
+            highScores.Sort((Score r1, Score r2) => r2.PlayerName.CompareTo(r1.PlayerName));
+            highScores.Sort((Score r1, Score r2) => r2.PlayerScore.CompareTo(r1.PlayerScore));
         }
     }
 }

@@ -5,17 +5,17 @@
         private string playerName;
         private int playerScore;
 
-        public Score()
+        internal Score()
         {
         }
 
-        public Score(string name, int score)
+        internal Score(string name, int score)
         {
             this.PlayerName = name;
             this.PlayerScore = score;
         }
 
-        public string PlayerName
+        internal string PlayerName
         {
             get
             {
@@ -28,7 +28,7 @@
             }
         }
 
-        public int PlayerScore
+        internal int PlayerScore
         {
             get
             {

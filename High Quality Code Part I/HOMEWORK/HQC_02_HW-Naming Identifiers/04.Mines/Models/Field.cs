@@ -1,4 +1,5 @@
 ﻿using Minesweeper.Common;
+using Minesweeper.Providers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +7,9 @@ using System.Text;
 
 namespace Minesweeper.Models
 {
-    public static class Field
+    internal static class Field
     {
-        public static void DisplayField(char[,] playingField)
+        internal static void DisplayField(char[,] playingField)
         {
             int rows = playingField.GetLength(0);
             int cols = playingField.GetLength(1);
@@ -32,7 +33,7 @@ namespace Minesweeper.Models
             Console.WriteLine(Constants.Field.PlayingFieldBottomBorder);
         }
 
-        public static void DisplayHighScores(List<Score> highScorePoints)
+        internal static void DisplayHighScores(List<Score> highScorePoints)
         {
             Console.WriteLine(Constants.Messages.Points);
 
@@ -55,7 +56,7 @@ namespace Minesweeper.Models
             }
         }
 
-        public static char[,] GetNewDisplayField()
+        internal static char[,] GetNewDisplayField()
         {
             int fieldRows = Constants.GameSettings.PlayingFieldRows;
             int fieldCols = Constants.GameSettings.PlayingFieldCols;
@@ -73,7 +74,7 @@ namespace Minesweeper.Models
             return playingField;
         }
 
-        public static char[,] GetNewPlayingField()
+        internal static char[,] GetNewPlayingField()
         {
             const char EmptyTile = Constants.TileSymbols.Empty;
 
@@ -95,7 +96,8 @@ namespace Minesweeper.Models
             // place mines 'randomly'
             while (mineTileIndices.Count < 15)
             {
-                int tileIndexDrawn = random.Next(50);
+                // int tileIndexDrawn = random.Next(50);
+                int tileIndexDrawn = Randomizer.GetRandomSeed().Next(50);
 
                 if (!mineTileIndices.Contains(tileIndexDrawn))
                 {
@@ -124,7 +126,7 @@ namespace Minesweeper.Models
             return playField;
         }
 
-        public static void UpdatePlayingFieldOnSuccessfulMove(
+        internal static void UpdatePlayingFieldOnSuccessfulMove(
                                         ref char[,] displayField,
                                         ref char[,] playingField,
                                         int turnRow,
@@ -136,7 +138,7 @@ namespace Minesweeper.Models
             playingField[turnRow, turnCol] = countOfSurroundingMines;
         }
 
-        public static char GetSurroundingMinesCount(
+        internal static char GetSurroundingMinesCount(
                                         char[,] playingField,
                                         int tileRow,
                                         int tileCol)
