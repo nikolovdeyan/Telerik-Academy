@@ -42,6 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -80,6 +81,7 @@
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Models\Field.cs" />
     <Compile Include="Models\Score.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Providers\Randomizer.cs" />
     <Compile Include="StartUp.cs" />
   </ItemGroup>

@@ -9,12 +9,21 @@ namespace Minesweeper.Models
 {
     internal static class Field
     {
-        internal static void DisplayField(char[,] playingField)
+        internal static void DisplayField(char[,] playingField, bool inhibitConsoleClear = false)
         {
             int rows = playingField.GetLength(0);
             int cols = playingField.GetLength(1);
 
-            Console.WriteLine(Constants.Field.PlayingFieldTopBorder);
+            if (inhibitConsoleClear == true)
+            {
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.Clear();
+            }
+
+                Console.WriteLine(Constants.Field.PlayingFieldTopBorder);
 
             for (int r = 0; r < rows; r++)
             {
@@ -35,9 +44,10 @@ namespace Minesweeper.Models
 
         internal static void DisplayHighScores(List<Score> highScorePoints)
         {
+            Console.Clear();
             Console.WriteLine(Constants.Messages.Points);
 
-            if (highScorePoints.Count > 0)
+            if (highScorePoints != null && highScorePoints.Count > 0)
             {
                 for (int i = 0; i < highScorePoints.Count; i++)
                 {
@@ -52,7 +62,7 @@ namespace Minesweeper.Models
             }
             else
             {
-                Console.WriteLine("prazna klasaciq!\n");
+                Console.WriteLine(Constants.Messages.EmptyScoreboard);
             }
         }
 
@@ -133,7 +143,7 @@ namespace Minesweeper.Models
                                         int turnCol)
         {
             char countOfSurroundingMines = GetSurroundingMinesCount(playingField, turnRow, turnCol);
-            Console.WriteLine(countOfSurroundingMines);
+
             displayField[turnRow, turnCol] = countOfSurroundingMines;
             playingField[turnRow, turnCol] = countOfSurroundingMines;
         }

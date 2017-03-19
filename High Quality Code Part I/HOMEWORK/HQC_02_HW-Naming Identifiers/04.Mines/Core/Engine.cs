@@ -11,12 +11,6 @@ namespace Minesweeper.Core
         {
             const int ScoreToWin = Constants.GameSettings.PointsNeededToWin;
 
-            char[,] displayField = Field.GetNewDisplayField();
-            char[,] playingField = Field.GetNewPlayingField();
-            int score = 0;
-            bool roundIsLost = false;
-            bool firstMoveForRound = true;
-            bool roundIsWon = false;
             int turnRow;
             int turnCol;
             string command = string.Empty;
@@ -24,69 +18,61 @@ namespace Minesweeper.Core
             Score playerScore = null;
             List<Score> highScores = null;
 
+            State state = State.Initial;
+
             do
             {
-                if (firstMoveForRound)
+                if (state.firstMoveForRound)
                 {
                     Console.WriteLine(Constants.Messages.Welcome);
-
-                    Field.DisplayField(displayField);
-
-                    firstMoveForRound = false;
+                    Field.DisplayField(state.displayField, true);
+                    state.firstMoveForRound = false;
                 }
 
-                Console.Write(Constants.Messages.AskInput);
-
-                command = Console.ReadLine().Trim();
-
-                ParsePlayerTurn(ref command, out turnRow, out turnCol);
-
+                GetNextCommand(ref command, out turnRow, out turnCol);
                 switch (command)
                 {
                     case "top":
                         Field.DisplayHighScores(highScores);
+                        Field.DisplayField(state.displayField, true);
                         break;
+
                     case "restart":
-                        StartNewRound(
-                                     ref displayField,
-                                     ref playingField,
-                                     ref score,
-                                     ref roundIsLost,
-                                     ref firstMoveForRound,
-                                     ref roundIsWon);
-
-                        Field.DisplayField(displayField);
-
+                        Console.Clear();
+                        state = State.Initial;
                         break;
+
                     case "exit":
-                        Console.WriteLine(Constants.Messages.ExitProgram);
+                        Console.Clear();
+                        Console.WriteLine(Constants.Messages.Exit);
                         break;
+
                     case "turn":
-                        if (playingField[turnRow, turnCol] != Constants.TileSymbols.Mine)
+                        if (state.playingField[turnRow, turnCol] != Constants.TileSymbols.Mine)
                         {
                             // didn't step on a mine, now check if stepped on a valid unopened tile
-                            if (playingField[turnRow, turnCol] == Constants.TileSymbols.Empty)
+                            if (state.playingField[turnRow, turnCol] == Constants.TileSymbols.Empty)
                             {
-                                score++;
+                                state.score++;
                                 Field.UpdatePlayingFieldOnSuccessfulMove(
-                                                                        ref displayField,
-                                                                        ref playingField,
+                                                                        ref state.displayField,
+                                                                        ref state.playingField,
                                                                         turnRow,
                                                                         turnCol);
                             }
 
-                            if (score == ScoreToWin)
+                            if (state.score == ScoreToWin)
                             {
-                                roundIsWon = true;
+                                state.roundIsWon = true;
                             }
                             else
                             {
-                                Field.DisplayField(displayField);
+                                Field.DisplayField(state.displayField);
                             }
                         }
                         else
                         {
-                            roundIsLost = true;
+                            state.roundIsLost = true;
                         }
 
                         break;
@@ -95,46 +81,34 @@ namespace Minesweeper.Core
                         break;
                 }
 
-                if (roundIsLost)
+                if (state.roundIsLost)
                 {
-                    Field.DisplayField(playingField);
+                    Field.DisplayField(state.playingField);
 
-                    Console.WriteLine(Constants.Messages.Defeat, score);
+                    Console.WriteLine(Constants.Messages.Defeat, state.score);
 
-                    SetPlayerScore(score, ref playerScore);
+                    SetPlayerScore(state.score, ref playerScore);
 
                     UpdateHighScores(ref playerScore, ref highScores);
 
                     Field.DisplayHighScores(highScores);
 
-                    StartNewRound(
-                                 ref displayField,
-                                 ref playingField,
-                                 ref score,
-                                 ref roundIsLost,
-                                 ref firstMoveForRound,
-                                 ref roundIsWon);
+                    state = State.Initial;
                 }
 
-                if (roundIsWon)
+                if (state.roundIsWon)
                 {
-                    Field.DisplayField(playingField);
+                    Field.DisplayField(state.playingField);
 
                     Console.WriteLine(Constants.Messages.Victory);
 
-                    SetPlayerScore(score, ref playerScore);
+                    SetPlayerScore(state.score, ref playerScore);
 
                     UpdateHighScores(ref playerScore, ref highScores);
 
                     Field.DisplayHighScores(highScores);
 
-                    StartNewRound(
-                                 ref displayField,
-                                 ref playingField,
-                                 ref score,
-                                 ref roundIsLost,
-                                 ref firstMoveForRound,
-                                 ref roundIsWon);
+                    state = State.Initial;
                 }
             }
             while (command != "exit");
@@ -143,13 +117,16 @@ namespace Minesweeper.Core
             Console.WriteLine(Constants.Messages.ExitProgram);
         }
 
-        private static void ParsePlayerTurn(
+        private static void GetNextCommand(
                                            ref string command,
                                            out int turnRow,
                                            out int turnCol)
         {
             turnRow = -1;
             turnCol = -1;
+
+            Console.Write(Constants.Messages.AskInput);
+            command = Console.ReadLine().Trim();
 
             if (command.Length >= 3)
             {
@@ -164,27 +141,6 @@ namespace Minesweeper.Core
                     command = "turn";
                 }
             }
-        }
-
-        private static void StartNewRound(
-                                         ref char[,] displayField,
-                                         ref char[,] playingField,
-                                         ref int scoreCount,
-                                         ref bool gameIsLost,
-                                         ref bool gameIsStarting,
-                                         ref bool gameIsWon)
-        {
-            displayField = Field.GetNewDisplayField();
-
-            playingField = Field.GetNewPlayingField();
-
-            scoreCount = Constants.GameSettings.StartingPoints;
-
-            gameIsLost = false;
-
-            gameIsStarting = true;
-
-            gameIsWon = false;
         }
 
         private static void SetPlayerScore(int score, ref Score playerScore)

@@ -49,6 +49,10 @@ Daaayum! You stepped on a mine and died with a score of {0}.";
             internal const string Exit =
     @"Exiting game...";
 
+            internal const string EmptyScoreboard =
+@"The scoreboard is empty!
+";
+
             internal const string AskInput =
     @"Your turn: Provide row and column in format 'r c' ";
 
