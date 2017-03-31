@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-12.Development Environments
-=====================================
+# 12.Development Environments
 
 ## Description
 - Perform a research (e.g. in _Google_ or _Wikipedia_) and provide a short list with popular development environments (**IDE**s) like Visual Studio.

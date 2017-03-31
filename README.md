@@ -4,7 +4,7 @@ A repository to keep my study materials
 -----------------------
 ## Courses List
 
-##### [<img src="/.resources/C#Fundamentals_small.png">](./01. C%23 Fundamentals)
+##### [<img src="/.resources/C%23Fundamentals_small.png">](./01. C# Fundamentals)
 ##### [![HTML Fundamentals](./.resources/HTMLFundamentals_small.png)](./02. HTML Fundamentals)
 ##### [![C# Advanced](./.resources/C%23Advanced_small.png)](./03. C%23 Advanced)
 ##### [![CSS Styling](./.resources/CSSStyling_small.png)](./04. CSS Styling)

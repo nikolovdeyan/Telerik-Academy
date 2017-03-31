@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-15. Age
-=====================================
+# 15. Age
 
 ## Description
 Write a program that reads your birthday(in the format `MM.DD.YYYY`) from the console and prints on the console how old you are you now and how old will you be after 10 years.

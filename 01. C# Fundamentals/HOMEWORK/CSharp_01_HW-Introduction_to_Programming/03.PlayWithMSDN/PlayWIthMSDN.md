@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-Play With MSDN
-=====================================
+# Play With MSDN
 
 - Play with [Microsoft Developer Network (MSDN)](http://msdn.microsoft.com/library) Library Documentation.
 

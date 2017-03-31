@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-02. Blank Solution
-=====================================
+# 02. Blank Solution
 
 ## Description
 - Create a blank solution in Visual Studio called *“Intro-Programming-Homework”*. use this solution to hold all your homework projects, code and files. 

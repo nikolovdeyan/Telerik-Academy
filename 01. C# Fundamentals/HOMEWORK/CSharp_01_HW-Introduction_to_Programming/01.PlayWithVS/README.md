@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-01. Play with Visual Studio
-=====================================
+# 01. Play with Visual Studio
 
 ## Description
 - Install **Visual Studio** on your laptop or home computer. Go to the official [Visual Studio](https://www.visualstudio.com/) site and download the **Community 2015** version.

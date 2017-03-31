@@ -1,8 +1,8 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-11. Programming Languages
-=====================================
+# 11. Programming Languages
+
 
 ## Description
 - Perform a research (e.g. in _Google_ or _Wikipedia_) and provide a short list with information about the most popular programming languages. How similar are they to C#? How do they differ from C#?

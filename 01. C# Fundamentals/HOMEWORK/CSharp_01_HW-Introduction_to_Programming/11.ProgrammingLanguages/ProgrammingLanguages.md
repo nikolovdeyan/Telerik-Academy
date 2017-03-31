@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-Programming Languages
-=====================================
+# Programming Languages
 
 ## Assembly
 Assembly or assembler language is a low-level programming language with a very strong corresponce between the language and the architecture's machine code instructions. Therefore each particular architecture has its own assembly language. Assembly language is converted into executable machine code by a utility program -- assembler. Assembly uses mnemonic to represent each low-level machine instruction or operation and many operations require one or more operands in order to form a complete instruction.

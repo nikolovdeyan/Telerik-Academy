@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-05. Print Name
-=====================================
+# 05. Print Name
 
 ## Description
 - Create a C# application that print your name on the console.

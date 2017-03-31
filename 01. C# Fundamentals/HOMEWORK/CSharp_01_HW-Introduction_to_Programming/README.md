@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-Introduction to Programming
-=====================================
+# Introduction to Programming
 
 ### [Submit homework in bgcoder](http://bgcoder.com/Contests/314/CSharp-Fundamentals-01-Introduction-to-Programming)
 

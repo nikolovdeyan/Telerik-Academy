@@ -1,8 +1,8 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-17. Play with the VS Debugger
-=====================================
+# 17. Play with the VS Debugger
+
 
 ## Description
 - Write a program that prints at the console the numbers from `1 to 1000`, each at a separate line.

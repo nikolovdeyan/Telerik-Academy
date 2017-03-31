@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-18. Command Line
-=====================================
+# 18. Command Line
 
 ## Description
 **The following task is not hard, but will require a bit of research on your part.** Open up a terminal/command line in a folder of your choice. You have to do the following tasks using the terminal:

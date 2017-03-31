@@ -1,8 +1,7 @@
 ###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
 -------------------------------------
 
-13. C# and .NET Differences
-=====================================
+# 13. C# and .NET Differences
 
 ## Description
 - Describe the difference between **C#** and **.NET Framework** in 2-3 sentences.
