@@ -12,7 +12,7 @@
 5. [Development Tools](./HOMEWORK/HQC_II_05_HW-Development_Tools)
  
 ## Useful Resources
-### Recommended Books: 
+### Recommended Books:
  - [McConnell, Steve, **Code Complete**]()
  - [Fowler, M., Kent Beck, John Brant, William Opdyke, Don Roberts, **Refactoring: Improving the Design of Existing Code**]()
  - [Beck, Kent, **Test Driven Development: By Example**]()
