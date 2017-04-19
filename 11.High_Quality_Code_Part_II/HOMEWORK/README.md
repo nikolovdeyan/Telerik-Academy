@@ -5,8 +5,8 @@
 =====================================
 
 ## Homework Submissions
-1. [Defensive Programming and Exceptions](./HQC_II_01_HW-Defensive Programming and Exceptions)
-2. [Code Tuning and Optimization](./HQC_II_02_HW-Code Tuning and Optimization)
+1. [Defensive Programming and Exceptions](./HQC_II_01_HW-Defensive_Programming_and_Exceptions)
+2. [Code Tuning and Optimization](./HQC_II_02_HW-Code_Tuning_and_Optimization)
 3. [Refactoring](./HQC_II_03_HW-Refactoring)
 4. [Debugging](./HQC_II_04_HW-Debugging)
-5. [Development Tools](./HQC_II_05_HW-Development Tools)
+5. [Development Tools](./HQC_II_05_HW-Development_Tools)
