@@ -4,7 +4,7 @@
 # JustDecompile Usage Examples
 JustDecompile is a new tool for me and I have not used it before this homework. 
 
-Below are some examples of my usage of StyleCop:
+Below are some examples of me testing the tool:
 ## Examples:
 1. A decompiled homework submission:
 ![Just Decompile](./just-decompile1.jpg)

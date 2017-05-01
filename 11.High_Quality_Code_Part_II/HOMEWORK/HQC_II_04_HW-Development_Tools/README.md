@@ -15,13 +15,14 @@
 
 ## Solution
 1. Tools Usage Verification
-  1. [Source control system usage example](./git)
-  2. [log4net usage example](./log4net)
-  3. [StyleCop usage example](./StyleCop)
-  4. [JustDecompile usage example](./JustDecompile)
-  5. [SandCastle usage example](./SandCastle)
-  6. [SmartAssembly usage example](./SmartAssembly)
+  - [Source control system usage example](./git)
+  - [log4net usage example](./log4net)
+  - [StyleCop usage example](./StyleCop)
+  - [JustDecompile usage example](./JustDecompile)
+  - [SandCastle usage example](./SandCastle)
+  - [SmartAssembly usage example](./SmartAssembly)
 
 2. [T4Template Usage Verification](./T4Template)
 
-3. [My GitHub Telerik Academy Repository](https://github.com/nikolovdeyan/TelerikAcademy)
+3. I have kept an up-to-date repository where (most of) my homework submission can be found since the start of my TelerikAcademy studies. Please check it on the link below:
+[My GitHub Telerik Academy Repository](https://github.com/nikolovdeyan/TelerikAcademy)

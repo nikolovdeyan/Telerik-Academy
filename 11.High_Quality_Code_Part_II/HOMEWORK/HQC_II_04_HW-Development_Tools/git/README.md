@@ -1,7 +1,7 @@
 ###### [Back to Development Tools Howework](../)
 -------------------------------------
 
-# Source Control System Usage Example -- Git
+# Source Control System Usage Example - git
 I use git for source control and backup for my code since I started studying in Telerik Academy. I choose git as it is by far the most widely used tool for the purpose, and I wanted to be able to use it freely when I am finished with my studies. 
 
 Below are some examples of my usage of git:
