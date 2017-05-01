@@ -1,43 +1,43 @@
 ## linguist-documentation settings to accurately track my code
 
-## 01. C# Fundamentals
-01.?C#?Fundamentals/**/*.html linguist-documentation
-01.?C#?Fundamentals/**/AssemblyInfo.cs linguist-documentation
+## 01. C#_Fundamentals
+01.C#?Fundamentals/**/*.html linguist-documentation
+01.C#?Fundamentals/**/AssemblyInfo.cs linguist-documentation
 
 ## 02. HTML Fundamentals -- currently everything tracked
 
 ## 03. C# Advanced
-03.?C#?Advanced/**/*.html linguist-documentation
-03.?C#?Advanced/**/AssemblyInfo.cs linguist-documentation
+03.C#?Advanced/**/*.html linguist-documentation
+03.C#?Advanced/**/AssemblyInfo.cs linguist-documentation
 
 ## 04. CSS Styling -- currently everything tracked
 
 ## 05. Object Oriented Programming
-05.?Object?Oriented?Programming/**/*.html linguist-documentation
-05.?Object?Oriented?Programming/**/AssemblyInfo.cs linguist-documentation
+05.Object?Oriented?Programming/**/*.html linguist-documentation
+05.Object?Oriented?Programming/**/AssemblyInfo.cs linguist-documentation
 
 ## 06. JavaScript Fundamentals
-06.?JavaScript?Fundamentals/**/*.html linguist-documentation
-06.?JavaScript?Fundamentals/**/*.css linguist-documentation
+06.JavaScript?Fundamentals/**/*.html linguist-documentation
+06.JavaScript?Fundamentals/**/*.css linguist-documentation
 # Ignoring <jsConsole.js>, a helper function (not mine either)
 06.?JavaScript?Fundamentals/**/jsConsole.js linguist-documentation
 
 ## 07. Unit Testing
 
 ## 08. JavaScript OOP
-08.?JavaScript?OOP/**/*.html linguist-documentation
-08.?JavaScript?OOP/**/*.css linguist-documentation
-08.?JavaScript?OOP/**/tests/ linguist-documentation
-08.?JavaScript?OOP/**/package.json linguist-documentation
+08.JavaScript?OOP/**/*.html linguist-documentation
+08.JavaScript?OOP/**/*.css linguist-documentation
+08.JavaScript?OOP/**/tests/ linguist-documentation
+08.JavaScript?OOP/**/package.json linguist-documentation
 
 ## 09. High Quality Code Part I
 09.?High?Quality?Code?PartI/**/AssemblyInfo.cs linguist-documentation
 
 ## 10. JavaScript UI & DOM
-10.?JavaScript?UI?and?DOM/**/*.html linguist-documentation
-10.?JavaScript?UI?and?DOM/**/*.css linguist-documentation
-10.?JavaScript?UI?and?DOM/**/tests/ linguist-documentation
-10.?JavaScript?UI?and?DOM/**/package.json linguist-documentation
+10.JavaScript?UI?and?DOM/**/*.html linguist-documentation
+10.JavaScript?UI?and?DOM/**/*.css linguist-documentation
+10.JavaScript?UI?and?DOM/**/tests/ linguist-documentation
+10.JavaScript?UI?and?DOM/**/package.json linguist-documentation
 
 ## 11. High Quality Code Part II
-11.?High?Quality?Code?PartII/**/AssemblyInfo.cs linguist-documentation
+11.High?Quality?Code?PartII/**/AssemblyInfo.cs linguist-documentation
