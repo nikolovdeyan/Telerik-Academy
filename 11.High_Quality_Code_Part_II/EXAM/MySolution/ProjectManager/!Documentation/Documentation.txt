@@ -1,0 +1,13 @@
+﻿Bugs:
+
+#1 In FileLogger the error logging was disabled by commenting the logger command. This prevented outputing error messsages in the log.txt
+#2 In CommandProcessor there was an unreachable segment of code (commented with "do not remove"), it was removed;
+#3 In CommandsFactory --> BuildCommand() the variable `end` was not used anywhere else, so it was removed;
+#4 In CreateUserCommand --> In Execute() new Database and ModelsFactory were created, preventing proper program execution; 
+Fixed by passing these parameters. The command also needed to be passed in the CommandsFactory switch
+#5 In CommandsFactory there was a middle man method BuildCommand() whose sole purpose was to lower the case of the command.
+
+Bottleneck:
+
+#1 In CommandsFactory the following line performs a needless loop:
+	while (DateTime.Now < end) ;
