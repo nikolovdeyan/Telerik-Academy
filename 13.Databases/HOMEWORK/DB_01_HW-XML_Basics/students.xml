@@ -1,0 +1,24 @@
+<students>
+  <student>
+    <name></name>
+    <sex></sex>
+    <placeofbirth></placeofbirth>
+    <phone></phone>
+    <email></email>
+    <course></course>
+    <specialty></specialty>
+    <facultynumber></facultynumber>
+    <takenexams>
+      <exam>
+        <name></name>
+        <tutor></tutor>
+        <score></score>
+      </exam>
+      <exam>
+        <name></name>
+        <tutor></tutor>
+        <score></score>
+      </exam>
+    </takenexams>
+  </student>
+</students>
