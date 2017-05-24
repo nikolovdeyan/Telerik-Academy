@@ -37,7 +37,7 @@ SELECT * FROM  Departments
 Result:
 
 |DepartmentID|Name|ManagerID|
-|---|
+|---|---|---|
 |1|Engineering|12|
 |2|Tool Design|4|
 |3|Sales|273|
@@ -65,6 +65,7 @@ SELECT Name FROM  Departments
 ```
 
 Result:
+
 |Name|
 |---|
 |Engineering|
@@ -95,8 +96,9 @@ Query:
 ```
 
 Result (first five results shown):
+
 |Full Name|Salary|
-|---|
+|---|---|
 |Guy Gilbert|12500.00|
 |Kevin Brown|13500.00|
 |Roberto Tamburello|43300.00|
@@ -114,6 +116,7 @@ SELECT FirstName + ' ' + LastName AS 'Full Name' FROM Employees
 
 
 Result (first five results shown):
+
 |Full Name|
 |---|
 |Guy Gilbert|
@@ -134,6 +137,7 @@ FROM Employees
 ```
 
 Result (first five results shown):
+
 |Full Email Address|
 |---|
 |Guy.Gilbert@telerik.com|
@@ -154,6 +158,7 @@ ORDER BY Salary DESC
 ```
 
 Result:
+
 |Salary|
 |---|
 |125500.00|
@@ -174,8 +179,9 @@ WHERE JobTitle = 'Sales Representative'
 ```
 
 Result (first five results shown):
+
 |EmployeeID|FirstName|LastName|MiddleName|JobTitle|DepartmentID|ManagerID|HireDate|Salary|AddressID|
-|---|
+|---|---|---|---|---|---|---|---|---|---|
 |275|Michael|Blythe|G|Sales Representative|3|268|2003-07-01 00:00:00|23100.00|60|
 |276|Linda|Mitchell|C|Sales Representative|3|268|2003-07-01 00:00:00|23100.00|170|
 |277|Jillian|Carson|NULL|Sales Representative|3|268|2003-07-01 00:00:00|23100.00|61|
@@ -196,7 +202,7 @@ WHERE FirstName LIKE 'SA%'
 Result (first five results):
 
 |EmployeeID|FirstName|LastName|MiddleName|JobTitle|DepartmentID|ManagerID|HireDate|Salary|AddressID|
-|---|
+|---|---|---|---|---|---|---|---|---|---|
 |46|Sariya|Harnpadoungsataya|E|Marketing Specialist|4|6|2001-01-13 00:00:00|14400.00|106|
 |73|Sandra|Reategui Alayo|NULL|Production Technician|7|135|2001-01-27 00:00:00|9500.00|255|
 |132|Sairaj|Uddin|L|Scheduling Assistant|8|44|2001-02-27 00:00:00|16000.00|190|
@@ -217,7 +223,7 @@ WHERE LastName LIKE '%ei%'
 Result (first five results)
 
 |EmployeeID|FirstName|LastName|MiddleName|JobTitle|DepartmentID|ManagerID|HireDate|Salary|AddressID|
-|---|
+|---|---|---|---|---|---|---|---|---|---|
 |29|Kendall|Keil|C|Production Technician|7|14|2001-01-06 00:00:00|11000.00|257|
 |49|Christian|Kleinerman|E|Maintenance Supervisor|14|218|2001-01-15 00:00:00|20400.00|118|
 |79|Diane|Margheim|L|Research and Development Engineer|6|158|2001-01-30 00:00:00|40900.00|111|
@@ -237,7 +243,7 @@ WHERE Salary BETWEEN 20000 AND 30000
 
 Result: 
 |FirstName|LastName|Salary|
-|------|
+|---|---|---|
 |Rob|Walters|29800.00|
 |Thierry|D'Hers|25000.00|
 |JoLynn|Dobney|25000.00|
@@ -255,9 +261,11 @@ SELECT FirstName + ' ' + LastName AS 'Full Name',
 FROM Employees
 WHERE Salary in (25000, 14000, 12500, 23600)
 ```
-Result (firt five results shown): 
+
+Result (firt five results shown):
+ 
 |Full Name|Salary|
-|---|
+|---|---|
 |Guy Gilbert|12500.00|
 |Thierry D'Hers|25000.00|
 |JoLynn Dobney|25000.00|
@@ -275,8 +283,9 @@ WHERE ManagerID IS NULL
 ``` 
 
 Result:
+
 |FirstName|LastName|
-|---|
+|---|---|
 |Ken|Sanchez|
 |Svetlin|Nakov|
 |Martin|Kulov|
@@ -295,8 +304,9 @@ ORDER BY Salary DESC
 ``` 
 
 Result (first five results shown): 
+
 |FirstName|LastName|Salary|
-|---|
+|---|---|---|
 |Ken|Sanchez|125500.00|
 |James|Hamilton|84100.00|
 |Brian|Welcker|72100.00|
@@ -316,8 +326,9 @@ ORDER BY Salary DESC
 ``` 
 
 Result: 
+
 |FirstName|LastName|Salary|
-|---|
+|---|---|---|
 |Ken|Sanchez|125500.00|
 |James|Hamilton|84100.00|
 |Brian|Welcker|72100.00|
@@ -338,8 +349,9 @@ JOIN Addresses AS a
 ``` 
 
 Result (first five results shown): 
+
 |Full Name|Address|
-|---|
+|---|---|
 |Andy Ruth|108 Lakeside Court|
 |Paula Barreto de Mattos |1343 Prospect St|
 |Russell King|1648 Eastgate Lane|
@@ -359,8 +371,9 @@ WHERE e.AddressID = a.AddressID
 ``` 
 
 Result (first five results shown): 
+
 |Full Name|Address|
-|---|
+|---|---|
 |AndyRuth|108 Lakeside Court|
 |PaulaBarreto de Mattos|1343 Prospect St|
 |RussellKing|1648 Eastgate Lane|
@@ -381,8 +394,9 @@ JOIN Employees AS m
 ``` 
 
 Result (first five results shown): 
+
 |Full Name|Manager Name|
-|---|
+|---|---|
 |Ovidiu Cracium|Roberto Tamburello|
 |Michael Sullivan|Roberto Tamburello|
 |Sharon Salavaria|Roberto Tamburello|
@@ -406,8 +420,9 @@ FROM Employees AS e
 ``` 
 
 Result: 
+
 |Full Name|Manager Name|Manager Address|
-|---|
+|---|---|---|
 |Rob Walters|Roberto Tamburello|8000 Crane Court|
 |Gail Erickson|Roberto Tamburello|8000 Crane Court|
 |Jossef Goldberg|Roberto Tamburello|8000 Crane Court|
@@ -426,6 +441,7 @@ SELECT Name FROM Towns
 ``` 
 
 Result (first five results shown): 
+
 |Name|
 |---|
 |Bellevue|
@@ -457,8 +473,9 @@ FROM Employees AS e
 ```
 
 Result: 
+
 |Manager Name|Employee Name|
-|---|
+|---|---|
 |NULL|Ken Sanchez|
 |NULL|Svetlin Nakov|
 |NULL|Martin Kulov|
@@ -481,8 +498,9 @@ AND YEAR(e.HireDate) BETWEEN 1995 AND 2005
 ``` 
 
 Result: 
+
 |Full Name|Department Name|
-|---|
+|---|---|
 |Deborah Poe|Finance|
 |Wendy Kahn|Finance|
 |Candy Spoon|Finance|
