@@ -242,6 +242,7 @@ WHERE Salary BETWEEN 20000 AND 30000
 ``` 
 
 Result: 
+
 |FirstName|LastName|Salary|
 |---|---|---|
 |Rob|Walters|29800.00|
