@@ -322,7 +322,7 @@ FROM Employees
 WHERE LEN(LastName) = 5
 ```
 
-Result:
+Result (first five results shown):
 
 |Employee Name|
 |---|
@@ -403,13 +403,13 @@ Result:
 Query:
 ```sql
 SELECT * FROM Users
-WHERE FORMAT(GETDATE(),'yyyymmdd') = FORMAT(LastLogin,'yyyymmdd')
+WHERE FORMAT(GETDATE(),'yyyyMMdd') = FORMAT(LastLogin,'yyyyMMdd')
 ```
 
 Result:
 
 |ID|UserName|Password|FullName|LastLogin|
-|---|---|
+|---|---|---|---|---|
 |3|NewUser|7dc5c078dcd6d4b374b90a85d66ce0da4526773fb3844faab90300c2efa1fcb3|Todays User|2017-05-24 22:44:31.110|
 
 ---
@@ -429,6 +429,15 @@ CREATE TABLE Groups
   CONSTRAINT UK_Name UNIQUE(Name)
 )
 
+INSERT INTO Groups (Name)
+VALUES ('Admins');
+
+INSERT INTO Groups (Name)
+VALUES ('Users');
+
+INSERT INTO Groups (Name)
+VALUES ('Inactive');
+
 -- Test the command and rollback. Then change ROLLBACK to COMMIT
 SELECT * FROM Groups
 
@@ -439,6 +448,9 @@ Result:
 
 |ID|Name|
 |---|---|
+|1|Admins|
+|3|Inactive|
+|2|Users|
 
 ---
 
@@ -448,12 +460,35 @@ Result:
     
 Query:
 ```sql
+BEGIN TRAN
 
+ALTER TABLE Users
+ADD GroupID int
+GO
+
+ALTER TABLE Users
+ADD CONSTRAINT FK_Users_Groups
+FOREIGN KEY(GroupID)
+REFERENCES Groups(ID)
+
+-- Updating already existing users with a GroupID
+UPDATE Users SET GroupID = 1 WHERE ID = 1
+UPDATE Users SET GroupID = 2 WHERE ID = 2
+UPDATE Users SET GroupID = 2 WHERE ID = 3
+
+-- Test the command and rollback. Then change ROLLBACK to COMMIT
+SELECT * FROM Users
+
+ROLLBACK TRAN
 ```
 
 Result:
 
-
+|ID|UserName|Password|FullName|LastLogin|GroupID|
+|---|---|---|---|---|---|
+|1|User|$5$MnfsQ4iN$ZMTppKN16y/tIsUYs/obHlhdP.Os80yXhTurpBMUbA5|User Sample|NULL|1|
+|2|User2|$5$rounds=5000$usesomesillystri$KqJWpanXZHKq2BOB43TSaYhEWsQ1Lr5QNyPCDH/Tp.6 |User2 Sample|NULL|2|
+|3|NewUser|7dc5c078dcd6d4b374b90a85d66ce0da4526773fb3844faab90300c2efa1fcb3|Todays User|2017-05-27 10:40:25.927|2|
 
 ---
 
@@ -461,12 +496,50 @@ Result:
     
 Query:
 ```sql
+BEGIN TRAN
 
+INSERT INTO Users ([UserName], [Password], [FullName], [LastLogin], [GroupID])
+VALUES ('RedOne', '7849e1d65de0028a7da5901ac5004462f238e467fd37320ca5fa5e86c9379652', 'Jared Huckabee', NULL, 1),
+		('Leslie123', '457af59805fa29a196a70ec12f0f042cd72e74dbee923b3204cc35d97c8956cf', 'Leslie Knope', GETDATE(), 2),
+		('jerry', '671b16ed98a14f053aac09447d6f51cadb3654c59b9f33ddfecb0fc4797879c0', 'Garry Gergich', GETDATE(), 2),
+		('notme', 'fedb5532f2a52d5a646f6e05d1ffd1e73f630a97ee4efc232807b03b3cc62710', 'Ron Swanson', GETDATE(), 2),
+		('tom', '0bddce0a2102d6b93d1300908df4919e5a647940e495e748ac883687f2746f2b', 'Tom Haverford', GETDATE(), 2),
+		('benwyatt', 'e8be84604783a904831cc91e68396c06eee57340caf097e235e3faf4976c3e6a', 'Ben Wyatt', GETDATE(), 2);
+
+INSERT INTO Groups ([Name])
+VALUES ('Managers'),
+       ('Legacy')
+
+-- Test the command and ROLLBACK. Then change ROLLBACK to COMMIT
+SELECT * FROM Users
+SELECT * FROM Groups
+       
+ROLLBACK TRAN
 ```
 
-Result:
+Result (Users):
 
+|ID|UserName|Password|FullName|LastLogin|GroupID|
+|---|---|---|---|---|---|
+|1|User|$5$MnfsQ4iN$ZMTppKN16y/tIsUYs/obHlhdP.Os80yXhTurpBMUbA5|User Sample|NULL|1|
+|2|User2|$5$rounds=5000$usesomesillystri$KqJWpanXZHKq2BOB43TSaYhEWsQ1Lr5QNyPCDH/Tp.6 |User2 Sample|NULL|2|
+|3|NewUser|7dc5c078dcd6d4b374b90a85d66ce0da4526773fb3844faab90300c2efa1fcb3|Todays User|2017-05-27 13:33:18.917|2|
+|10|RedOne|7849e1d65de0028a7da5901ac5004462f238e467fd37320ca5fa5e86c9379652|Jared Huckabee|NULL|1|
+|11|Leslie123|457af59805fa29a196a70ec12f0f042cd72e74dbee923b3204cc35d97c8956cf|Leslie Knope|2017-05-27 13:35:44.183|2|
+|12|jerry|671b16ed98a14f053aac09447d6f51cadb3654c59b9f33ddfecb0fc4797879c0|Garry Gergich|2017-05-27 13:35:44.183|2|
+|13|notme|fedb5532f2a52d5a646f6e05d1ffd1e73f630a97ee4efc232807b03b3cc62710|Ron Swanson|2017-05-27 13:35:44.183|2|
+|14|tom|0bddce0a2102d6b93d1300908df4919e5a647940e495e748ac883687f2746f2b|Tom Haverford|2017-05-27 13:35:44.183|2|
+|15|benwyatt|e8be84604783a904831cc91e68396c06eee57340caf097e235e3faf4976c3e6a|Ben Wyatt|2017-05-27 13:35:44.183|2|
 
+Result (Groups):
+
+|ID|Name|
+|---|---|
+|1|Admins|
+|3|Inactive|
+|7|Legacy|
+|6|Managers|
+|2|Users|
 
 ---
 
@@ -474,12 +547,22 @@ Result:
     
 Query:
 ```sql
+UPDATE Users 
+SET GroupID = g.ID
+FROM 
+(
+    SELECT ID, Name FROM Groups WHERE Name = 'Managers'
+) g
+WHERE UserName = 'notme'
 
+SELECT * FROM Users WHERE UserName = 'notme'
 ```
 
 Result:
 
-
+|UserName|Password|FullName|LastLogin|GroupID|
+|---|---|---|---|---|
+|notme|fedb5532f2a52d5a646f6e05d1ffd1e73f630a97ee4efc232807b03b3cc62710|Ron Swanson|2017-05-27 11:07:34.410|6|
 
 ---
 
@@ -487,12 +570,12 @@ Result:
     
 Query:
 ```sql
+DELETE FROM Users
+WHERE ID = 1
 
+DELETE FROM Groups
+WHERE Name = 'Legacy'
 ```
-
-Result:
-
-
 
 ---
 
@@ -503,12 +586,18 @@ Result:
     
 Query:
 ```sql
+BEGIN TRAN
 
+INSERT INTO Users ([UserName], [Password], [FullName], [LastLogin], [GroupID])
+SELECT LEFT(LOWER(e.FirstName), 3) + LOWER(e.LastName),
+	   LEFT(LOWER(e.FirstName), 3) + LOWER(e.LastName),
+	   e.FirstName + ' ' + e.LastName,
+	   Null,
+	   2
+FROM Employees e
+
+ROLLBACK TRAN
 ```
-
-Result:
-
-
 
 ---
 
@@ -516,12 +605,10 @@ Result:
     
 Query:
 ```sql
-
+UPDATE Users
+SET [Password] = NULL
+WHERE [LastLogin] < CONVERT(DATETIME, '2010-03-10')
 ```
-
-Result:
-
-
 
 ---
 
@@ -529,12 +616,15 @@ Result:
     
 Query:
 ```sql
+BEGIN TRAN 
 
+DELETE FROM Users
+WHERE Password IS NULL
+
+SELECT * FROM Users
+
+ROLLBACK TRAN
 ```
-
-Result:
-
-
 
 ---
 
@@ -542,12 +632,25 @@ Result:
     
 Query:
 ```sql
-
+SELECT d.Name AS [Department], 
+       e.JobTitle AS [Job Title],
+	   AVG(e.Salary) AS [Avg Salary]
+FROM Employees e
+	INNER JOIN Departments d
+	ON e.DepartmentID = d.DepartmentID
+GROUP BY d.Name, e.JobTitle
+ORDER BY d.Name
 ```
 
-Result:
+Result (first five results shown):
 
-
+|Department|Job Title|Avg Salary|
+|---|---|---|
+|Document Control|Control Specialist|16800.00|
+|Document Control|Document Control Assistant|10300.00|
+|Document Control|Document Control Manager|17800.00|
+|Engineering|Design Engineer|32700.00|
+|Engineering|Engineering Manager|43300.00|
 
 ---
 
@@ -555,12 +658,26 @@ Result:
     
 Query:
 ```sql
-
+SELECT d.Name AS [Department], 
+       e.JobTitle AS [Job Title], 
+       MIN(e.FirstName +' '+ e.LastName) AS [Full Name], 
+       MIN(e.Salary) AS [Min. Salary]
+FROM Employees e
+    INNER JOIN Departments d
+	ON e.DepartmentID = d.DepartmentID
+GROUP BY d.Name, e.JobTitle
+ORDER BY d.Name
 ```
 
 Result:
 
-
+|Department|Job Title|Full Name|Min. Salary|
+|---|---|---|---|
+|Document Control|Control Specialist|Chris Norred|16800.00|
+|Document Control|Document Control Assistant|Karen Berge|10300.00|
+|Document Control|Document Control Manager|Zainal Arifin|17800.00|
+|Engineering|Design Engineer|Gail Erickson|32700.00|
+|Engineering|Engineering Manager|Roberto Tamburello|43300.00|
 
 ---
 
@@ -568,12 +685,22 @@ Result:
     
 Query:
 ```sql
-
+SELECT TOP 1 t.Name AS [Maximum Occupancy Office], 
+       COUNT(*) AS [Employees Count]
+FROM Employees e
+JOIN Addresses a
+	ON a.AddressID = e.AddressID
+JOIN Towns t
+	ON a.TownID = t.TownID
+GROUP BY t.Name
+ORDER BY [Employees Count] DESC
 ```
 
 Result:
 
-
+|Maximum Occupancy Office|Employees Count|
+|---|---|
+|Seattle|44|
 
 ---
 
@@ -581,12 +708,28 @@ Result:
     
 Query:
 ```sql
-
+SELECT t.Name AS [City Name], 
+       COUNT(DISTINCT e.ManagerID) AS [Managers Count]
+FROM Employees e
+    JOIN Employees m
+	ON e.ManagerID = m.EmployeeID
+        JOIN Addresses a
+	    ON a.AddressID = m.AddressID
+            JOIN Towns t
+	        ON a.TownID = t.TownID
+GROUP BY t.Name
+ORDER BY [Managers Count] DESC
 ```
 
 Result:
 
-
+|City Name|Managers Count|
+|---|---|
+|Seattle|10|
+|Redmond|5|
+|Kenmore|5|
+|Bellevue|4|
+|Renton|4|
 
 ---
 
@@ -596,14 +739,88 @@ Result:
  - Define a table `WorkHoursLogs` to track all changes in the `WorkHours` table with triggers.
    - For each change keep the old record data, the new record data and the command (insert / update / delete).
     
-Query:
+Creating the WorkHours Table:
 ```sql
+BEGIN TRAN
 
+CREATE TABLE WorkHours 
+(
+	[ID] int IDENTITY,
+	[EmployeeID] int NOT NULL,
+	[Date] datetime,
+	[Task] nvarchar(100),
+	[Hours] int,
+	[Comments] nvarchar(500),
+	CONSTRAINT PK_WorkHours PRIMARY KEY(ID),
+	CONSTRAINT FK_WorkHours_Employees FOREIGN KEY(EmployeeID)
+	REFERENCES Employees(EmployeeID)
+)
+GO
+
+INSERT INTO WorkHours([EmployeeID], [Date], [Task], [Hours], [Comments])
+VALUES
+	(2, GETDATE(),'Scrum Meeting', 2, 'Kick-off Aviatto Project'),
+	(3, GETDATE(),'Scrum Meeting', 1, 'Kick-off Aviatto Project'),
+	(4, GETDATE(),'PTO', 8, 'Holiday'),
+	(5, GETDATE(),'Task11', 4, 'Working on feature 11');
+
+UPDATE WorkHours SET [Hours] = 2 WHERE [EmployeeID] = 3
+
+DELETE FROM WorkHours WHERE Task='PTO'
+
+CREATE TABLE WorkHoursLogs 
+(
+	[ID] int IDENTITY,
+	[WorkHoursID] int,
+	[EmployeeID] int NOT NULL,
+	[Date] datetime,
+	[Task] nvarchar(100),
+	[Hours] int,
+	[Comments] nvarchar(500),
+	[Command] nvarchar(30) NOT NULL,
+	CONSTRAINT PK_WorkHoursLogs PRIMARY KEY(ID),
+	CONSTRAINT FK_WorkHoursLogs_Employees FOREIGN KEY(EmployeeID)
+	REFERENCES Employees(EmployeeID)
+)
+GO
+
+CREATE TRIGGER TR_WorhoursInsert ON WorkHours FOR INSERT
+AS
+INSERT INTO WorkHoursLogs(WorkHoursID, EmployeeID, [Date], Task, [Hours], Comments, Command)
+SELECT  ID, EmployeeID, [Date], Task, [Hours], Comments, 'INSERT'
+FROM inserted
+GO
+
+CREATE TRIGGER TR_WorhoursUpdate ON WorkHours FOR UPDATE
+AS
+INSERT INTO WorkHoursLogs(WorkHoursID, EmployeeID, [Date], Task, [Hours], Comments, Command)
+SELECT ID, EmployeeID, [Date], Task, [Hours], Comments, 'UPDATE'
+FROM inserted
+GO
+
+CREATE TRIGGER TR_WorhoursDelete ON WorkHours FOR DELETE
+AS
+INSERT INTO WorkHoursLogs(WorkHoursID, EmployeeID, [Date], Task, [Hours], Comments, Command)
+SELECT ID, EmployeeID, [Date], Task, [Hours], Comments, 'DELETE'
+FROM deleted
+GO
+
+INSERT INTO WorkHours([EmployeeID], [Date], [Task], [Hours], [Comments])
+VALUES
+(10, GETDATE(),'Insert Trigger 1', 2, 'Testing insert trigger'),
+(11, GETDATE(),'Insert Trigger 2', 4, 'Testing insert trigger again')
+
+UPDATE WorkHours
+SET Task = 'Update Trigger 1'
+WHERE EmployeeID = 11
+
+DELETE FROM WorkHours
+WHERE EmployeeID = 11
+
+SELECT * FROM WorkHoursLogs
+
+ROLLBACK TRAN
 ```
-
-Result:
-
-
 
 ---
 
@@ -612,27 +829,28 @@ Result:
     
 Query:
 ```sql
+BEGIN TRAN
 
+ALTER TABLE Departments
+DROP CONSTRAINT FK_Departments_Employees
+
+DELETE FROM Employees
+WHERE DepartmentID =
+	(
+	SELECT DepartmentID FROM Departments
+	WHERE Name = 'Sales'
+	)
+
+ROLLBACK TRAN
 ```
-
-Result:
-
-
 
 ---
 
 ##### 31. Start a database transaction and drop the table `EmployeesProjects`.
  - Now how you could restore back the lost table data?
     
-Query:
-```sql
-
-```
-
-Result:
-
-
-
+>> Use BEGIN TRAN / ROLLBACK TRAN / COMMIT TRAN for all transactions that modify the database structure
+	
 ---
 
 ##### 32. Find how to use temporary tables in SQL Server.
@@ -640,11 +858,25 @@ Result:
     
 Query:
 ```sql
+BEGIN TRAN
 
+CREATE TABLE #MyTemporaryTable
+(
+    EmployeeID int, 
+	ProjectID int
+)
+SELECT EmployeeID, ProjectID FROM EmployeesProjects
+
+DROP TABLE EmployeesProjects;
+
+CREATE TABLE EmployeesProjects
+(
+    EmployeeID int, 
+	ProjectID int
+)
+SELECT EmployeeID, ProjectID FROM #MyTemporaryTable
+
+ROLLBACK TRAN
 ```
-
-Result:
-
-
 
 ---
