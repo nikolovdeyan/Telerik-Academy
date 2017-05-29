@@ -14,7 +14,9 @@ SELECT FirstName + ' ' + LastName AS [Full Name],
        Salary
 FROM Employees
 WHERE Salary = 
-	(SELECT MIN(Salary) FROM Employees)
+	(
+        SELECT MIN(Salary) FROM Employees
+    )
 ```
 
 Result:
@@ -36,8 +38,7 @@ SELECT FirstName + ' ' + LastName AS [Full Name],
 FROM Employees
 WHERE Salary < 
 	(
-	SELECT (MIN(Salary) * 1.1)
-	FROM Employees
+	SELECT (MIN(Salary) * 1.1) FROM Employees
 	)
 ```
 
@@ -61,8 +62,8 @@ Query:
 SELECT FirstName + ' ' + LastName AS [Full Name],
        d.Name AS [Dept. Name],
        Salary AS [Min. Dept. Salary]
-FROM Employees AS e
-    JOIN Departments AS d
+FROM Employees e
+    JOIN Departments d
 	ON e.DepartmentID = d.DepartmentID
 WHERE Salary = 
 	(
@@ -90,8 +91,8 @@ Query:
 ```sql
 SELECT d.Name AS [Dept. Name],
        AVG(Salary) AS [Avg. Salary]
-FROM Employees AS e
-    JOIN Departments AS d
+FROM Employees e
+    JOIN Departments d
 	ON e.DepartmentID = d.DepartmentID
 WHERE d.DepartmentID = 1
 GROUP BY d.Name
@@ -111,8 +112,8 @@ Query:
 ```sql
 SELECT d.Name AS [Dept. Name],
        AVG(e.Salary) AS [Avg. Salary]
-FROM Employees AS e
-    JOIN Departments AS d
+FROM Employees e
+    JOIN Departments d
 	ON e.DepartmentID = d.DepartmentID
 WHERE d.Name = 'Sales'
 GROUP BY d.Name
@@ -132,8 +133,8 @@ Query:
 ```sql
 SELECT d.Name AS [Dept. Name],
      COUNT(*) AS [Num. Employees]
-FROM Employees AS e
-    JOIN Departments as d
+FROM Employees e
+    JOIN Departments d
 	ON e.DepartmentID = d.DepartmentID
 WHERE d.Name = 'Sales'
 GROUP BY d.Name
@@ -159,8 +160,8 @@ WHERE ManagerID IS NOT NULL
 Another way (using a self-join):
 ```sql
 SELECT COUNT(*) AS [Employees With Manager]
-FROM Employees AS e
-    JOIN Employees as m
+FROM Employees e
+    JOIN Employees m
 	ON e.ManagerID = m.EmployeeID
 ```
 
@@ -194,8 +195,8 @@ Query:
 ```sql
 SELECT d.Name AS [Dept. Name],
        AVG(e.Salary) AS [Avg. Salary]
-FROM Employees AS e
-    JOIN Departments AS d
+FROM Employees e
+    JOIN Departments d
 	ON e.DepartmentID = d.DepartmentID
 GROUP BY d.Name
 ORDER BY d.Name
@@ -231,7 +232,7 @@ Query:
 SELECT d.Name as [Dept. Name], 
        t.Name as [Town Name], 
 	   COUNT(*) as [Num. Employees]
-FROM Employees AS e
+FROM Employees e
 	INNER JOIN Departments d
     ON e.DepartmentID = d.DepartmentID
 		INNER JOIN Addresses a
@@ -268,8 +269,8 @@ Query:
 SELECT e.ManagerID,
        m.FirstName + ' ' +  m.LastName AS [Full Name],
        COUNT(*) AS [Num. Employees]
-FROM Employees AS e
-    INNER JOIN Employees AS m
+FROM Employees e
+    INNER JOIN Employees m
 	ON e.ManagerID = m.EmployeeID
 GROUP BY e.ManagerID, m.FirstName, m.LastName
 HAVING COUNT(*) = 5
@@ -296,8 +297,8 @@ Query:
 ```sql
 SELECT e.FirstName + ' ' + e.LastName AS [Employee Name],
        COALESCE(m.FirstName + ' ' + m.LastName, 'no manager') AS [Manager Name]
-FROM Employees as e
-    LEFT OUTER JOIN Employees as m
+FROM Employees e
+    LEFT OUTER JOIN Employees m
     ON e.ManagerID = m.EmployeeID
 ```
 
@@ -314,7 +315,7 @@ Result (first five results shown):
 ---
 
 ##### 13. Write a SQL query to find the names of all employees whose last name is exactly 5 characters long. Use the built-in `LEN(str)` function.
-    
+
 Query:
 ```sql
 SELECT FirstName + ' ' + LastName AS [Employee Name]
@@ -499,7 +500,7 @@ Query:
 BEGIN TRAN
 
 INSERT INTO Users ([UserName], [Password], [FullName], [LastLogin], [GroupID])
-VALUES ('RedOne', '7849e1d65de0028a7da5901ac5004462f238e467fd37320ca5fa5e86c9379652', 'Jared Huckabee', NULL, 1),
+VALUES ('RedOne', '7849e1d65de0028a7da5901ac5004462f238e467fd37320ca5fa5e86c9379652', 'Reddd TheFirst', NULL, 1),
 		('Leslie123', '457af59805fa29a196a70ec12f0f042cd72e74dbee923b3204cc35d97c8956cf', 'Leslie Knope', GETDATE(), 2),
 		('jerry', '671b16ed98a14f053aac09447d6f51cadb3654c59b9f33ddfecb0fc4797879c0', 'Garry Gergich', GETDATE(), 2),
 		('notme', 'fedb5532f2a52d5a646f6e05d1ffd1e73f630a97ee4efc232807b03b3cc62710', 'Ron Swanson', GETDATE(), 2),
@@ -524,7 +525,7 @@ Result (Users):
 |1|User|$5$MnfsQ4iN$ZMTppKN16y/tIsUYs/obHlhdP.Os80yXhTurpBMUbA5|User Sample|NULL|1|
 |2|User2|$5$rounds=5000$usesomesillystri$KqJWpanXZHKq2BOB43TSaYhEWsQ1Lr5QNyPCDH/Tp.6 |User2 Sample|NULL|2|
 |3|NewUser|7dc5c078dcd6d4b374b90a85d66ce0da4526773fb3844faab90300c2efa1fcb3|Todays User|2017-05-27 13:33:18.917|2|
-|10|RedOne|7849e1d65de0028a7da5901ac5004462f238e467fd37320ca5fa5e86c9379652|Jared Huckabee|NULL|1|
+|10|RedOne|7849e1d65de0028a7da5901ac5004462f238e467fd37320ca5fa5e86c9379652|Reddd TheFirst |NULL|1|
 |11|Leslie123|457af59805fa29a196a70ec12f0f042cd72e74dbee923b3204cc35d97c8956cf|Leslie Knope|2017-05-27 13:35:44.183|2|
 |12|jerry|671b16ed98a14f053aac09447d6f51cadb3654c59b9f33ddfecb0fc4797879c0|Garry Gergich|2017-05-27 13:35:44.183|2|
 |13|notme|fedb5532f2a52d5a646f6e05d1ffd1e73f630a97ee4efc232807b03b3cc62710|Ron Swanson|2017-05-27 13:35:44.183|2|
@@ -551,7 +552,9 @@ UPDATE Users
 SET GroupID = g.ID
 FROM 
 (
-    SELECT ID, Name FROM Groups WHERE Name = 'Managers'
+    SELECT ID, Name 
+    FROM Groups 
+    WHERE Name = 'Managers'
 ) g
 WHERE UserName = 'notme'
 
@@ -658,26 +661,42 @@ Result (first five results shown):
     
 Query:
 ```sql
-SELECT d.Name AS [Department], 
-       e.JobTitle AS [Job Title], 
-       MIN(e.FirstName +' '+ e.LastName) AS [Full Name], 
-       MIN(e.Salary) AS [Min. Salary]
-FROM Employees e
-    INNER JOIN Departments d
-	ON e.DepartmentID = d.DepartmentID
-GROUP BY d.Name, e.JobTitle
+SELECT d.Name as [Dept. Name],
+       MIN(Salary) AS [Minimal Salary],
+       JobTitle,
+       ExampleEmployee = 
+	   (
+	        SELECT TOP 1 FirstName + ' ' + LastName 
+	        FROM Employees e 
+	        WHERE
+			( 
+				e.Salary = MIN(m.Salary)
+				AND
+				e.JobTitle = m.JobTitle
+			)
+			ORDER BY NEWID() -- Gets a random match
+	   )
+FROM Employees m
+	JOIN Departments d
+	ON m.DepartmentID = d.DepartmentID 
+GROUP BY d.Name, m.JobTitle
 ORDER BY d.Name
 ```
 
-Result:
+Result (first ten results shown):
 
-|Department|Job Title|Full Name|Min. Salary|
+|Dept. Name|Minimal Salary|JobTitle|ExampleEmployee|
 |---|---|---|---|
-|Document Control|Control Specialist|Chris Norred|16800.00|
-|Document Control|Document Control Assistant|Karen Berge|10300.00|
-|Document Control|Document Control Manager|Zainal Arifin|17800.00|
-|Engineering|Design Engineer|Gail Erickson|32700.00|
-|Engineering|Engineering Manager|Roberto Tamburello|43300.00|
+|Document Control|16800.00|Control Specialist|Chris Norred|
+|Document Control|10300.00|Document Control Assistant|Sean Chai|
+|Document Control|17800.00|Document Control Manager|Zainal Arifin|
+|Engineering|32700.00|Design Engineer|Gail Erickson|
+|Engineering|43300.00|Engineering Manager|Roberto Tamburello|
+|Engineering|36100.00|Senior Design Engineer|Michael Sullivan|
+|Engineering|63500.00|Vice President of Engineering|Terri Duffy|
+|Executive|125500.00|Chief Executive Officer|Ken Sanchez|
+|Executive|60100.00|Chief Financial Officer|Laura Norman|
+|Facilities and Maintenance|9800.00|Facilities Administrative Assistant|Magnus Hedlund|
 
 ---
 
@@ -878,5 +897,4 @@ SELECT EmployeeID, ProjectID FROM #MyTemporaryTable
 
 ROLLBACK TRAN
 ```
-
 ---

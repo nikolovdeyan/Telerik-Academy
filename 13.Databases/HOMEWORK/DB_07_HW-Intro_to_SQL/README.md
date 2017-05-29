@@ -31,7 +31,7 @@ Major tables: `Addresses`, `Departments`, `Employees`, `EmployeesProjects`, `Pro
 
 Query: 
 ```sql
-SELECT * FROM  Departments
+SELECT * FROM Departments
 ```
 
 Result:
@@ -61,7 +61,7 @@ Result:
 
 Query: 
 ```sql
-SELECT Name FROM  Departments
+SELECT Name FROM Departments
 ```
 
 Result:
@@ -91,8 +91,8 @@ Result:
 
 Query:
 ```sql
- SELECT FirstName + ' ' + LastName AS [Full Name], 
- Salary FROM Employees
+SELECT FirstName + ' ' + LastName AS [Full Name], 
+Salary FROM Employees
 ```
 
 Result (first five results shown):
@@ -131,8 +131,7 @@ Result (first five results shown):
 
 Query:
 ```sql
-SELECT FirstName + '.' + LastName + '@telerik.com' 
-AS [Full Email Address] 
+SELECT FirstName + '.' + LastName + '@telerik.com' AS [Full Email Address] 
 FROM Employees
 ```
 
@@ -175,7 +174,7 @@ Query:
 ```sql
 SELECT * 
 FROM Employees
-WHERE JobTitle = [Sales Representative]
+WHERE JobTitle = 'Sales Representative'
 ```
 
 Result (first five results shown):
@@ -344,8 +343,8 @@ Query:
 ```sql
 SELECT e.FirstName + ' ' + e.LastName AS [Full Name],
 	   a.AddressText AS [Address]
-FROM Employees AS e
-JOIN Addresses AS a
+FROM Employees e
+	JOIN Addresses a
     ON e.AddressID = a.AddressID
 ``` 
 
@@ -390,7 +389,7 @@ Query:
 SELECT e.FirstName + ' ' + e.LastName AS [Full Name],
        m.FirstName + ' ' + m.LastName AS [Manager Name]
 FROM Employees e
-JOIN Employees m
+	JOIN Employees m
     ON e.ManagerID = m.EmployeeID
 ``` 
 
@@ -412,7 +411,7 @@ Query:
 ```sql
 SELECT e.FirstName + ' ' + e.LastName AS [Full Name],
        m.FirstName + ' ' + m.LastName AS [Manager Name],
-	   a.AddressText AS 'Manager Address'
+	   a.AddressText AS [Manager Address]
 FROM Employees e
 	JOIN Employees m
 	ON e.ManagerID = m.EmployeeID
