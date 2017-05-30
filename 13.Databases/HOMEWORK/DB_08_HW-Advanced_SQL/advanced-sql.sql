@@ -164,11 +164,10 @@ VALUES ('User2', '$5$rounds=5000$usesomesillystri$KqJWpanXZHKq2BOB43TSaYhEWsQ1Lr
 INSERT INTO Users (UserName, [Password], FullName, LastLogin)
 VALUES ('NewUser', '7dc5c078dcd6d4b374b90a85d66ce0da4526773fb3844faab90300c2efa1fcb3', 'Todays User', GETDATE());
 
-
 -- 16. Write a SQL statement to create a view that displays the users from the `Users` table that have been in the system today.
 --     - Test if the view works correctly.
 
-CREATE VIEW [SystemUsersToday] AS
+CREATE VIEW [V_SystemUsersToday] AS
 SELECT * FROM Users
 WHERE FORMAT(GETDATE(),'yyyyMMdd') = FORMAT(LastLogin,'yyyyMMdd')
 
@@ -192,7 +191,6 @@ VALUES ('Users');
 INSERT INTO Groups (Name)
 VALUES ('Inactive');
 
--- Test the command and rollback. Then change ROLLBACK to COMMIT
 SELECT * FROM Groups
 
 -- 18. Write a SQL statement to add a column `GroupID` to the table `Users`.
@@ -213,7 +211,6 @@ UPDATE Users SET GroupID = 1 WHERE ID = 1
 UPDATE Users SET GroupID = 2 WHERE ID = 2
 UPDATE Users SET GroupID = 2 WHERE ID = 3
 
--- Test the command and rollback. Then change ROLLBACK to COMMIT
 SELECT * FROM Users
 
 -- 19. Write SQL statements to insert several records in the `Users` and `Groups` tables.
@@ -230,7 +227,6 @@ INSERT INTO Groups ([Name])
 VALUES ('Managers'),
        ('Legacy')
 
--- Test the command and ROLLBACK. Then change ROLLBACK to COMMIT
 SELECT * FROM Users
 SELECT * FROM Groups
 
@@ -261,13 +257,102 @@ WHERE Name = 'Legacy'
 --     - For username use the first letter of the first name + the last name (in lowercase).
 --     - Use the same for the password, and `NULL` for last login time.
 
-INSERT INTO Users ([UserName], [Password], [FullName], [LastLogin], [GroupID])
-SELECT LEFT(LOWER(e.FirstName), 3) + LOWER(e.LastName),
-	   LEFT(LOWER(e.FirstName), 3) + LOWER(e.LastName),
-	   e.FirstName + ' ' + e.LastName,
-	   Null,
-	   2
+-- A helper function to produce deduplicated user name
+CREATE FUNCTION ufn_GetDeduplicatedUserName
+(
+    @firstName nvarchar(100),
+	@lastName nvarchar(100)
+)
+RETURNS nvarchar(100)
+AS
+BEGIN
+	DECLARE @firstNameCharsToTake int = 1;
+	DECLARE @userName nvarchar(100);
+	DECLARE @isUniqueUserName bit = 0;
+	DECLARE @occurances int;
+
+	WHILE (@isUniqueUserName = 0)
+	    BEGIN
+		    SET @userName = LEFT(LOWER(@firstName), @firstNameCharsToTake) + LOWER(@lastName);
+
+			SELECT @occurances = [Occurances] FROM
+			(
+				SELECT
+				LEFT(LOWER(e.FirstName), @firstNameCharsToTake) + LOWER(e.LastName) AS [UserName],
+				Count(*) AS [Occurances]
+				FROM Employees e
+				GROUP BY LEFT(LOWER(e.FirstName), @firstNameCharsToTake) + LOWER(e.LastName)
+			) as r
+			WHERE r.UserName = @userName;
+
+			IF (@occurances = 1)
+				SET @isUniqueUserName = 1;
+			ELSE
+				SET @firstNameCharsToTake = @firstNameCharsToTake + 1;
+		END;
+	RETURN @userName;
+END;
+GO
+
+CREATE FUNCTION ufn_GetDeduplicatedPassword
+(
+    @firstName nvarchar(100),
+	@lastName nvarchar(100)
+)
+RETURNS nvarchar(100)
+AS
+BEGIN
+	DECLARE @minPasswordLength int = 5
+	DECLARE @firstNameCharsToTake int = 1;
+	DECLARE @userName nvarchar(100);
+	DECLARE @isUniqueUserName bit = 0;
+	DECLARE @occurances int;
+
+	WHILE (@isUniqueUserName = 0)
+	    BEGIN
+		    SET @userName = LEFT(LOWER(@firstName), @firstNameCharsToTake) + LOWER(@lastName);
+
+			SELECT @occurances = [Occurances] FROM
+			(
+				SELECT
+				LEFT(LOWER(e.FirstName), @firstNameCharsToTake) + LOWER(e.LastName) AS [UserName],
+				Count(*) AS [Occurances]
+				FROM Employees e
+				GROUP BY LEFT(LOWER(e.FirstName), @firstNameCharsToTake) + LOWER(e.LastName)
+			) as r
+			WHERE r.UserName = @userName;
+
+
+			IF (LEN(@userName) <= @minPasswordLength)
+			    SET @userName = REPLICATE('_', (@minPasswordLength - LEN(@userName))) + @userName;
+
+			IF (@occurances = 1)
+				SET @isUniqueUserName = 1;
+			ELSE
+				SET @firstNameCharsToTake = @firstNameCharsToTake + 1;
+		END;
+	RETURN @userName;
+END;
+GO
+
+INSERT INTO Users 
+(
+    [UserName], 
+    [Password], 
+    [FullName], 
+    [LastLogin], 
+	[GroupID]
+)
+SELECT 
+    dbo.ufn_GetDeduplicatedUserName(e.FirstName, e.LastName),
+    dbo.ufn_GetDeduplicatedPassword(e.FirstName, e.LastName),
+    e.FirstName + ' ' + e.LastName,
+    Null,
+    2
 FROM Employees e
+GO
+
+SELECT * FROM Users ORDER BY UserName
 
 -- 23. Write a SQL statement that changes the password to `NULL` for all users that have not been in the system since 10.03.2010.
 

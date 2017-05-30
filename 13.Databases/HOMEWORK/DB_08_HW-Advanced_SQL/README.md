@@ -590,20 +590,122 @@ WHERE Name = 'Legacy'
  - For username use the first letter of the first name + the last name (in lowercase).
  - Use the same for the password, and `NULL` for last login time.
     
-Query:
+ - Creating a function that will return a unique user name:
 ```sql
-BEGIN TRAN
+CREATE FUNCTION ufn_GetDeduplicatedUserName
+(
+    @firstName nvarchar(100),
+	@lastName nvarchar(100)
+)
+RETURNS nvarchar(100)
+AS
+BEGIN
+	DECLARE @firstNameCharsToTake int = 1;
+	DECLARE @userName nvarchar(100);
+	DECLARE @isUniqueUserName bit = 0;
+	DECLARE @occurances int;
 
-INSERT INTO Users ([UserName], [Password], [FullName], [LastLogin], [GroupID])
-SELECT LEFT(LOWER(e.FirstName), 3) + LOWER(e.LastName),
-       LEFT(LOWER(e.FirstName), 3) + LOWER(e.LastName),
-       e.FirstName + ' ' + e.LastName,
-       Null,
-       2
-FROM Employees e
+	WHILE (@isUniqueUserName = 0)
+	    BEGIN
+		    SET @userName = LEFT(LOWER(@firstName), @firstNameCharsToTake) + LOWER(@lastName);
 
-ROLLBACK TRAN
+			SELECT @occurances = [Occurances] FROM
+			(
+				SELECT
+				LEFT(LOWER(e.FirstName), @firstNameCharsToTake) + LOWER(e.LastName) AS [UserName],
+				Count(*) AS [Occurances]
+				FROM Employees e
+				GROUP BY LEFT(LOWER(e.FirstName), @firstNameCharsToTake) + LOWER(e.LastName)
+			) as r
+			WHERE r.UserName = @userName;
+
+			IF (@occurances = 1)
+				SET @isUniqueUserName = 1;
+			ELSE
+				SET @firstNameCharsToTake = @firstNameCharsToTake + 1;
+		END;
+	RETURN @userName;
+END;
+GO
 ```
+
+ - Creating a function that will return a unique password, and will fill the password up to the constraint's requirement:
+ ```sql
+ CREATE FUNCTION ufn_GetDeduplicatedPassword
+(
+    @firstName nvarchar(100),
+	@lastName nvarchar(100)
+)
+RETURNS nvarchar(100)
+AS
+BEGIN
+	DECLARE @minPasswordLength int = 5
+	DECLARE @firstNameCharsToTake int = 1;
+	DECLARE @userName nvarchar(100);
+	DECLARE @isUniqueUserName bit = 0;
+	DECLARE @occurances int;
+
+	WHILE (@isUniqueUserName = 0)
+	    BEGIN
+		    SET @userName = LEFT(LOWER(@firstName), @firstNameCharsToTake) + LOWER(@lastName);
+
+			SELECT @occurances = [Occurances] FROM
+			(
+				SELECT
+				LEFT(LOWER(e.FirstName), @firstNameCharsToTake) + LOWER(e.LastName) AS [UserName],
+				Count(*) AS [Occurances]
+				FROM Employees e
+				GROUP BY LEFT(LOWER(e.FirstName), @firstNameCharsToTake) + LOWER(e.LastName)
+			) as r
+			WHERE r.UserName = @userName;
+
+
+			IF (LEN(@userName) <= @minPasswordLength)
+			    SET @userName = REPLICATE('_', (@minPasswordLength - LEN(@userName))) + @userName;
+
+			IF (@occurances = 1)
+				SET @isUniqueUserName = 1;
+			ELSE
+				SET @firstNameCharsToTake = @firstNameCharsToTake + 1;
+		END;
+	RETURN @userName;
+END;
+GO
+```
+ - Using the created functions to complete the required modifications:
+ ```sql
+INSERT INTO Users 
+(
+    [UserName], 
+    [Password], 
+    [FullName], 
+    [LastLogin], 
+	[GroupID]
+)
+SELECT 
+    dbo.ufn_GetDeduplicatedUserName(e.FirstName, e.LastName),
+    dbo.ufn_GetDeduplicatedPassword(e.FirstName, e.LastName),
+    e.FirstName + ' ' + e.LastName,
+    Null,
+    2
+FROM Employees e
+GO
+```
+
+Result: 
+
+|ID|UserName|Password|FullName|LastLogin|GroupID|
+|---|---|---|---|---|---|
+|129|abarbariol|abarbariol|Angela Barbariol|NULL|2|
+|154|aberglund|aberglund|Andreas Berglund|NULL|2|
+|179|abrewer|abrewer|Alan Brewer|NULL|2|
+|220|acencini|acencini|Andrew Cencini|NULL|2|
+|45|aciccu|aciccu|Alice Ciccu|NULL|2|
+|40|amcguel|amcguel|Alejandro McGuel|NULL|2|
+|164|anayberg|anayberg|Alex Nayberg|NULL|2|
+|194|andhill|andhill|Andrew Hill|NULL|2|
+|273|annhill|annhill|Annette Hill|NULL|2|
+|207|arao|_arao|Arvind Rao|NULL|2|
 
 ---
 
@@ -880,24 +982,23 @@ ROLLBACK TRAN
     
 Query:
 ```sql
-BEGIN TRAN
+SELECT * 
+INTO #MyTempTable
+FROM EmployeesProjects
+GO
 
-CREATE TABLE #MyTemporaryTable
-(
-    EmployeeID int, 
-    ProjectID int
+DROP TABLE EmployeesProjects
+GO
+
+CREATE TABLE EmployeesProjects(
+[EmployeeID] INT NOT NULL,
+[ProjectID] INT NOT NULL,
+CONSTRAINT FK_EmployeesProjects_Employees FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
+CONSTRAINT FK_EmployeesProjects_Projects FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
 )
-SELECT EmployeeID, ProjectID FROM EmployeesProjects
+GO
 
-DROP TABLE EmployeesProjects;
-
-CREATE TABLE EmployeesProjects
-(
-    EmployeeID int, 
-    ProjectID int
-)
-SELECT EmployeeID, ProjectID FROM #MyTemporaryTable
-
-ROLLBACK TRAN
+INSERT INTO EmployeesProjects
+SELECT * FROM #MyTempTable
 ```
 ---
