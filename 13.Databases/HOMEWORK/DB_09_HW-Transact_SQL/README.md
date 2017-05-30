@@ -1,3 +1,6 @@
+###### [My Telerik Academy Courses](https://github.com/nikolovdeyan/TelerikAcademy) 
+---
+
 ## 06. Transact SQL
 ### _Homework_
 
@@ -15,13 +18,13 @@ GO
 CREATE DATABASE FinancesDatabase
 ON
 (
-	NAME = FinancesDB_dat,
-	FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL13.SQLEXPRESS\MSSQL\DATA\FinancesDB.mdf'    
+    NAME = FinancesDB_dat,
+    FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL13.SQLEXPRESS\MSSQL\DATA\FinancesDB.mdf'    
 )
 LOG ON
 (
-	NAME = FinancesDB_log, 
-	FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL13.SQLEXPRESS\MSSQL\DATA\FinancesDB.ldf'
+    NAME = FinancesDB_log, 
+    FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL13.SQLEXPRESS\MSSQL\DATA\FinancesDB.ldf'
 );
 GO
 
@@ -31,51 +34,51 @@ GO
 -- Create tables
 CREATE TABLE Persons
 (
-	ID int IDENTITY NOT NULL PRIMARY KEY,
-	FirstName nvarchar(50) NOT NULL,
-	LastName nvarchar(50) NOT NULL,
-	SSN nvarchar(30) NOT NULL,
+    ID int IDENTITY NOT NULL PRIMARY KEY,
+    FirstName nvarchar(50) NOT NULL,
+    LastName nvarchar(50) NOT NULL,
+    SSN nvarchar(30) NOT NULL,
 )
 GO
 
 CREATE TABLE Accounts
 (
-	ID int IDENTITY NOT NULL PRIMARY KEY,
-	PersonID int NOT NULL, 
-	Balance money NOT NULL,
-	CONSTRAINT FK_Accounts_Persons 
-	    FOREIGN KEY(PersonID)
-		REFERENCES Persons(ID)
+    ID int IDENTITY NOT NULL PRIMARY KEY,
+    PersonID int NOT NULL, 
+    Balance money NOT NULL,
+    CONSTRAINT FK_Accounts_Persons 
+        FOREIGN KEY(PersonID)
+        REFERENCES Persons(ID)
 )
 
 -- Insert testing records
 INSERT INTO Persons(FirstName, LastName, SSN)
 VALUES
     ('Bill', 'Woolcott', 99181321588),
-	('Charlton', 'Sennet', 99441917881),
-	('Margaret', 'Case', 89168457791),
-	('Sophie','Bangs', 89441737211),
-	('Barbara','Shelley', 89426625692),
-	('Stacia','Vanderveer', 89111149472),
-	('Grace','Brannagh',89777819991);
+    ('Charlton', 'Sennet', 99441917881),
+    ('Margaret', 'Case', 89168457791),
+    ('Sophie','Bangs', 89441737211),
+    ('Barbara','Shelley', 89426625692),
+    ('Stacia','Vanderveer', 89111149472),
+    ('Grace','Brannagh',89777819991);
 
 INSERT INTO Accounts(PersonID, Balance)
 VALUES
-	(1, 100.00),
-	(2, 755.25),
-	(3, 10000.00),
-	(4, 12768.55), 
-	(5, 500.00),
-	(6, 988.71),
-	(7, 3.50);
+    (1, 100.00),
+    (2, 755.25),
+    (3, 10000.00),
+    (4, 12768.55), 
+    (5, 500.00),
+    (6, 988.71),
+    (7, 3.50);
 ```
 
 Create the stored procedure:
 ```sql
 CREATE PROC usp_GetFullNames
 AS
-	SELECT FirstName + ' ' + LastName AS [Full Name] 
-	FROM Persons
+    SELECT FirstName + ' ' + LastName AS [Full Name] 
+    FROM Persons
 GO
 ```
 
@@ -104,15 +107,15 @@ Create the stored procedure:
 ```sql
 CREATE PROC usp_GetAccounsWithBalanceAboveLimit
 (
-	@limit money
+    @limit money
 )
 AS
-  SELECT p.FirstName + ' '  + p.LastName AS [Full Name],
-		 a.Balance AS [Account Balance]
-  FROM Persons p
-	INNER JOIN Accounts a
+SELECT p.FirstName + ' '  + p.LastName AS [Full Name],
+       a.Balance AS [Account Balance]
+FROM Persons p
+    INNER JOIN Accounts a
     ON p.PersonID = a.AccountID
-  WHERE a.Balance > @limit
+WHERE a.Balance > @limit
 GO
 ```
 
@@ -143,20 +146,20 @@ Creating the function:
 CREATE FUNCTION ufn_CalculateInterestRate
 (
     @sum money,
-	@yearlyInterestRate float,
-	@numberOfMonths int
+    @yearlyInterestRate float,
+    @numberOfMonths int
 )
 RETURNS money
 AS
 BEGIN
-	RETURN @sum + (@sum * @yearlyInterestRate / 12 * @numberOfMonths) 
+    RETURN @sum + (@sum * @yearlyInterestRate / 12 * @numberOfMonths) 
 END
 ```
 Testing the function:
 ```sql
 SELECT ID AS [Account ID], 
        Balance AS [Balance Before Interest Applied],
-	   dbo.ufn_CalculateInterestRate(Balance, 0.06, 12) AS [Balance After Interest Applied]
+       dbo.ufn_CalculateInterestRate(Balance, 0.06, 12) AS [Balance After Interest Applied]
 FROM Accounts
 ```
 
@@ -182,11 +185,11 @@ Creating the stored procedure:
 CREATE PROC usp_ApplyMonthlyInterestRateToAccount
 (
     @accountID int,
-	@interestRate float
+    @interestRate float
 )
 AS 
-	UPDATE Accounts 
-	SET Balance = dbo.ufn_CalculateInterestRate(Balance, @interestRate, 1)
+    UPDATE Accounts 
+    SET Balance = dbo.ufn_CalculateInterestRate(Balance, @interestRate, 1)
 FROM Accounts
 WHERE ID = @accountID
 GO
@@ -196,7 +199,7 @@ Using the stored procedure:
 ```sql
 EXEC usp_ApplyMonthlyInterestRateToAccount
     @accountID = 1,
-	@interestRate = 0.06
+    @interestRate = 0.06
 GO
 ```
 
@@ -209,11 +212,11 @@ Creating the stored procedure `WithdrawMoney`:
 CREATE PROC usp_WithdrawMoney
 (
     @accountID int,
-	@sum money
+    @sum money
 )
 AS
     UPDATE Accounts
-	SET Balance = Balance - @sum
+    SET Balance = Balance - @sum
 FROM Accounts
 WHERE ID = @accountID
 GO
@@ -224,11 +227,11 @@ Creating the stored procedure `DepositMoney`:
 CREATE PROC usp_DepositMoney
 (
     @accountID int,
-	@sum money
+    @sum money
 )
 AS
-	UPDATE Accounts
-	SET Balance = Balance + @sum
+    UPDATE Accounts
+    SET Balance = Balance + @sum
 FROM Accounts
 WHERE ID = @accountID
 GO
@@ -238,11 +241,11 @@ Using the stored procedures:
 ```sql
 EXEC usp_WithdrawMoney
     @accountID = 1,
-	@sum = 50
+    @sum = 50
 
 EXEC usp_DepositMoney
     @accountID = 1,
-	@sum = 1000
+    @sum = 1000
 ```
 
 ---
@@ -254,13 +257,13 @@ Create the table:
 ```sql
 CREATE TABLE Logs
 (
-	ID int IDENTITY NOT NULL PRIMARY KEY,
-	AccountID int,
-	OldSum money,
-	NewSum money,
-	CONSTRAINT FK_Logs_Accounts
-	    FOREIGN KEY(AccountID)
-		REFERENCES Accounts(ID)
+    ID int IDENTITY NOT NULL PRIMARY KEY,
+    AccountID int,
+    OldSum money,
+    NewSum money,
+    CONSTRAINT FK_Logs_Accounts
+        FOREIGN KEY(AccountID)
+        REFERENCES Accounts(ID)
 )
 GO
 ```
@@ -272,8 +275,8 @@ AS
 INSERT INTO Logs
 (
     AccountID,
-	OldSum,
-	NewSum
+    OldSum,
+    NewSum
 )
 SELECT i.ID, d.Balance, i.Balance
 FROM inserted i, deleted d
@@ -284,15 +287,15 @@ Test the trigger:
 ```sql
 EXEC usp_DepositMoney
     @accountID = 2,
-	@sum = 750.50
+    @sum = 750.50
 
 EXEC usp_DepositMoney
     @accountID = 3,
-	@sum = 100000
+    @sum = 100000
 
 EXEC usp_WithdrawMoney
     @accountID = 3,
-	@sum = 1550.49
+    @sum = 1550.49
 
 SELECT * FROM Logs
 ```
@@ -321,15 +324,15 @@ RETURNS bit
 AS
 BEGIN
     DECLARE @index int = 1
-	DECLARE @currentChar nvarchar(1)
-	WHILE (@index <= LEN(@string))
-		BEGIN
-			SET @currentChar = SUBSTRING(@string, @index, 1)
-			IF (CHARINDEX(LOWER(@currentChar), LOWER(@characterSet)) <= 0)
-				RETURN 0
-			SET @index = @index + 1
-		END
-	RETURN 1
+    DECLARE @currentChar nvarchar(1)
+    WHILE (@index <= LEN(@string))
+        BEGIN
+            SET @currentChar = SUBSTRING(@string, @index, 1)
+            IF (CHARINDEX(LOWER(@currentChar), LOWER(@characterSet)) <= 0)
+                RETURN 0
+            SET @index = @index + 1
+        END
+    RETURN 1
 END
 GO
 ```
@@ -355,13 +358,13 @@ CREATE Function dbo.ufn_FilterEmployeeAndCityNamesContainingCharacterSet
 )
 RETURNS @result TABLE
     (
-	[Name] nvarchar(50)
-	)
+    [Name] nvarchar(50)
+    )
 AS
 BEGIN
     INSERT @result
-	SELECT [Name] FROM
-	(
+    SELECT [Name] FROM
+    (
         SELECT Name FROM Towns
         UNION
         SELECT LastName FROM Employees
@@ -369,12 +372,12 @@ BEGIN
         SELECT MiddleName FROM Employees
         UNION 
         SELECT FirstName FROM Employees
-	) as resultTable
-	WHERE 
-	    dbo.ufn_FilterNameContainingCharacterSet(resultTable.Name, @characterSet) = 1
-		AND
-		resultTable.Name IS NOT NULL
-	RETURN
+    ) as resultTable
+    WHERE 
+        dbo.ufn_FilterNameContainingCharacterSet(resultTable.Name, @characterSet) = 1
+        AND
+        resultTable.Name IS NOT NULL
+    RETURN
 END
 GO
 ```
@@ -408,7 +411,7 @@ Result (first ten results shown):
 ---
 
 ##### 9. *Write a T-SQL script that shows for each town a list of all employees that live in it.
- - _Sample output_:	
+ - _Sample output_:    
 ```sql
 Sofia -> Martin Kulov, George Denchev
 Ottawa -> Jose Saraiva

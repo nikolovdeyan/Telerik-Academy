@@ -14,9 +14,9 @@ SELECT FirstName + ' ' + LastName AS [Full Name],
        Salary
 FROM Employees
 WHERE Salary = 
-	(
-        SELECT MIN(Salary) FROM Employees
-    )
+(
+    SELECT MIN(Salary) FROM Employees
+)
 ```
 
 Result:
@@ -37,9 +37,9 @@ SELECT FirstName + ' ' + LastName AS [Full Name],
        Salary
 FROM Employees
 WHERE Salary < 
-	(
-	SELECT (MIN(Salary) * 1.1) FROM Employees
-	)
+(
+    SELECT (MIN(Salary) * 1.1) FROM Employees
+)
 ```
 
 Result (first five results shown):
@@ -64,13 +64,13 @@ SELECT FirstName + ' ' + LastName AS [Full Name],
        Salary AS [Min. Dept. Salary]
 FROM Employees e
     JOIN Departments d
-	ON e.DepartmentID = d.DepartmentID
+    ON e.DepartmentID = d.DepartmentID
 WHERE Salary = 
-	(
-	SELECT MIN(Salary)
-	FROM Employees
-	WHERE DepartmentID = e.DepartmentID
-	)
+(
+    SELECT MIN(Salary)
+    FROM Employees
+    WHERE DepartmentID = e.DepartmentID
+)
 ```
 
 Result (first five results shown):
@@ -93,7 +93,7 @@ SELECT d.Name AS [Dept. Name],
        AVG(Salary) AS [Avg. Salary]
 FROM Employees e
     JOIN Departments d
-	ON e.DepartmentID = d.DepartmentID
+    ON e.DepartmentID = d.DepartmentID
 WHERE d.DepartmentID = 1
 GROUP BY d.Name
 ```
@@ -114,7 +114,7 @@ SELECT d.Name AS [Dept. Name],
        AVG(e.Salary) AS [Avg. Salary]
 FROM Employees e
     JOIN Departments d
-	ON e.DepartmentID = d.DepartmentID
+    ON e.DepartmentID = d.DepartmentID
 WHERE d.Name = 'Sales'
 GROUP BY d.Name
 ```
@@ -132,10 +132,10 @@ Result:
 Query:
 ```sql
 SELECT d.Name AS [Dept. Name],
-     COUNT(*) AS [Num. Employees]
+       COUNT(*) AS [Num. Employees]
 FROM Employees e
     JOIN Departments d
-	ON e.DepartmentID = d.DepartmentID
+    ON e.DepartmentID = d.DepartmentID
 WHERE d.Name = 'Sales'
 GROUP BY d.Name
 ```
@@ -162,7 +162,7 @@ Another way (using a self-join):
 SELECT COUNT(*) AS [Employees With Manager]
 FROM Employees e
     JOIN Employees m
-	ON e.ManagerID = m.EmployeeID
+    ON e.ManagerID = m.EmployeeID
 ```
 
 Result:
@@ -197,7 +197,7 @@ SELECT d.Name AS [Dept. Name],
        AVG(e.Salary) AS [Avg. Salary]
 FROM Employees e
     JOIN Departments d
-	ON e.DepartmentID = d.DepartmentID
+    ON e.DepartmentID = d.DepartmentID
 GROUP BY d.Name
 ORDER BY d.Name
 ```
@@ -231,14 +231,14 @@ Query:
 ```sql
 SELECT d.Name as [Dept. Name], 
        t.Name as [Town Name], 
-	   COUNT(*) as [Num. Employees]
+       COUNT(*) as [Num. Employees]
 FROM Employees e
-	INNER JOIN Departments d
+    INNER JOIN Departments d
     ON e.DepartmentID = d.DepartmentID
-		INNER JOIN Addresses a
-		ON e.AddressID = a.AddressID 
-			INNER JOIN Towns t
-			ON a.TownID = t.TownID
+        INNER JOIN Addresses a
+        ON e.AddressID = a.AddressID 
+            INNER JOIN Towns t
+            ON a.TownID = t.TownID
 GROUP BY d.Name, t.Name
 ORDER BY d.Name
 ```
@@ -271,7 +271,7 @@ SELECT e.ManagerID,
        COUNT(*) AS [Num. Employees]
 FROM Employees e
     INNER JOIN Employees m
-	ON e.ManagerID = m.EmployeeID
+    ON e.ManagerID = m.EmployeeID
 GROUP BY e.ManagerID, m.FirstName, m.LastName
 HAVING COUNT(*) = 5
 ```
@@ -363,14 +363,14 @@ BEGIN TRAN
 
 CREATE TABLE Users
 (
-	ID int IDENTITY,
-	[UserName] varchar(20) NOT NULL,
-	[Password] varchar(100) NOT NULL,
-	[FullName] varchar(50) NOT NULL,
-	[LastLogin] dateTime,
-	CONSTRAINT PK_Users PRIMARY KEY(ID),
-	CONSTRAINT UK_UserName UNIQUE(UserName),
-	CONSTRAINT Check_Password CHECK(LEN([Password])>=5)
+    ID int IDENTITY,
+    [UserName] varchar(20) NOT NULL,
+    [Password] varchar(100) NOT NULL,
+    [FullName] varchar(50) NOT NULL,
+    [LastLogin] dateTime,
+    CONSTRAINT PK_Users PRIMARY KEY(ID),
+    CONSTRAINT UK_UserName UNIQUE(UserName),
+    CONSTRAINT Check_Password CHECK(LEN([Password])>=5)
 )
 
 INSERT INTO Users (UserName, [Password], FullName, LastLogin)
@@ -403,8 +403,11 @@ Result:
     
 Query:
 ```sql
+CREATE VIEW [SystemUsersToday] AS
 SELECT * FROM Users
 WHERE FORMAT(GETDATE(),'yyyyMMdd') = FORMAT(LastLogin,'yyyyMMdd')
+
+SELECT * FROM SystemUsersToday
 ```
 
 Result:
@@ -424,10 +427,10 @@ BEGIN TRAN
 
 CREATE TABLE Groups
 (
-  [ID] int IDENTITY,
-  [Name] nvarchar(100) NOT NULL,
-  CONSTRAINT PK_Groups PRIMARY KEY(ID),
-  CONSTRAINT UK_Name UNIQUE(Name)
+    [ID] int IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    CONSTRAINT PK_Groups PRIMARY KEY(ID),
+    CONSTRAINT UK_Name UNIQUE(Name)
 )
 
 INSERT INTO Groups (Name)
@@ -501,11 +504,11 @@ BEGIN TRAN
 
 INSERT INTO Users ([UserName], [Password], [FullName], [LastLogin], [GroupID])
 VALUES ('RedOne', '7849e1d65de0028a7da5901ac5004462f238e467fd37320ca5fa5e86c9379652', 'Reddd TheFirst', NULL, 1),
-		('Leslie123', '457af59805fa29a196a70ec12f0f042cd72e74dbee923b3204cc35d97c8956cf', 'Leslie Knope', GETDATE(), 2),
-		('jerry', '671b16ed98a14f053aac09447d6f51cadb3654c59b9f33ddfecb0fc4797879c0', 'Garry Gergich', GETDATE(), 2),
-		('notme', 'fedb5532f2a52d5a646f6e05d1ffd1e73f630a97ee4efc232807b03b3cc62710', 'Ron Swanson', GETDATE(), 2),
-		('tom', '0bddce0a2102d6b93d1300908df4919e5a647940e495e748ac883687f2746f2b', 'Tom Haverford', GETDATE(), 2),
-		('benwyatt', 'e8be84604783a904831cc91e68396c06eee57340caf097e235e3faf4976c3e6a', 'Ben Wyatt', GETDATE(), 2);
+        ('Leslie123', '457af59805fa29a196a70ec12f0f042cd72e74dbee923b3204cc35d97c8956cf', 'Leslie Knope', GETDATE(), 2),
+        ('jerry', '671b16ed98a14f053aac09447d6f51cadb3654c59b9f33ddfecb0fc4797879c0', 'Garry Gergich', GETDATE(), 2),
+        ('notme', 'fedb5532f2a52d5a646f6e05d1ffd1e73f630a97ee4efc232807b03b3cc62710', 'Ron Swanson', GETDATE(), 2),
+        ('tom', '0bddce0a2102d6b93d1300908df4919e5a647940e495e748ac883687f2746f2b', 'Tom Haverford', GETDATE(), 2),
+        ('benwyatt', 'e8be84604783a904831cc91e68396c06eee57340caf097e235e3faf4976c3e6a', 'Ben Wyatt', GETDATE(), 2);
 
 INSERT INTO Groups ([Name])
 VALUES ('Managers'),
@@ -593,10 +596,10 @@ BEGIN TRAN
 
 INSERT INTO Users ([UserName], [Password], [FullName], [LastLogin], [GroupID])
 SELECT LEFT(LOWER(e.FirstName), 3) + LOWER(e.LastName),
-	   LEFT(LOWER(e.FirstName), 3) + LOWER(e.LastName),
-	   e.FirstName + ' ' + e.LastName,
-	   Null,
-	   2
+       LEFT(LOWER(e.FirstName), 3) + LOWER(e.LastName),
+       e.FirstName + ' ' + e.LastName,
+       Null,
+       2
 FROM Employees e
 
 ROLLBACK TRAN
@@ -637,10 +640,10 @@ Query:
 ```sql
 SELECT d.Name AS [Department], 
        e.JobTitle AS [Job Title],
-	   AVG(e.Salary) AS [Avg Salary]
+       AVG(e.Salary) AS [Avg Salary]
 FROM Employees e
-	INNER JOIN Departments d
-	ON e.DepartmentID = d.DepartmentID
+    INNER JOIN Departments d
+    ON e.DepartmentID = d.DepartmentID
 GROUP BY d.Name, e.JobTitle
 ORDER BY d.Name
 ```
@@ -665,20 +668,20 @@ SELECT d.Name as [Dept. Name],
        MIN(Salary) AS [Minimal Salary],
        JobTitle,
        ExampleEmployee = 
-	   (
-	        SELECT TOP 1 FirstName + ' ' + LastName 
-	        FROM Employees e 
-	        WHERE
-			( 
-				e.Salary = MIN(m.Salary)
-				AND
-				e.JobTitle = m.JobTitle
-			)
-			ORDER BY NEWID() -- Gets a random match
-	   )
+       (
+            SELECT TOP 1 FirstName + ' ' + LastName 
+            FROM Employees e 
+            WHERE
+            ( 
+                e.Salary = MIN(m.Salary)
+                AND
+                e.JobTitle = m.JobTitle
+            )
+            ORDER BY NEWID() -- Gets a random match
+       )
 FROM Employees m
-	JOIN Departments d
-	ON m.DepartmentID = d.DepartmentID 
+    JOIN Departments d
+    ON m.DepartmentID = d.DepartmentID 
 GROUP BY d.Name, m.JobTitle
 ORDER BY d.Name
 ```
@@ -707,10 +710,10 @@ Query:
 SELECT TOP 1 t.Name AS [Maximum Occupancy Office], 
        COUNT(*) AS [Employees Count]
 FROM Employees e
-JOIN Addresses a
-	ON a.AddressID = e.AddressID
-JOIN Towns t
-	ON a.TownID = t.TownID
+    JOIN Addresses a
+    ON a.AddressID = e.AddressID
+	    JOIN Towns t
+	    ON a.TownID = t.TownID
 GROUP BY t.Name
 ORDER BY [Employees Count] DESC
 ```
@@ -731,11 +734,11 @@ SELECT t.Name AS [City Name],
        COUNT(DISTINCT e.ManagerID) AS [Managers Count]
 FROM Employees e
     JOIN Employees m
-	ON e.ManagerID = m.EmployeeID
+    ON e.ManagerID = m.EmployeeID
         JOIN Addresses a
-	    ON a.AddressID = m.AddressID
+        ON a.AddressID = m.AddressID
             JOIN Towns t
-	        ON a.TownID = t.TownID
+            ON a.TownID = t.TownID
 GROUP BY t.Name
 ORDER BY [Managers Count] DESC
 ```
@@ -764,24 +767,24 @@ BEGIN TRAN
 
 CREATE TABLE WorkHours 
 (
-	[ID] int IDENTITY,
-	[EmployeeID] int NOT NULL,
-	[Date] datetime,
-	[Task] nvarchar(100),
-	[Hours] int,
-	[Comments] nvarchar(500),
-	CONSTRAINT PK_WorkHours PRIMARY KEY(ID),
-	CONSTRAINT FK_WorkHours_Employees FOREIGN KEY(EmployeeID)
-	REFERENCES Employees(EmployeeID)
+    [ID] int IDENTITY,
+    [EmployeeID] int NOT NULL,
+    [Date] datetime,
+    [Task] nvarchar(100),
+    [Hours] int,
+    [Comments] nvarchar(500),
+    CONSTRAINT PK_WorkHours PRIMARY KEY(ID),
+    CONSTRAINT FK_WorkHours_Employees FOREIGN KEY(EmployeeID)
+    REFERENCES Employees(EmployeeID)
 )
 GO
 
 INSERT INTO WorkHours([EmployeeID], [Date], [Task], [Hours], [Comments])
 VALUES
-	(2, GETDATE(),'Scrum Meeting', 2, 'Kick-off Aviatto Project'),
-	(3, GETDATE(),'Scrum Meeting', 1, 'Kick-off Aviatto Project'),
-	(4, GETDATE(),'PTO', 8, 'Holiday'),
-	(5, GETDATE(),'Task11', 4, 'Working on feature 11');
+    (2, GETDATE(),'Scrum Meeting', 2, 'Kick-off Aviatto Project'),
+    (3, GETDATE(),'Scrum Meeting', 1, 'Kick-off Aviatto Project'),
+    (4, GETDATE(),'PTO', 8, 'Holiday'),
+    (5, GETDATE(),'Task11', 4, 'Working on feature 11');
 
 UPDATE WorkHours SET [Hours] = 2 WHERE [EmployeeID] = 3
 
@@ -789,17 +792,17 @@ DELETE FROM WorkHours WHERE Task='PTO'
 
 CREATE TABLE WorkHoursLogs 
 (
-	[ID] int IDENTITY,
-	[WorkHoursID] int,
-	[EmployeeID] int NOT NULL,
-	[Date] datetime,
-	[Task] nvarchar(100),
-	[Hours] int,
-	[Comments] nvarchar(500),
-	[Command] nvarchar(30) NOT NULL,
-	CONSTRAINT PK_WorkHoursLogs PRIMARY KEY(ID),
-	CONSTRAINT FK_WorkHoursLogs_Employees FOREIGN KEY(EmployeeID)
-	REFERENCES Employees(EmployeeID)
+    [ID] int IDENTITY,
+    [WorkHoursID] int,
+    [EmployeeID] int NOT NULL,
+    [Date] datetime,
+    [Task] nvarchar(100),
+    [Hours] int,
+    [Comments] nvarchar(500),
+    [Command] nvarchar(30) NOT NULL,
+    CONSTRAINT PK_WorkHoursLogs PRIMARY KEY(ID),
+    CONSTRAINT FK_WorkHoursLogs_Employees FOREIGN KEY(EmployeeID)
+    REFERENCES Employees(EmployeeID)
 )
 GO
 
@@ -855,10 +858,10 @@ DROP CONSTRAINT FK_Departments_Employees
 
 DELETE FROM Employees
 WHERE DepartmentID =
-	(
-	SELECT DepartmentID FROM Departments
-	WHERE Name = 'Sales'
-	)
+    (
+    SELECT DepartmentID FROM Departments
+    WHERE Name = 'Sales'
+    )
 
 ROLLBACK TRAN
 ```
@@ -869,7 +872,7 @@ ROLLBACK TRAN
  - Now how you could restore back the lost table data?
     
 >> Use BEGIN TRAN / ROLLBACK TRAN / COMMIT TRAN for all transactions that modify the database structure
-	
+    
 ---
 
 ##### 32. Find how to use temporary tables in SQL Server.
@@ -882,7 +885,7 @@ BEGIN TRAN
 CREATE TABLE #MyTemporaryTable
 (
     EmployeeID int, 
-	ProjectID int
+    ProjectID int
 )
 SELECT EmployeeID, ProjectID FROM EmployeesProjects
 
@@ -891,7 +894,7 @@ DROP TABLE EmployeesProjects;
 CREATE TABLE EmployeesProjects
 (
     EmployeeID int, 
-	ProjectID int
+    ProjectID int
 )
 SELECT EmployeeID, ProjectID FROM #MyTemporaryTable
 

@@ -168,6 +168,7 @@ VALUES ('NewUser', '7dc5c078dcd6d4b374b90a85d66ce0da4526773fb3844faab90300c2efa1
 -- 16. Write a SQL statement to create a view that displays the users from the `Users` table that have been in the system today.
 --     - Test if the view works correctly.
 
+CREATE VIEW [SystemUsersToday] AS
 SELECT * FROM Users
 WHERE FORMAT(GETDATE(),'yyyyMMdd') = FORMAT(LastLogin,'yyyyMMdd')
 
@@ -443,18 +444,21 @@ WHERE DepartmentID =
 -- 32. Find how to use temporary tables in SQL Server.
 --     - Using temporary tables backup all records from `EmployeesProjects` and restore them back after dropping and re-creating the table.
 
-CREATE TABLE #MyTemporaryTable
-(
-    EmployeeID int, 
-	ProjectID int
-)
-SELECT EmployeeID, ProjectID FROM EmployeesProjects
+SELECT * 
+INTO #MyTempTable
+FROM EmployeesProjects
+GO
 
-DROP TABLE EmployeesProjects;
+DROP TABLE EmployeesProjects
+GO
 
-CREATE TABLE EmployeesProjects
-(
-    EmployeeID int, 
-	ProjectID int
+CREATE TABLE EmployeesProjects(
+[EmployeeID] INT NOT NULL,
+[ProjectID] INT NOT NULL,
+CONSTRAINT FK_EmployeesProjects_Employees FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
+CONSTRAINT FK_EmployeesProjects_Projects FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
 )
-SELECT EmployeeID, ProjectID FROM #MyTemporaryTable
+GO
+
+INSERT INTO EmployeesProjects
+SELECT * FROM #MyTempTable

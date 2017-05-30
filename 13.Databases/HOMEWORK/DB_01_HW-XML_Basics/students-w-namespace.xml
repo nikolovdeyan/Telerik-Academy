@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<students>
+<?xml-stylesheet type="text/xslt" href="stylesheet.xslt"?>
+
+<students xmlns='https://mysite.com/my-awesome-xmlnamespace'>
   <student>
     <name>Gay Loyndon
     </name>
