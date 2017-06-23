@@ -1,0 +1,51 @@
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: The passed command is not found!
+ERROR: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+ERROR: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+ERROR: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+ERROR: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+ERROR: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+ERROR: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+ERROR: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+ERROR: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
