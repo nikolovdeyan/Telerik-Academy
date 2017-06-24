@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManager.ConsoleClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManager.Framework", "ProjectManager.Framework\ProjectManager.Framework.csproj", "{6D548169-75E7-495F-BC01-0C8CF6F6BE04}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{997A2268-E736-4525-8EBA-4C78CAB8E339}"
+	ProjectSection(SolutionItems) = preProject
+		GradingCriteria.md = GradingCriteria.md
+		Requirements.md = Requirements.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

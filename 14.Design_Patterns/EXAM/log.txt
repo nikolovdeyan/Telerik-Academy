@@ -49,3 +49,13 @@ ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Command
 Could not find a parameterless constructor.
 ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
 Could not find a parameterless constructor.
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: No command has been provided!
+ERROR: No command has been provided!
+ERROR: No command has been provided!
+ERROR: Can not instantiate proxy of class: ProjectManager.Framework.Core.Commands.Listing.ListProjectsCommand.
+Could not find a parameterless constructor.
+ERROR: The passed command is not found!
+ERROR: No command has been provided!
+ERROR: No command has been provided!

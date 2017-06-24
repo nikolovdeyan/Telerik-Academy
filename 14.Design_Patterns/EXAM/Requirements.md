@@ -1,13 +1,14 @@
 
-Project Manager Tool
-Design Patterns Exam, 15 June 2017
+# Project Manager Tool
+
+## Design Patterns Exam, 15 June 2017
 
 Refactor and complete the project management system.
 Application description
 
 About a month ago a development team from your company started to refactor the Project Management System which you are about to use in order to enhance your team's productivity. Initially, the system has been developed by junior developers and after some time a few senior members joined the team. Later on, the team switched to another project so you are the one man band now. The code is in some odd state of having all the needed interfaces to complete refactoring the system but not all of them have been used. You know "THE BOOK", right? Your task is to complete the refactoring following all the principles you have learnt (I hope :D ) so far and build the best project ever.
 
-Guidelines:
+#### Guidelines:
 
     There are 2 projects and 1 test project. One of them is the framework and the other is the client.
     Both projects are splitted as this is an essential part of decoupling your application. In fact, building the framework is the main focus of this application and it should be done using all the SOLID principles. This will allow you to disconnect the client from the framework.
@@ -26,32 +27,32 @@ Output
 
 The output is also the same and should be on the console. It should consist of the outputs from each of the commands from the input sequence. There is, however, a new functionality you have to implement. You should add caching when ListProjects command is executed.
 
-    Hint 1: Check what's going on in the following files in the CLI project (the architect left some goodies) - StartUp, IConfigurationProvider, ConfigurationProvider, NinjectManagerModule, App.config.
+ - Hint 1: Check what's going on in the following files in the CLI project (the architect left some goodies) - StartUp, IConfigurationProvider, ConfigurationProvider, NinjectManagerModule, App.config.
+ 
+ - Hint 2: Check the files CacheableCommand and ValidatableCommand and think about how to use them according to the use case
+ 
+ - Hint 3: All the needed interfaces are there for you (thank me later).
+ 
+ - Hint 4: SimpleInterceptor for writing the result of ProcessCommand
 
-    Hint 2: Check the files CacheableCommand and ValidatableCommand and think about how to use them according to the use case
-
-    Hint 3: All the needed interfaces are there for you (thank me later).
-
-    Hint 4: SimpleInterceptor for writing the result of ProcessCommand
-
-Application requirements
+#### Application requirements
 
 Follow the good object orientated programming and (especially) dependency inversion practices and principles. Modifying things that you are NOT allowed to modify will result in a penalty for each violation.
-Problem 1. Code Refactoring (35 points)
+##### Problem 1. Code Refactoring (35 points)
 
-Refactor the code in both Framework and ConsoleClient projects following the best practices introduced in the Design Patterns course:
+###### Refactor the code in both Framework and ConsoleClient projects following the best practices introduced in the Design Patterns course:
 
-    Do not modify ModelsFactory class. Don't try to use IoC container there.git
+ - Do not modify ModelsFactory class. Don't try to use IoC container there.git
 
-    Replace all usages of the new keyword with a corresponding architectural approach (design pattern) in all the classes: (except internal .NET classes such as StringBuilder, List, Exception types and etc.).
+ - Replace all usages of the new keyword with a corresponding architectural approach (design pattern) in all the classes: (except internal .NET classes such as StringBuilder, List, Exception types and etc.).
 
-    Remove the switch case in CommandsFactory class and use the IoC container. It is okay to depend on it in this class. (Service Locator - please, no :) )
+ - Remove the switch case in CommandsFactory class and use the IoC container. It is okay to depend on it in this class. (Service Locator - please, no :) )
 
-    Use an IoC container to compose all of the refactored code and allow to decouple the CLI from the framework and, of course, to allow unit testing.
+ - Use an IoC container to compose all of the refactored code and allow to decouple the CLI from the framework and, of course, to allow unit testing.
 
-Problem 2. Unit Tests (25 points)
+##### Problem 2. Unit Tests (25 points)
 
-Design and fully implement unit tests for:
+###### Design and fully implement unit tests for:
 
     CacheableCommand class
     CachingService class
@@ -83,11 +84,13 @@ You can also find them in the Tests folder.
 Notice that ListProjects is always returning all the added projects. After implementing caching functionality, you should see cached projects for 20 seconds (or the time you added in the app.config file). The first test shows the difference.
 01. Input
 
+```
 CreateProject DeathStar 2016-1-1 2018-05-04 Active
 ListProjects
 CreateProject SomeOtherStarWarsStuff 2016-1-1 2018-05-04 Active
 ListProjects
 Exit
+```
 
 01. Expected output (Without caching. Notice the listing after adding the second project!)
 

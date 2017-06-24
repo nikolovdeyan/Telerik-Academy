@@ -26,15 +26,22 @@ namespace ProjectManager.Configs
         {
             Bind<IConfigurationProvider>().To<ConfigurationProvider>().InSingletonScope();
             IConfigurationProvider configurationProvider = Kernel.Get<IConfigurationProvider>();
-            this.Bind<ILogger>().To<FileLogger>().InSingletonScope().WithConstructorArgument(configurationProvider.LogFilePath);
 
-            Bind<IReader>().To<ConsoleReaderProvider>().InSingletonScope();
-            Bind<IWriter>().To<ConsoleWriterProvider>().InSingletonScope();
             Bind<IEngine>().To<Engine>().InSingletonScope();
+
+            Bind<IReader>().To<ConsoleReader>().InSingletonScope();
+            Bind<IWriter>().To<ConsoleWriter>().InSingletonScope();
+            this.Bind<ILogger>().To<FileLogger>().InSingletonScope().WithConstructorArgument(configurationProvider.LogFilePath);
             var commandProcessorBinding = Bind<IProcessor>().To<CommandProcessor>().InSingletonScope();
+
+
+            Bind<IDatabase>().To<Database>().InSingletonScope();
+
+
+
             Bind<IModelsFactory>().To<ModelsFactory>().InSingletonScope();
             Bind<IValidator>().To<Validator>().InSingletonScope();
-            Bind<IDatabase>().To<Database>().InSingletonScope();
+
 
             Bind<CreateProjectCommand>().ToSelf().InSingletonScope();
             Bind<CreateTaskCommand>().ToSelf().InSingletonScope();

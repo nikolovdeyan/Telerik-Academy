@@ -1,5 +1,5 @@
-﻿using System;
-using ProjectManager.Framework.Core.Common.Contracts;
+﻿using ProjectManager.Framework.Core.Common.Contracts;
+using System;
 
 namespace ProjectManager.Framework.Core.Common.Providers
 {
